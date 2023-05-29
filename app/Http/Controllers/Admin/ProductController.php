@@ -3,15 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Repository\CargoEcommerce;
 use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function productList()
+    protected $product;
+
+    public function __construct(CargoEcommerce $cargoEcommerce)
     {
-        return view('layouts.admin.ecommerce.product.index');
+        $this->product = $cargoEcommerce;
+    }
+
+    public function productList(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        // dd($this->product->getAllData());
+        return view('layouts.admin.ecommerce.product.index', [
+            'products' => $this->product->getAllData()
+        ]);
     }
 
     public function productCreate()
