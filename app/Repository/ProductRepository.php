@@ -46,7 +46,7 @@ class ProductRepository implements CargoEcommerce
 
     public function edit($id)
     {
-
+        return $product = Product::where('id', $id)->with('brand', 'category')->first();
     }
 
     public function update($id = [], $data = [])

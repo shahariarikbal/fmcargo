@@ -47,6 +47,16 @@ class ProductController extends Controller
         }
     }
 
+    public function productEdit($id)
+    {
+        $data = [
+            'categories' => Category::orderBy('id', 'desc')->select(['id', 'name', 'status'])->where('status', 1)->get(),
+            'brands' => Brand::orderBy('id', 'desc')->select(['id', 'name', 'status'])->where('status', 1)->get(),
+        ];
+        $product = $this->product->edit($id);
+        return view('layouts.admin.ecommerce.product.edit', compact('product','data'));
+    }
+
     public function productDelete ($id)
     {
         $product = $this->product->delete($id);
