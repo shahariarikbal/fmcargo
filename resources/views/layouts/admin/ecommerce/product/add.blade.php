@@ -80,7 +80,7 @@
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                                 <x-admin.label for="gallery_image">Gallery Image</x-admin.label>
-                                <x-admin.input type="file" id="gallery_image" name="gallery_image" multiple></x-admin.input>
+                                <x-admin.input type="file" id="gallery_image" name="gallery_image[]" multiple></x-admin.input>
                                 <x-admin.input-error for="gallery_image" class="mt-2"></x-admin.input-error>
                             </x-admin.input-group-div>
 

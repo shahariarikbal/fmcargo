@@ -33,4 +33,18 @@ class ProductController extends Controller
         ];
         return view('layouts.admin.ecommerce.product.add', compact('data'));
     }
+
+    public function productStore(Request $request)
+    {
+        try {
+            $product = $request->only(['name','sku','cat_id','brand_id','image','gallery_image','price','qty','short_description','long_description']);
+            $this->product->store($product);
+            $this->setSuccessMessage('Product has been created.');
+            return redirect()->route('product.list');
+        }catch (\Exception $exception){
+            $this->setErrorMessage($exception->getMessage());
+            return redirect()->route('product.list');
+        }
+    }
+
 }

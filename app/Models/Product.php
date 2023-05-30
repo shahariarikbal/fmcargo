@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Product extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
 
     public function category(): BelongsTo
     {
