@@ -14,8 +14,7 @@ class ProductRepository implements CargoEcommerce
 
     public function store($data = [])
     {
-        //dd($data);
-            if(($data['gallery_image'][0]) !=null){
+            if(isset($data['gallery_image'])){
                 foreach($data['gallery_image'] as $imagefile)
                 {
                     $name = mt_rand(10000, 99999).'.'.$imagefile->extension();
@@ -24,7 +23,7 @@ class ProductRepository implements CargoEcommerce
                 }
             }
 
-           if(($data['image'])){
+           if(isset($data['image'])){
             $imgname = mt_rand(10000, 99999). '.' . $data['image']->getClientOriginalExtension();
             $data['image']->move('product/', $imgname);
         }
@@ -51,10 +50,9 @@ class ProductRepository implements CargoEcommerce
 
     public function update($data = [], $id = [])
     {
-        //dd($data);
         $product = Product::find($id);
         $images = json_decode($product->gallery_image, true);
-        if(($data['gallery_image'][0]) !=null){
+            if(isset($data['gallery_image'])){
             foreach($data['gallery_image'] as $imagefile)
             {
                 $name = mt_rand(10000, 99999).'.'.$imagefile->extension();
@@ -63,7 +61,7 @@ class ProductRepository implements CargoEcommerce
             }
         }
 
-        if(($data['image'])){
+        if(isset($data['image'])){
             if ($product->image && file_exists(public_path('product/'.$product->image))){
                 unlink(public_path('product/'.$product->image));
             }
