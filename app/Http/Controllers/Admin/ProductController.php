@@ -47,6 +47,19 @@ class ProductController extends Controller
         }
     }
 
+    public function productUpdate(Request $request, $id)
+    {
+        try {
+            $product = $request->only(['name','sku','cat_id','brand_id','image','gallery_image','price','qty','short_description','long_description']);
+            $this->product->update($product, $id);
+            $this->setSuccessMessage('Product has been updated.');
+            return redirect()->route('product.list');
+        }catch (\Exception $exception){
+            $this->setErrorMessage($exception->getMessage());
+            return redirect()->route('product.list');
+        }
+    }
+
     public function productEdit($id)
     {
         $data = [
