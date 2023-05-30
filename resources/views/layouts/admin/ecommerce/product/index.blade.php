@@ -56,8 +56,8 @@
                            @else
                                <x-admin.action-button href="{{ route('category.inactive', $product->id) }}" title="Click to active" class="btn-primary"><i class="fa-solid fa-circle-down"></i></x-admin.action-button>
                            @endif  --}}
-                           <x-admin.action-button href="{{ route('category.edit', $product->id) }}" title="Edit" class="btn-info"><i class="fas fa-pen-to-square"></i></x-admin.action-button>
-                           <x-admin.action-button href="{{ route('category.delete', $product->id) }}" title="Delete" onclick="return confirm('Are you sure delete this info ?')" class="btn-danger"><i class="fas fa-trash-alt"></i></x-admin.action-button>
+                           <x-admin.action-button href="{{ route('product.edit', $product->id) }}" title="Edit" class="btn-info"><i class="fas fa-pen-to-square"></i></x-admin.action-button>
+                           <x-admin.action-button href="{{ route('product.delete', $product->id) }}" title="Delete" onclick="return confirm('Are you sure delete this info ?')" class="btn-danger"><i class="fas fa-trash-alt"></i></x-admin.action-button>
                        </td>
                    </tr>
                @endforeach

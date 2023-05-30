@@ -43,4 +43,40 @@ class ProductRepository implements CargoEcommerce
             'gallery_image'=> json_encode($gallery_image),
         ]);
     }
+
+    public function edit($id)
+    {
+
+    }
+
+    public function update($id = [], $data = [])
+    {
+
+    }
+
+    public function active($id)
+    {
+
+    }
+
+    public function inactive($id)
+    {
+
+    }
+
+    public function delete($id)
+    {
+        $product = Product::find($id);
+        if ($product->image && file_exists(public_path('product/'.$product->image))){
+            unlink(public_path('product/'.$product->image));
+        }
+
+        foreach (json_decode($product->gallery_image, true) as $image) {
+            if ($product->image && file_exists(public_path('product/'.$image))){
+                unlink(public_path('product/'.$image));
+            }
+        }
+        $product->delete();
+    }
+
 }

@@ -47,4 +47,11 @@ class ProductController extends Controller
         }
     }
 
+    public function productDelete ($id)
+    {
+        $product = $this->product->delete($id);
+        $this->setSuccessMessage('Product has been deleted.');
+        return redirect()->route('product.list');
+    }
+
 }
