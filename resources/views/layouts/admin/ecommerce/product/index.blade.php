@@ -18,33 +18,49 @@
                 <tr>
                     <th>SL</th>
                     <th>Name</th>
-                    <th>Status</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Image</th>
+                    {{--  <th>Status</th>  --}}
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-{{--                @foreach($categories as $category)--}}
-{{--                    <tr>--}}
-{{--                        <td>{{ $loop->index+1 }}</td>--}}
-{{--                        <td>{{ ucfirst($category->name) }}</td>--}}
-{{--                        <td>--}}
-{{--                            @if($category->status == 1)--}}
-{{--                                <span>Active</span>--}}
-{{--                            @else--}}
-{{--                                <span>Inactive</span>--}}
-{{--                            @endif--}}
-{{--                        </td>--}}
-{{--                        <td>--}}
-{{--                            @if($category->status == 1)--}}
-{{--                                <x-admin.action-button href="{{ route('category.active', $category->id) }}" title="Click to inactive" class="btn-success"><i class="fa-solid fa-circle-up"></i></x-admin.action-button>--}}
-{{--                            @else--}}
-{{--                                <x-admin.action-button href="{{ route('category.inactive', $category->id) }}" title="Click to active" class="btn-primary"><i class="fa-solid fa-circle-down"></i></x-admin.action-button>--}}
-{{--                            @endif--}}
-{{--                            <x-admin.action-button href="{{ route('category.edit', $category->id) }}" title="Edit" class="btn-info"><i class="fas fa-pen-to-square"></i></x-admin.action-button>--}}
-{{--                            <x-admin.action-button href="{{ route('category.delete', $category->id) }}" title="Delete" onclick="return confirm('Are you sure delete this info ?')" class="btn-danger"><i class="fas fa-trash-alt"></i></x-admin.action-button>--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-{{--                @endforeach--}}
+               @foreach($products as $product)
+                   <tr>
+                       <td>{{ $loop->index+1 }}</td>
+                       <td>{{ ucfirst($product->name) }}</td>
+                       <td>{{ $product->category->name }}y</td>
+                       <td>{{ $product->brand->name }}</td>
+                       <td>{{ $product->price }}</td>
+                       <td>{{ $product->qty }}</td>
+                       <td>
+                        @if (substr($product->image, 0, 5) == 'https')
+                            <img src="https://via.placeholder.com/640x480.png/00bbbb?text=commodi" alt="" height="20px" width="40px">
+                        @else
+                            <img src="{{ asset('product/'.$product->image) }}" alt="" height="20px" width="40px">
+                        @endif
+                       </td>
+                       {{--  <td>
+                           @if($product->status == 1)
+                               <span>Active</span>
+                           @else
+                               <span>Inactive</span>
+                           @endif
+                       </td>  --}}
+                       <td>
+                           {{--  @if($product->status == 1)
+                               <x-admin.action-button href="{{ route('category.active', $product->id) }}" title="Click to inactive" class="btn-success"><i class="fa-solid fa-circle-up"></i></x-admin.action-button>
+                           @else
+                               <x-admin.action-button href="{{ route('category.inactive', $product->id) }}" title="Click to active" class="btn-primary"><i class="fa-solid fa-circle-down"></i></x-admin.action-button>
+                           @endif  --}}
+                           <x-admin.action-button href="{{ route('product.edit', $product->id) }}" title="Edit" class="btn-info"><i class="fas fa-pen-to-square"></i></x-admin.action-button>
+                           <x-admin.action-button href="{{ route('product.delete', $product->id) }}" title="Delete" onclick="return confirm('Are you sure delete this info ?')" class="btn-danger"><i class="fas fa-trash-alt"></i></x-admin.action-button>
+                       </td>
+                   </tr>
+               @endforeach
                 </tbody>
             </table>
         </div>
