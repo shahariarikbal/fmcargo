@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -91,6 +92,7 @@ Route::middleware([
     });
 
     Route::group(['prefix' => 'settings'], function (){
-        Route::get('/show', [SettingController::class, 'showSetting'])->name('setting.show');
+        Route::get('/show/{id}', [SettingController::class, 'showSetting'])->name('setting.show');
+        Route::post('/update/{id}', [SettingController::class, 'updateSetting'])->name('setting.update');
     });
 });
