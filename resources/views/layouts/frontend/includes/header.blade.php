@@ -4,7 +4,7 @@
         <div class="header-top-left">
             <ul class="social-icon-list">
                 <li class="social-icon-list-item">
-                    <a href="javascript:void(0);" class="fab fa-facebook-f"></a>
+                    <a href="{{ url($setting->facebook) }}" class="fab fa-facebook-f"></a>
                 </li>
                 <li class="social-icon-list-item">
                     <a href="javascript:void(0);" class="fab fa-twitter"></a>
@@ -18,13 +18,13 @@
             </ul>
         </div>
         <div class="header-top-right">
-            <a href="mailto:info@example.com">
+            <a href="{{ url('mailto:'.$setting->email) }}">
                 <i class="fa fa-envelope"></i>
-                <span>info@example.com</span>
+                <span>{{ $setting->email }}</span>
             </a>
-            <a href="tel:+141 1234 567 890">
+            <a href="{{ url('tel:'.$setting->phone) }}">
                 <i class="fas fa-phone-alt"></i>
-                <span>+141 1234 567 890</span>
+                <span>{{ $setting->phone }}</span>
             </a>
         </div>
     </div>
@@ -34,7 +34,7 @@
         <!-- Website Logo -->
         <div class="header-brand-logo-outer">
             <a href="index.html" class="header-brand-logo">
-                <img src="assets/images/logo2.png" width="193" height="89" alt="logo">
+                <img src="{{ asset('setting/'.$setting->logo) }}" width="193" height="89" alt="logo">
             </a>
         </div>
         <!-- Nav Item -->

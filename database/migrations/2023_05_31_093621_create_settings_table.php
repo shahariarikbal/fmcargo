@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('whatsapp');
             $table->string('wechat');
             $table->longText('address');
+            $table->longText('footer_description');
             $table->string('logo');
             $table->timestamps();
         });

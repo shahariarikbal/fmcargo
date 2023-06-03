@@ -4,21 +4,18 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
-                        <img src="assets/images/logo2.png" alt="Footer Logo" class="footer-brand-logo">
+                        <img src="{{ asset('setting/'.$setting->logo) }}" alt="Footer Logo" class="footer-brand-logo">
                         <p class="footer-item-des">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                            {{$setting->footer_description}}
                         </p>
                         <ul class="socials-link-list">
                             <li class="socials-link-list-item">
-                                <a href="#" target="_blank">
+                                <a href="{{ url($setting->facebook) }}" target="_blank">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>
                             <li class="socials-link-list-item">
-                                <a href="#" target="_blank">
+                                <a href="{{ url('https://wa.me/'.$setting->whatsapp) }}" target="_blank">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
                             </li>

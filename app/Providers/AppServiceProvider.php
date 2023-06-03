@@ -11,6 +11,7 @@ use App\Repository\CargoEcommerce;
 use App\Repository\EcommerceRepository;
 use App\Repository\ProductRepository;
 use App\Repository\SettingRepository;
+use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -42,6 +43,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer('*', function($view){
+            $view->with('setting', Setting::first());
+        });
     }
 }

@@ -85,7 +85,7 @@
     <div class="fixed-social-icon-wrap">
         <ul class="fixed-social-list">
             <li class="fixed-social-list-item">
-                <a href="#" class="fixed-social-list-item-link">
+                <a href="{{ url('https://wa.me/'.$setting->whatsapp) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </li>
@@ -95,7 +95,7 @@
                 </a>
             </li>
             <li class="fixed-social-list-item">
-                <a href="#" class="fixed-social-list-item-link">
+                <a href="{{ url($setting->facebook) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </li>
