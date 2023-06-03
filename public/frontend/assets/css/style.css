@@ -78,7 +78,7 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 99;
+    z-index: 9;
 }
 
 .fixed-social-list {
@@ -459,6 +459,8 @@ body {
 
 .nav-items-wrap {
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .header-brand-logo {
@@ -568,7 +570,7 @@ body {
 
 .nav-toggle-btn .btn-inner {
     width: 26px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
     position: relative;
     transition: all .4s ease;
 }
@@ -577,7 +579,7 @@ body {
     width: 40px;
     align-items: center;
     justify-content: center;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     padding: 5px;
     border-radius: 5px;
     display: none;
@@ -590,7 +592,7 @@ body {
     height: 1px;
     width: 26px;
     position: absolute;
-    background: #fff;
+    background: #000;
     top: -7px;
 }
 .nav-toggle-btn .btn-inner:after {
@@ -598,7 +600,7 @@ body {
     height: 1px;
     width: 26px;
     position: absolute;
-    background: #fff;
+    background: #000;
     top: 7px;
 }
 /*fixed header*/
@@ -606,7 +608,7 @@ body {
 .fixed-header .header-top-bar {
     display: none;
 }
-.fixed-header .main-navbar {
+.fixed-header .header-bottom-wrap {
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 100%;
@@ -805,46 +807,18 @@ body {
     transition: all .4s ease-in-out;
 }
 .service-item-title {
-    font-size: 22px;
+    font-size: 20px;
     color: #fff;
     font-weight: 600;
     display: inline-block;
     margin-bottom: 5px;
-}
-
-.service-item-details {
-    color: #fff;
-    font-size: 16px;
-    border-bottom: 1px dashed #ff9700;
-    display: inline-block;
-    visibility: hidden;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: all .2s ease-in-out;
+    text-transform: capitalize;
 }
 
 .service-item-wrap:hover .service-item-info {
     min-height: 100%;
     padding-top: 128px;
     background: rgb(0 0 0 / 71%);
-}
-
-.service-item-wrap:hover .service-item-details {
-    opacity: 1;
-    visibility: visible;
-    transition: all .5s ease-in-out;
-}
-
-.service-item-details i {
-    font-size: 12px;
-    margin-left: 3px;
-}
-
-.service-item-details:hover {
-    color: #ff9700;
 }
 
 .service-item-title:hover {
@@ -889,15 +863,15 @@ body {
 }
 
 .transport-skill-progress-item .progress {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     position: relative;
 }
 
 .transport-skill-progress-item .progress span {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     background: #fff;
     border-radius: 50%;

@@ -166,86 +166,62 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service1.jpg" class="Service" />
                         <div class="service-item-info">
                             <a href="service-details.html" class="service-item-title">
                                 DOOR TO DOOR SERVICE
                             </a>
-                            <a href="service-details.html" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service2.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 C & F Service
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service3.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 INTERNATIONAL COURIER
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service2.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 AIR FREIGHT SERVICE
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service4.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 SEA FREIGHT SERVICE
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service5.png" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 CUSTOMIZED FCL AND LCL
-                            </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
                             </a>
                         </div>
                     </div>
@@ -259,12 +235,12 @@
     <section class="transport-skill-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="transport-skill-left">
                         <img src="{{ asset('/frontend/') }}/assets/images/services-promo.jpg" alt="Image">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="transport-skill-right">
                         <h6 class="top-title">
                             OUR CARGO
