@@ -10,20 +10,20 @@ $(window).scroll(function() {
 
 // Navbar Toggle Button For Mini Device
 $('.nav-toggle-btn').click(function() {
-    $('.nav-items-wrapper').toggleClass('menu-visible');
+    $('.nav-items-wrap').toggleClass('menu-visible');
     $('body').toggleClass('body-overflow');
 });
 
 $(document).ready(function() {
     // Nav submenu Responsive
-    if ($(window).width() <= 991) {
+    if ($(window).width() <= 1024) {
         $('.nav-item-submenu').addClass('collapse');
     } else {
         $('.nav-item-submenu').removeClass('collapse');
     }
 
     $(window).resize(function() {
-        if ($(window).width() <= 991) {
+        if ($(window).width() <= 1024) {
             $('.nav-item-submenu').addClass('collapse');
         } else {
             $('.nav-item-submenu').removeClass('collapse');
@@ -32,14 +32,14 @@ $(document).ready(function() {
 
     // Nav submenu collapse Js
     $(window).resize(function() {
-        if ($(window).width() <= 991) {
+        if ($(window).width() <= 1024) {
             $('.item-has-submenu .nav-item-link').on('click', function(e) {
                 e.preventDefault();
                 $(this).closest('.nav-list-item').find('.collapse').collapse('toggle');
             });
         }
     });
-    if ($(window).width() <= 991) {
+    if ($(window).width() <= 1024) {
         $('.item-has-submenu .nav-item-link').on('click', function(e) {
             e.preventDefault();
             $(this).closest('.nav-list-item').find('.collapse').collapse('toggle');

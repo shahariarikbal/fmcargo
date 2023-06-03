@@ -46,7 +46,7 @@
             <!-- Main Nav -->
             <ul class="nav-item-list">
                 <li class="nav-list-item">
-                    <a href="index.html" class="nav-item-link">
+                    <a href="{{url('/')}}" class="nav-item-link">
                         Home
                     </a>
                 </li>
