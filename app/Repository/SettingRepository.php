@@ -24,40 +24,27 @@ class SettingRepository implements CargoEcommerce
 
     public function update($data = [], $id = [])
     {
-        $product = Product::find($id);
-        $images = json_decode($product->gallery_image, true);
-            if(isset($data['gallery_image'])){
-            foreach($data['gallery_image'] as $imagefile)
-            {
-                $name = mt_rand(10000, 99999).'.'.$imagefile->extension();
-                $imagefile->move('product/', $name);
-                $images[] = $name;
-            }
-        }
+        $setting = Setting::find($id);
 
-        if(isset($data['image'])){
-            if ($product->image && file_exists(public_path('product/'.$product->image))){
-                unlink(public_path('product/'.$product->image));
+        if(isset($data['logo'])){
+            if ($setting->logo && file_exists(public_path('setting/'.$setting->logo))){
+                unlink(public_path('setting/'.$setting->logo));
             }
-            $imgname = mt_rand(10000, 99999). '.' . $data['image']->getClientOriginalExtension();
-            $data['image']->move('product/', $imgname);
+            $imgname = mt_rand(10000, 99999). '.' . $data['logo']->getClientOriginalExtension();
+            $data['logo']->move('setting/', $imgname);
         }
         else{
-            $imgname = $product->image;
+            $imgname = $setting->logo;
         }
 
-        $product->update([
-            'name' => $data['name'],
-            'slug' => Str::slug($data['name']),
-            'sku' => $data['sku'],
-            'cat_id' => $data['cat_id'],
-            'brand_id' => $data['brand_id'],
-            'price' => $data['price'],
-            'qty' => $data['qty'],
-            'short_description' => $data['short_description'],
-            'long_description' => $data['long_description'],
-            'image' => $imgname,
-            'gallery_image'=> json_encode($images),
+        $setting->update([
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'facebook' => $data['facebook'],
+            'whatsapp' => $data['whatsapp'],
+            'wechat' => $data['wechat'],
+            'address' => $data['address'],
+            'logo' => $imgname,
         ]);
     }
 
