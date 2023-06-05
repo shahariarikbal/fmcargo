@@ -69,12 +69,12 @@
                     </ul>
                 </li>
                 <li class="nav-list-item">
-                    <a href="tracking.html" class="nav-item-link">
+                    <a href="{{ url('/tracking') }}" class="nav-item-link">
                         Tracking
                     </a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="contact.html" class="nav-item-link">
+                    <a href="{{ url('/contact') }}" class="nav-item-link">
                         Contact Us
                     </a>
                 </li>
@@ -85,19 +85,19 @@
                     </a>
                     <ul class="nav-item-submenu">
                         <li class="submenu-item">
-                            <a href="login.html" class="submenu-item-link">
+                            <a href="{{ url('/login') }}" class="submenu-item-link">
                                 Login
                             </a>
                         </li>
                         <li class="submenu-item">
-                            <a href="ragistration.html" class="submenu-item-link">
+                            <a href="{{ url('/registration') }}" class="submenu-item-link">
                                 Registration
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-list-item">
-                    <a href="shop.html" class="nav-item-link">
+                    <a href="{{ url('/shop') }}" class="nav-item-link">
                         Shop
                     </a>
                 </li>
