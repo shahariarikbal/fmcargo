@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -29,6 +30,13 @@ Route::get('clear', function () {
 });
 
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('/contact', [FrontendController::class, 'showContactUs']);
+Route::get('/shop', [FrontendController::class, 'showShop']);
+Route::get('/product/details', [FrontendController::class, 'showProductDetails']);
+Route::get('/checkout', [FrontendController::class, 'showCheckout']);
+Route::get('/tracking', [FrontendController::class, 'showTracking']);
+Route::get('/login', [FrontendController::class, 'showLogin']);
+Route::get('/registration', [FrontendController::class, 'showRegistration']);
 
 Route::middleware([
     'auth:sanctum',
@@ -88,5 +96,10 @@ Route::middleware([
         Route::get('/active/{id}', [ProductController::class, 'productActive'])->name('product.active');
         Route::get('/inactive/{id}', [ProductController::class, 'productInactive'])->name('product.inactive');
         Route::get('/delete/{id}', [ProductController::class, 'productDelete'])->name('product.delete');
+    });
+
+    Route::group(['prefix' => 'settings'], function (){
+        Route::get('/show/{id}', [SettingController::class, 'showSetting'])->name('setting.show');
+        Route::post('/update/{id}', [SettingController::class, 'updateSetting'])->name('setting.update');
     });
 });

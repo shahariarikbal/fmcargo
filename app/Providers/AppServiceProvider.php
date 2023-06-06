@@ -5,10 +5,13 @@ namespace App\Providers;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Repository\BrandRepository;
 use App\Repository\CargoEcommerce;
 use App\Repository\EcommerceRepository;
 use App\Repository\ProductRepository;
+use App\Repository\SettingRepository;
+use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->when(ProductController::class)->needs(CargoEcommerce::class)->give(function (){
             return new ProductRepository;
         });
+
+        $this->app->when(SettingController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new SettingRepository;
+        });
     }
 
     /**
@@ -36,6 +43,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer('*', function($view){
+            $view->with('setting', Setting::first());
+        });
     }
 }

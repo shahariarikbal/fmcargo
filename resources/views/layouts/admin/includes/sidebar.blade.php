@@ -33,8 +33,8 @@
             </a>
             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="#">Static Navigation</a>
-                    <a class="nav-link" href="#">Light Sidenav</a>
+                    <a class="nav-link" href="{{ url('/settings/show/1') }}">Settings</a>
+                    {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>
         </div>

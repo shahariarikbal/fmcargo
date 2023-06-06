@@ -5,104 +5,6 @@
 @endsection
 
 @section('content')
-    <div class="shopping-cart">
-        <div class="cart-hide-icon cart-show-hide-btn">
-            <button class="shopping-cart-close-icon">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        <div class="shopping-cart-items-count">
-            <div class="left">
-                <p class="shopping-cart-item-cont">
-                    <span>
-                        <i class="fas fa-shopping-bag"></i>
-                    </span>
-                    <span class="shopping-item-number">
-                        10
-                    </span>
-                    <span>items</span>
-                </p>
-            </div>
-            <div class="right cart-show-hide-btn">
-                <button class="shopping-cart-close-btn">
-                    close
-                </button>
-            </div>
-        </div>
-        <div class="shopping-delivery">
-            <span>
-                <i class="fas fa-truck"></i>
-                Express Delivery
-            </span>
-        </div>
-        <div class="shopping-order-items-wrapper">
-            <div class="shopping-order-item-outer">
-                <div class="order-quantity">
-                    <div>
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <span>10</span>
-                    <div>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </div>
-                <div class="shopping-order-item-image">
-                    <img src="{{ asset('/frontend/') }}/assets/images/product.webp" />
-                </div>
-                <div class="shopping-order-item-name">
-                    <h3 class="name">
-                        Iphone 12 Pro max
-                    </h3>
-                    <span class="sub-text">
-                        ৳ 12000
-                    </span>
-                </div>
-                <div class="shopping-order-item-amount">
-                    <button class="shopping-order-item-delete-btn">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="shopping-cart-order-check">
-            <span class="shopping-order-price">
-                ৳ 6000
-            </span>
-            <a href="billing.html" class="shopping-order-view-cart">
-                Place Order
-            </a>
-        </div>
-    </div>
-    <div class="add-cart-outer cart-show-hide-btn">
-        <div class="cart-item-count">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="items-number">10</span>
-        </div>
-    </div>
-    <!-- /Fixed Cart -->
-
-    <!-- Fixed Social Icon -->
-    <div class="fixed-social-icon-wrap">
-        <ul class="fixed-social-list">
-            <li class="fixed-social-list-item">
-                <a href="#" class="fixed-social-list-item-link">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </li>
-            <li class="fixed-social-list-item">
-                <a href="#" class="fixed-social-list-item-link">
-                    <i class="fab fa-weixin"></i>
-                </a>
-            </li>
-            <li class="fixed-social-list-item">
-                <a href="#" class="fixed-social-list-item-link">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- /Fixed Social Icon -->
-
     <!-- Home Slider -->
     <section class="home-slider-section">
         <div class="slider-items-wrapper owl-carousel">
@@ -166,86 +68,62 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service1.jpg" class="Service" />
                         <div class="service-item-info">
                             <a href="service-details.html" class="service-item-title">
                                 DOOR TO DOOR SERVICE
                             </a>
-                            <a href="service-details.html" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service2.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 C & F Service
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service3.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 INTERNATIONAL COURIER
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service2.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 AIR FREIGHT SERVICE
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service4.jpg" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 SEA FREIGHT SERVICE
                             </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service5.png" class="Service">
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
                                 CUSTOMIZED FCL AND LCL
-                            </a>
-                            <a href="#" class="service-item-details">
-                                Details
-                                <i class="fas fa-angle-right"></i>
                             </a>
                         </div>
                     </div>
@@ -259,12 +137,12 @@
     <section class="transport-skill-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="transport-skill-left">
                         <img src="{{ asset('/frontend/') }}/assets/images/services-promo.jpg" alt="Image">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="transport-skill-right">
                         <h6 class="top-title">
                             OUR CARGO
