@@ -33,8 +33,8 @@
     <div class="header-bottom-wrap">
         <!-- Website Logo -->
         <div class="header-brand-logo-outer">
-            <a href="index.html" class="header-brand-logo">
-                <img src="assets/images/logo2.png" width="193" height="89" alt="logo">
+            <a href="{{ url('/') }}" class="header-brand-logo">
+                <img src="{{ asset('/frontend/') }}/assets/images/logo2.png" width="193" height="89" alt="logo">
             </a>
         </div>
         <!-- Nav Item -->
@@ -46,7 +46,7 @@
             <!-- Main Nav -->
             <ul class="nav-item-list">
                 <li class="nav-list-item">
-                    <a href="index.html" class="nav-item-link">
+                    <a href="{{ url('/') }}" class="nav-item-link">
                         Home
                     </a>
                 </li>

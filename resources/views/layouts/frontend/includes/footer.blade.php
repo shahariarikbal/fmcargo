@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
-                        <img src="assets/images/logo2.png" alt="Footer Logo" class="footer-brand-logo">
+                        <img src="{{ asset('/frontend/') }}/assets/images/logo2.png" alt="Footer Logo" class="footer-brand-logo">
                         <p class="footer-item-des">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
