@@ -6,7 +6,6 @@
     <title>@yield('title')</title>
     <!-- Pavicon ICon -->
     @include('layouts.frontend.includes.style')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 

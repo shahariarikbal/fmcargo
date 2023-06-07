@@ -33,7 +33,7 @@
     <div class="header-bottom-wrap">
         <!-- Website Logo -->
         <div class="header-brand-logo-outer">
-            <a href="index.html" class="header-brand-logo">
+            <a href="{{ url('/') }}" class="header-brand-logo">
                 <img src="{{ asset('setting/'.$setting->logo) }}" width="193" height="89" alt="logo">
             </a>
         </div>
@@ -85,7 +85,7 @@
                     </a>
                     <ul class="nav-item-submenu">
                         <li class="submenu-item">
-                            <a href="{{ url('/login') }}" class="submenu-item-link">
+                            <a href="{{ url('/customer/login') }}" class="submenu-item-link">
                                 Login
                             </a>
                         </li>

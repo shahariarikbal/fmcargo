@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -35,7 +36,7 @@ Route::get('/shop', [FrontendController::class, 'showShop']);
 Route::get('/product/details', [FrontendController::class, 'showProductDetails']);
 Route::get('/checkout', [FrontendController::class, 'showCheckout']);
 Route::get('/tracking', [FrontendController::class, 'showTracking']);
-Route::get('/login', [FrontendController::class, 'showLogin']);
+Route::get('/customer/login', [FrontendController::class, 'showLogin']);
 Route::get('/registration', [FrontendController::class, 'showRegistration']);
 
 Route::middleware([
@@ -101,5 +102,14 @@ Route::middleware([
     Route::group(['prefix' => 'settings'], function (){
         Route::get('/show/{id}', [SettingController::class, 'showSetting'])->name('setting.show');
         Route::post('/update/{id}', [SettingController::class, 'updateSetting'])->name('setting.update');
+    });
+
+    Route::group(['prefix' => 'service'], function (){
+        Route::get('/list', [ServiceController::class, 'serviceList'])->name('services');
+        Route::get('/add', [ServiceController::class, 'serviceAdd'])->name('service.add');
+        Route::post('/store', [ServiceController::class, 'serviceStore'])->name('service.store');
+        Route::get('/edit/{id}', [ServiceController::class, 'serviceEdit'])->name('service.edit');
+        Route::post('/update/{id}', [ServiceController::class, 'serviceUpdate'])->name('service.update');
+        Route::post('/destroy/{id}', [ServiceController::class, 'serviceDelete'])->name('service.delete');
     });
 });
