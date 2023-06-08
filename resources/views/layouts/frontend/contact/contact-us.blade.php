@@ -30,7 +30,7 @@
     <section class="contact-section-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-12">
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
                             <i class="fas fa-phone-alt"></i>
@@ -41,7 +41,7 @@
                         <a href="tel:+6594717964">0123456789</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-12">
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
                             <i class="fas fa-envelope"></i>
@@ -52,7 +52,7 @@
                         <a href="mailto:mimpainting18@gmail.com">info@gmail.com</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-12">
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -68,7 +68,7 @@
             </div>
             <div class="contact-form-wrapper">
                 <div class="row">
-                    <div class="col-md-8 m-auto">
+                    <div class="col-lg-8 col-md-12 m-auto">
                         <form action="" method="" class="contact-form form-group">
                             @csrf
                             <div class="row">

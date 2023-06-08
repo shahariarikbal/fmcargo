@@ -99,6 +99,12 @@
 	.section-title-wrap .title {
 		font-size: 25px;
 	}
+	.contact-info-icon {
+		padding: 15px 20px;
+	}
+	.billing-details-form-outer {
+		margin-bottom: 30px;
+	}
 }
 
 @media screen and (max-width: 567px) {
@@ -123,6 +129,21 @@
 	}
 }
 
+@media screen and (max-width: 530px) {
+	.order-tracking-items-outer {
+		display: block;
+		text-align: center;
+	}	
+	.order-tracking {
+		margin: 20px auto;
+		display: inline-block;
+		width: 100%;
+	}	
+	.order-tracking::before {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 400px) {
 	.slider-content-outer .slider-content h2 {
 		font-size: 14px;
@@ -135,6 +156,10 @@
 	}
 	.transport-skill-right .title {
 		font-size: 25px;
+	}
+	.order-tracking-wrapper .tracking-form .input-group button {
+		padding: 0 10px;
+		font-size: 16px;
 	}
 }
 

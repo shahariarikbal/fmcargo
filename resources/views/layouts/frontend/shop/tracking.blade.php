@@ -34,7 +34,7 @@
 	        <div class="order-tracking-wrapper">
 	            <form action="" method="" class="tracking-form form-group">
 	                <div class="input-group">
-	                    <input type="search" name="shipment_bol_no" placeholder="Enter Shipment or BOL No." class="form-control" />
+	                    <input type="search" name="shipment_bol_no" placeholder="Enter Tracking No." class="form-control" />
 	                    <button type="submit" name="tracking">Search</button>
 	                </div>
 	            </form>
