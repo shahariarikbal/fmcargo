@@ -2,16 +2,26 @@
 
 namespace App\Repository;
 
+use App\Models\Service;
+
 class ServiceRepository implements CargoEcommerce
 {
     public function getAllData()
     {
-        // TODO: Implement getAllData() method.
+        return Service::orderBy('id', 'desc')->select(['id', 'title', 'image'])->get();
     }
 
     public function store($data = [])
     {
-        // TODO: Implement store() method.
+        if ($data['image']){
+            $imageName = time().'.'.$data['image']->extension();
+            $data['image']->move('/service/', $imageName);
+        }
+
+        Service::create([
+            'title' => $data['title'],
+            'image' => $imageName,
+        ]);
     }
 
     public function edit($id)

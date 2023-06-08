@@ -18,7 +18,9 @@ class ServiceController extends Controller
 
     public function serviceList() : View
     {
-        return view('layouts.admin.service');
+        return view('layouts.admin.service.index', [
+            'services' => $this->service->getAllData()
+        ]);
     }
 
     public function serviceAdd()
