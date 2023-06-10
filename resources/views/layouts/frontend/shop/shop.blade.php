@@ -31,21 +31,26 @@
     <section class="product-section">
 		<div class="container">
 			<div class="row">
+                @foreach ($frontend_contents['products'] as $product )
 				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="product-item-wrap">
+                    <div class="product-item-wrap">
 						<div class="product-image-outer">
-							<img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">	
-							<span class="product-discount-persent">
+                            @if (substr($product->image, 0, 5) == 'https')
+                            <img src="https://via.placeholder.com/640x480.png/00bbbb?text=commodi" alt="product" class="product-image">
+                            @else
+                            <img src="{{ asset('product/'.$product->image) }}" alt="product" class="product-image">
+                            @endif
+							{{--  <span class="product-discount-persent">
 								-15%
-							</span>
+							</span>  --}}
 							<div class="product-action">
-                                <a class="action-btn" href="#">
+                                <a class="action-btn" href="{{ url('/product/add-to-cart/'.$product->id) }}">
                                 	<i class="fas fa-shopping-cart"></i>
                                 </a>
                             </div>
 						</div>
 						<div class="product-info-outer">
-							<ul class="product-item-ratting">
+							{{--  <ul class="product-item-ratting">
                                 <li>
                                     <i class="fas fa-star"></i>
                                 </li>
@@ -61,27 +66,28 @@
                                 <li>
                                     <i class="fas fa-star"></i>
                                 </li>
-                            </ul>
+                            </ul>  --}}
                             <a href="{{ url('/product/details') }}" class="product-name">
-                            	Maytto Mini Portable Fan
+                            	{{ $product->name }}
                             </a>
                             <div class="product-price-outer">
-                            	<del class="main-price">
+                            	{{--  <del class="main-price">
                             		$300
-                            	</del>
+                            	</del>  --}}
                             	<span class="discount-price">
-                            		$200
+                            		${{ $product->price }}
                             	</span>
                             </div>
 						</div>
 					</div>
 				</div>
+                @endforeach
 			</div>
-			<div class="product-load-btn-outer">
+			{{--  <div class="product-load-btn-outer">
 				<a href="#" class="product-load-btn-inner">
 					Load More
 				</a>
-			</div>
+			</div>  --}}
 		</div>
 	</section>
     <!-- /Shop -->
