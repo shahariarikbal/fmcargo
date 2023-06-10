@@ -18,7 +18,6 @@ class FrontendController extends Controller
     public function index()
     {
         $frontend_contents = $this->frontend_content->getAllData();
-        //dd($frontend_contents);
         return view('layouts.frontend.home.index', compact('frontend_contents'));
     }
 
@@ -27,7 +26,8 @@ class FrontendController extends Controller
     }
 
     public function showShop(){
-        return view('layouts.frontend.shop.shop');
+        $frontend_contents = $this->frontend_content->getAllData();
+        return view('layouts.frontend.shop.shop',compact('frontend_contents'));
     }
 
     public function showProductDetails(){
