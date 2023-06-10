@@ -39,10 +39,16 @@
 			          <span class="fas fa-user"></span>
 			          <input type="text" name="email" class="form-control" placeholder="Email only">
 			        </div>
+                    @if ($errors->has('email'))
+                        <div class="text-danger">{{ $errors->first('email') }}</div>
+                    @endif
 			        <div class="input-field-wrapper">
 			          <span class="fas fa-lock"></span>
 			          <input type="password" name="password" class="form-control" placeholder="Password">
 			        </div>
+                    @if ($errors->has('password'))
+                        <div class="text-danger">{{ $errors->first('password') }}</div>
+                    @endif
 			  		<div class="submit-btn-outer">
 			  			<button type="submit" class="submit-btn-inner">
 				  			Sign in
