@@ -24,9 +24,9 @@ class ProductRepository implements CargoEcommerce
             }
 
            if(isset($data['image'])){
-            $imgname = mt_rand(10000, 99999). '.' . $data['image']->getClientOriginalExtension();
-            $data['image']->move('product/', $imgname);
-        }
+                $imgname = mt_rand(10000, 99999). '.' . $data['image']->getClientOriginalExtension();
+                $data['image']->move('product/', $imgname);
+            }
 
         Product::create([
             'name' => $data['name'],

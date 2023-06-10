@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Admin\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::get('/checkout', [FrontendController::class, 'showCheckout']);
 Route::get('/tracking', [FrontendController::class, 'showTracking']);
 Route::get('/customer/login', [FrontendController::class, 'showLogin']);
 Route::get('/registration', [FrontendController::class, 'showRegistration']);
+Route::get('/blog/details/{id}/{slug}', [FrontendController::class, 'blogDetails']);
 
 Route::middleware([
     'auth:sanctum',
@@ -111,5 +113,14 @@ Route::middleware([
         Route::get('/edit/{id}', [ServiceController::class, 'serviceEdit'])->name('service.edit');
         Route::post('/update/{id}', [ServiceController::class, 'serviceUpdate'])->name('service.update');
         Route::post('/destroy/{id}', [ServiceController::class, 'serviceDelete'])->name('service.delete');
+    });
+
+    Route::group(['prefix' => 'blog'], function (){
+        Route::get('/list', [BlogController::class, 'blogList'])->name('blog.list');
+        Route::get('/add', [BlogController::class, 'blogAdd'])->name('blog.add');
+        Route::post('/store', [BlogController::class, 'blogStore'])->name('blog.store');
+        Route::get('/edit/{id}', [BlogController::class, 'blogEdit'])->name('blog.edit');
+        Route::post('/update/{id}', [BlogController::class, 'blogUpdate'])->name('blog.update');
+        Route::get('/destroy/{id}', [BlogController::class, 'blogDelete'])->name('blog.delete');
     });
 });

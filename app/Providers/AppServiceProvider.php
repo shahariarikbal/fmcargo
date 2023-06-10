@@ -2,11 +2,14 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\SettingController;
+use App\Models\Blog;
+use App\Repository\BlogRepository;
 use App\Repository\BrandRepository;
 use App\Repository\CargoEcommerce;
 use App\Repository\EcommerceRepository;
@@ -42,6 +45,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->when(ServiceController::class)->needs(CargoEcommerce::class)->give(function (){
             return new ServiceRepository();
         });
+
+        $this->app->when(BlogController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new BlogRepository();
+        });
     }
 
     /**
@@ -51,6 +58,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('*', function($view){
             $view->with('setting', Setting::first());
+            $view->with('blogs', Blog::orderBy('id', 'desc')->select(['id', 'title', 'description', 'slug', 'image', 'created_at'])->get());
         });
     }
 }
