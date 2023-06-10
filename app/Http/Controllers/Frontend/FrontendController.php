@@ -57,4 +57,9 @@ class FrontendController extends Controller
         $relatedPosts = Blog::where('id', '!=', $blog->id)->get();
         return view('layouts.frontend.home.blog-details', compact('blog', 'relatedPosts'));
     }
+
+    public function serviceDetails()
+    {
+        return view('layouts.frontend.service.service-details');
+    }
 }
