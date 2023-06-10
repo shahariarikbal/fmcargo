@@ -13,9 +13,9 @@ class ServiceRepository implements CargoEcommerce
 
     public function store($data = [])
     {
-        if ($data['image']){
-            $imageName = time().'.'.$data['image']->extension();
-            $data['image']->move('/service/', $imageName);
+        if(isset($data['image'])){
+            $imageName = mt_rand(10000, 99999). '.' . $data['image']->getClientOriginalExtension();
+            $data['image']->move('service/', $imageName);
         }
 
         Service::create([
@@ -26,12 +26,27 @@ class ServiceRepository implements CargoEcommerce
 
     public function edit($id)
     {
-        // TODO: Implement edit() method.
+        return $service = Service::where('id', $id)->first();
     }
 
-    public function update($id = [], $data = [])
+    public function update($data = [], $id = [])
     {
-        // TODO: Implement update() method.
+        $service = Service::find($id);
+        if(isset($data['image'])){
+            if ($service->image && file_exists(public_path('service/'.$service->image))){
+                unlink(public_path('service/'.$service->image));
+            }
+            $imgname = mt_rand(10000, 99999). '.' . $data['image']->getClientOriginalExtension();
+            $data['image']->move('service/', $imgname);
+        }
+        else{
+            $imgname = $service->image;
+        }
+
+        $service->update([
+            'title' => $data['title'],
+            'image' => $imgname,
+        ]);
     }
 
     public function active($id)
@@ -46,6 +61,10 @@ class ServiceRepository implements CargoEcommerce
 
     public function delete($id)
     {
-        // TODO: Implement delete() method.
+        $service = Service::find($id);
+        if ($service->image && file_exists(public_path('service/'.$service->image))){
+            unlink(public_path('service/'.$service->image));
+        }
+        $service->delete();
     }
 }

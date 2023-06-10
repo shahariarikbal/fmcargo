@@ -5,12 +5,22 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Repository\CargoEcommerce;
 
 class FrontendController extends Controller
 {
+    protected $frontend_content;
+
+    public function __construct(CargoEcommerce $cargoEcommerce)
+    {
+        $this->frontend_content = $cargoEcommerce;
+    }
+
     public function index()
     {
-        return view('layouts.frontend.home.index');
+        $frontend_contents = $this->frontend_content->getAllData();
+        //dd($frontend_contents);
+        return view('layouts.frontend.home.index', compact('frontend_contents'));
     }
 
     public function showContactUs(){

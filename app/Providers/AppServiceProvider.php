@@ -2,20 +2,19 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\SettingController;
-use App\Models\Blog;
-use App\Repository\BlogRepository;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Repository\BrandRepository;
 use App\Repository\CargoEcommerce;
 use App\Repository\EcommerceRepository;
 use App\Repository\ProductRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\SettingRepository;
+use App\Repository\FrontendRepository;
 use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 
@@ -46,8 +45,8 @@ class AppServiceProvider extends ServiceProvider
             return new ServiceRepository();
         });
 
-        $this->app->when(BlogController::class)->needs(CargoEcommerce::class)->give(function (){
-            return new BlogRepository();
+        $this->app->when(FrontendController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new FrontendRepository();
         });
     }
 
@@ -58,7 +57,6 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('*', function($view){
             $view->with('setting', Setting::first());
-            $view->with('blogs', Blog::orderBy('id', 'desc')->select(['id', 'title', 'description', 'slug', 'image', 'created_at'])->get());
         });
     }
 }

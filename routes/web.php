@@ -112,7 +112,7 @@ Route::middleware([
         Route::post('/store', [ServiceController::class, 'serviceStore'])->name('service.store');
         Route::get('/edit/{id}', [ServiceController::class, 'serviceEdit'])->name('service.edit');
         Route::post('/update/{id}', [ServiceController::class, 'serviceUpdate'])->name('service.update');
-        Route::post('/destroy/{id}', [ServiceController::class, 'serviceDelete'])->name('service.delete');
+        Route::get('/destroy/{id}', [ServiceController::class, 'serviceDelete'])->name('service.delete');
     });
 
     Route::group(['prefix' => 'blog'], function (){
