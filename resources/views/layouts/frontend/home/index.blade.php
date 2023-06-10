@@ -68,17 +68,19 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($frontend_contents['services'] as $service)
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
-                        <img src="{{ asset('/frontend/') }}/assets/images/service1.jpg" class="Service" />
+                        <img src="{{ asset('service/'.$service->image) }}" alt="service" class="Service" />
                         <div class="service-item-info">
                             <a href="service-details.html" class="service-item-title">
-                                DOOR TO DOOR SERVICE
+                                {{ $service->title }}
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                @endforeach
+                {{--  <div class="col-lg-4 col-md-6">
                     <div class="service-item-wrap">
                         <img src="{{ asset('/frontend/') }}/assets/images/service2.jpg" class="Service">
                         <div class="service-item-info">
@@ -127,7 +129,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
             </div>
         </div>
     </section>
