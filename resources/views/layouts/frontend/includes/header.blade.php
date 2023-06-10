@@ -74,10 +74,16 @@
                     </a>
                 </li>
                 <li class="nav-list-item">
+                    <a href="{{ url('/shop') }}" class="nav-item-link">
+                        Shop
+                    </a>
+                </li>
+                <li class="nav-list-item">
                     <a href="{{ url('/contact') }}" class="nav-item-link">
                         Contact Us
                     </a>
                 </li>
+                @if(!session()->get('userId'))
                 <li class="nav-list-item item-has-submenu">
                     <a href="javascript:;" class="nav-item-link">
                         SignIn / SignUp
@@ -96,11 +102,21 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-list-item">
-                    <a href="{{ url('/shop') }}" class="nav-item-link">
-                        Shop
-                    </a>
-                </li>
+                @else
+                    <li class="nav-list-item item-has-submenu">
+                        <a href="javascript:;" class="nav-item-link" style="color: orangered; font-weight: 600">
+                            {{ ucfirst(session()->get('userName')) }}
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="nav-item-submenu">
+                            <li class="submenu-item">
+                                <a href="{{ url('/customer/logout') }}" class="submenu-item-link">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- <div class="cart-items-wrap">
