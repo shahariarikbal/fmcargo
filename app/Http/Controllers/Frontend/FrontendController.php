@@ -3,13 +3,24 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Repository\CargoEcommerce;
 
 class FrontendController extends Controller
 {
+    protected $frontend_content;
+
+    public function __construct(CargoEcommerce $cargoEcommerce)
+    {
+        $this->frontend_content = $cargoEcommerce;
+    }
+
     public function index()
     {
-        return view('layouts.frontend.home.index');
+        $frontend_contents = $this->frontend_content->getAllData();
+        //dd($frontend_contents);
+        return view('layouts.frontend.home.index', compact('frontend_contents'));
     }
 
     public function showContactUs(){
@@ -38,5 +49,12 @@ class FrontendController extends Controller
 
     public function showRegistration(){
         return view('layouts.frontend.auth.registration');
+    }
+
+    public function blogDetails($id, $slug)
+    {
+        $blog = Blog::where('id', $id)->first();
+        $relatedPosts = Blog::where('id', '!=', $blog->id)->get();
+        return view('layouts.frontend.home.blog-details', compact('blog', 'relatedPosts'));
     }
 }
