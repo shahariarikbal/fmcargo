@@ -9,6 +9,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Frontend\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::get('/tracking', [FrontendController::class, 'showTracking']);
 Route::get('/customer/login', [FrontendController::class, 'showLogin']);
 Route::get('/registration', [FrontendController::class, 'showRegistration']);
 Route::get('/blog/details/{id}/{slug}', [FrontendController::class, 'blogDetails']);
+
+Route::post('/customer/register', [CustomerController::class, 'customerRegister']);
+Route::post('/customer/login', [CustomerController::class, 'customerLogin']);
+Route::get('/customer/logout', [CustomerController::class, 'customerLogout']);
 
 Route::middleware([
     'auth:sanctum',

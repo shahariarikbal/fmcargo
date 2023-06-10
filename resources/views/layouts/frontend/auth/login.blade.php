@@ -12,7 +12,7 @@
 				<h1 class="banner-title">Login</h1>
 				<ul class="banner-item">
 					<li>
-						<a href="index.html">
+						<a href="{{ url('/') }}">
 							<i class="fas fa-home"></i>
 							Home
 						</a>
@@ -28,20 +28,21 @@
 	</section>
 	<!-- /Banner -->
 
-	<!-- Registration -->
+	<!-- Login -->
 	<section class="login-section">
 		<div class="container">
-			<div class="login-form-wrapper">				
-				<form action="#" method="#" class="login-form form-group">
+			<div class="login-form-wrapper">
+				<form action="{{ url('/customer/login') }}" method="post" class="login-form form-group">
+                    @csrf
 					<div class="title">Login</div>
 			  		<div class="input-field-wrapper">
 			          <span class="fas fa-user"></span>
-			          <input type="text" class="form-control" placeholder="Email or Phone">
+			          <input type="text" name="email" class="form-control" placeholder="Email only">
 			        </div>
 			        <div class="input-field-wrapper">
 			          <span class="fas fa-lock"></span>
-			          <input type="password" class="form-control" placeholder="Password">
-			        </div>			        
+			          <input type="password" name="password" class="form-control" placeholder="Password">
+			        </div>
 			  		<div class="submit-btn-outer">
 			  			<button type="submit" class="submit-btn-inner">
 				  			Sign in
@@ -52,5 +53,5 @@
 			</div>
 		</div>
 	</section>
-	<!-- /Registration -->
+	<!-- /Login -->
 @endsection
