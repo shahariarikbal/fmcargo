@@ -40,6 +40,7 @@ Route::get('/tracking', [FrontendController::class, 'showTracking']);
 Route::get('/customer/login', [FrontendController::class, 'showLogin']);
 Route::get('/registration', [FrontendController::class, 'showRegistration']);
 Route::get('/blog/details/{id}/{slug}', [FrontendController::class, 'blogDetails']);
+Route::get('/product/add-to-cart/{id}', [FrontendController::class, 'addToCart']);
 
 Route::middleware([
     'auth:sanctum',

@@ -44,7 +44,7 @@
 								-15%
 							</span>  --}}
 							<div class="product-action">
-                                <a class="action-btn" href="#">
+                                <a class="action-btn" href="{{ url('/product/add-to-cart/'.$product->id) }}">
                                 	<i class="fas fa-shopping-cart"></i>
                                 </a>
                             </div>

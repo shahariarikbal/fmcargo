@@ -27,7 +27,7 @@
                         <i class="fas fa-shopping-bag"></i>
                     </span>
                     <span class="shopping-item-number">
-                        10
+                        {{ $addToCartCount }}
                     </span>
                     <span>items</span>
                 </p>
@@ -50,7 +50,7 @@
                     <div>
                         <i class="fas fa-chevron-up"></i>
                     </div>
-                    <span>10</span>
+                    <span>{{ $addToCartCount }}</span>
                     <div>
                         <i class="fas fa-chevron-down"></i>
                     </div>
@@ -85,7 +85,7 @@
     <div class="add-cart-outer cart-show-hide-btn">
         <div class="cart-item-count">
             <i class="fas fa-shopping-bag"></i>
-            <span class="items-number">10</span>
+            <span class="items-number">{{ $addToCartCount }}</span>
         </div>
     </div>
     <!-- /Fixed Cart -->

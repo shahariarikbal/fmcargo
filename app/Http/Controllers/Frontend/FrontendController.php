@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\AddToCart;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
+use Auth;
 
 class FrontendController extends Controller
 {
@@ -56,5 +58,26 @@ class FrontendController extends Controller
         $blog = Blog::where('id', $id)->first();
         $relatedPosts = Blog::where('id', '!=', $blog->id)->get();
         return view('layouts.frontend.home.blog-details', compact('blog', 'relatedPosts'));
+    }
+
+    public function addToCart (Request $request, $id)
+    {
+        $add_to_cart = new AddToCart();
+        if(Auth::check()){
+            $add_to_cart->user_id = Auth::user()->id;
+            $add_to_cart->product_id = $id;
+            $add_to_cart->quantity = 1;
+            $add_to_cart->save();
+            $this->setSuccessMessage('Added to cart successfully!');
+            return redirect()->back();
+        }
+        else{
+            $add_to_cart->ip_address = $request->ip();
+            $add_to_cart->product_id = $id;
+            $add_to_cart->quantity = 1;
+            $add_to_cart->save();
+            $this->setSuccessMessage('Added to cart successfully!');
+            return redirect()->back();
+        }
     }
 }
