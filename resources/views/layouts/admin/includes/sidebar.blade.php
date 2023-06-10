@@ -35,6 +35,7 @@
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link" href="{{ url('/settings/show/1') }}">Settings</a>
                     <a class="nav-link" href="{{ route('services') }}">Services</a>
+                    <a class="nav-link" href="{{ route('blog.list') }}">Blogs</a>
                     {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>

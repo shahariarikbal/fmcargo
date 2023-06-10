@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 
@@ -48,5 +49,12 @@ class FrontendController extends Controller
 
     public function showRegistration(){
         return view('layouts.frontend.auth.registration');
+    }
+
+    public function blogDetails($id, $slug)
+    {
+        $blog = Blog::where('id', $id)->first();
+        $relatedPosts = Blog::where('id', '!=', $blog->id)->get();
+        return view('layouts.frontend.home.blog-details', compact('blog', 'relatedPosts'));
     }
 }
