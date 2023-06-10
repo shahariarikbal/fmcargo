@@ -63,8 +63,8 @@ class FrontendController extends Controller
     public function addToCart (Request $request, $id)
     {
         $add_to_cart = new AddToCart();
-        if(Auth::check()){
-            $add_to_cart->user_id = Auth::user()->id;
+        if(session()->has('userId')){
+            $add_to_cart->user_id = session()->get('userId');
             $add_to_cart->product_id = $id;
             $add_to_cart->quantity = 1;
             $add_to_cart->save();
@@ -79,5 +79,13 @@ class FrontendController extends Controller
             $this->setSuccessMessage('Added to cart successfully!');
             return redirect()->back();
         }
+    }
+
+    public function deleteAddToCart ($id)
+    {
+        $add_to_cart = AddToCart::find($id);
+        $add_to_cart->delete();
+        $this->setSuccessMessage('Item is deleted form cart!');
+        return redirect()->back();
     }
 }

@@ -45,6 +45,7 @@
             </span>
         </div>
         <div class="shopping-order-items-wrapper">
+            @foreach ($addToCart as $item )
             <div class="shopping-order-item-outer">
                 <div class="order-quantity">
                     <div>
@@ -56,22 +57,23 @@
                     </div>
                 </div>
                 <div class="shopping-order-item-image">
-                    <img src="{{ asset('/frontend/') }}/assets/images/product.webp" />
+                    <img src="{{ asset('product/'.$item->product->image) }}" />
                 </div>
                 <div class="shopping-order-item-name">
                     <h3 class="name">
-                        Iphone 12 Pro max
+                        {{ $item->product->name }}
                     </h3>
                     <span class="sub-text">
-                        ৳ 12000
+                        ৳ {{ $item->product->price }}
                     </span>
                 </div>
                 <div class="shopping-order-item-amount">
-                    <button class="shopping-order-item-delete-btn">
+                    <a href="{{ url('/delete/add-to-cart/'.$item->id) }}" class="shopping-order-item-delete-btn">
                         <i class="fas fa-times"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="shopping-cart-order-check">
             <span class="shopping-order-price">
