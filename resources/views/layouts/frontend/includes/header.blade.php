@@ -57,7 +57,7 @@
                     </a>
                     <ul class="nav-item-submenu">
                         <li class="submenu-item">
-                            <a href="service-details.html" class="submenu-item-link">
+                            <a href="{{ url('/service/details') }}" class="submenu-item-link">
                                 Door To Door
                             </a>
                         </li>
