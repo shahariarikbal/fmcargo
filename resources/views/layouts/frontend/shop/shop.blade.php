@@ -67,7 +67,7 @@
                                     <i class="fas fa-star"></i>
                                 </li>
                             </ul>  --}}
-                            <a href="{{ url('/product/details') }}" class="product-name">
+                            <a href="{{ url('/product/details/'.$product->id) }}" class="product-name">
                             	{{ $product->name }}
                             </a>
                             <div class="product-price-outer">

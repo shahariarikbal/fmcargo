@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\AddToCart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 use Auth;
@@ -33,8 +34,9 @@ class FrontendController extends Controller
         return view('layouts.frontend.shop.shop',compact('frontend_contents'));
     }
 
-    public function showProductDetails(){
-        return view('layouts.frontend.shop.product-details');
+    public function showProductDetails($id){
+        $product = Product::where('id', $id)->with('category')->first();
+        return view('layouts.frontend.shop.product-details',compact('product'));
     }
 
     public function showCheckout(){
@@ -67,7 +69,12 @@ class FrontendController extends Controller
             $add_to_cart->user_id = session()->get('userId');
             $add_to_cart->ip_address = $request->ip();
             $add_to_cart->product_id = $id;
-            $add_to_cart->quantity = 1;
+            if(isset($request->quantity)){
+                $add_to_cart->quantity = $request->quantity;
+            }
+            else{
+                $add_to_cart->quantity = 1;
+            }
             $add_to_cart->save();
             $this->setSuccessMessage('Added to cart successfully!');
             return redirect()->back();
@@ -75,7 +82,12 @@ class FrontendController extends Controller
         else{
             $add_to_cart->ip_address = $request->ip();
             $add_to_cart->product_id = $id;
-            $add_to_cart->quantity = 1;
+            if(isset($request->quantity)){
+                $add_to_cart->quantity = $request->quantity;
+            }
+            else{
+                $add_to_cart->quantity = 1;
+            }
             $add_to_cart->save();
             $this->setSuccessMessage('Added to cart successfully!');
             return redirect()->back();
