@@ -68,9 +68,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view){
             $view->with('setting', Setting::first());
             $view->with('blogs', Blog::orderBy('id', 'desc')->select(['id', 'title', 'slug', 'image', 'created_at'])->get());
-            if(Auth::check()){
-                $view->with('addToCart', AddToCart::where('user_id', Auth::user()->id)->orderBy('created_at','desc')->with('product')->get());
-                $view->with('addToCartCount', AddToCart::where('user_id', Auth::user()->id)->count());
+            if(session()->has('userId')){
+                $view->with('addToCart', AddToCart::where('user_id', session()->get('userId'))->orWhere('ip_address',Request::ip())->orderBy('created_at','desc')->with('product')->get());
+                $view->with('addToCartCount', AddToCart::where('user_id', session()->get('userId'))->orWhere('ip_address',Request::ip())->count());
             }
             else{
                 $view->with('addToCart', AddToCart::where('ip_address', Request::ip())->orderBy('created_at','desc')->with('product')->get());

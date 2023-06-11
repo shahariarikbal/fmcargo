@@ -65,6 +65,7 @@ class FrontendController extends Controller
         $add_to_cart = new AddToCart();
         if(session()->has('userId')){
             $add_to_cart->user_id = session()->get('userId');
+            $add_to_cart->ip_address = $request->ip();
             $add_to_cart->product_id = $id;
             $add_to_cart->quantity = 1;
             $add_to_cart->save();
