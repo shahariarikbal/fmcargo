@@ -29,7 +29,8 @@
 	<!-- /Banner -->
     <section class="billing-details-section">
         <div class="container">
-            <form action="" method="" class="form-group">
+            <form action="{{ url('/order/complete') }}" method="post" class="form-group">
+                @csrf
                 <div class="row">
                     <div class="col-lg-7 col-md-7">
                         <div class="billing-details-form-outer">
@@ -40,15 +41,21 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
-                                            <label for="first_name">First Name* :</label>
-                                            <input type="text" name="first_name" class="form-control" placeholder="Jackson Mile">
+                                            <label for="first_name">First Name :</label>
+                                            <input type="text" name="first_name" value="{{ session()->has('firstName') ? session()->get('firstName') : old('first_name') }}" class="form-control" placeholder="Jackson Mile">
                                         </div>
+                                        @if ($errors->has('first_name'))
+                                            <div class="text-danger">{{ $errors->first('first_name') }}</div>
+                                        @endif
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
-                                            <label for="last_name">Last Name* :</label>
-                                            <input type="text" name="last_name" class="form-control" placeholder="Jackson Mile">
+                                            <label for="last_name">Last Name :</label>
+                                            <input type="text" name="last_name" value="{{ session()->has('lastName') ? session()->get('lastName') : old('last_name') }}" class="form-control" placeholder="Jackson Mile">
                                         </div>
+                                        @if ($errors->has('last_name'))
+                                            <div class="text-danger">{{ $errors->first('last_name') }}</div>
+                                        @endif
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
@@ -65,6 +72,9 @@
                                                 <option value="Sylhet">Sylhet</option>
                                             </select>
                                         </div>
+                                        @if ($errors->has('division'))
+                                            <div class="text-danger">{{ $errors->first('division') }}</div>
+                                        @endif
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
@@ -137,24 +147,36 @@
                                                 <option value="Satkhira">Satkhira</option>
                                             </select>
                                         </div>
+                                        @if ($errors->has('district'))
+                                            <div class="text-danger">{{ $errors->first('district') }}</div>
+                                        @endif
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
                                             <label for="post_code">Post Code* :</label>
-                                            <input type="text" name="post_code" class="form-control" placeholder="3100">
+                                            <input type="text" name="post_code" value="{{ old('post_code') }}" class="form-control" placeholder="3100">
                                         </div>
+                                        @if ($errors->has('post_code'))
+                                            <div class="text-danger">{{ $errors->first('post_code') }}</div>
+                                        @endif
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
                                             <label for="email">Email* :</label>
-                                            <input type="email" name="email" class="form-control" placeholder="info@gmail.com">
+                                            <input type="email" name="email" value="{{ session()->has('email') ? session()->get('email') : old('email') }}" class="form-control" placeholder="info@gmail.com">
                                         </div>
+                                        @if ($errors->has('email'))
+                                            <div class="text-danger">{{ $errors->first('email') }}</div>
+                                        @endif
                                     </div>
                                     <div class="col-md-12">
                                         <div class="input-field-wrap">
                                             <label for="address">Address :</label>
-                                            <textarea name="address" class="form-control" rows="4" cols="50" placeholder="Address here..."></textarea>
+                                            <textarea name="address" class="form-control" rows="4" cols="50" placeholder="Address here...">{{ old('address') }}</textarea>
                                         </div>
+                                        @if ($errors->has('email'))
+                                            <div class="text-danger">{{ $errors->first('email') }}</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -185,13 +207,23 @@
 {{--                            </div>--}}
                                 @php
                                     $sum = 0;
+                                    $qty = 0;
                                     foreach ($addToCart as $product){
-                                        $price = $product->product->price;
+                                        $price = $product->product?->price;
+                                        $p_qty = $product?->quantity;
 
                                         $sum += $price;
+                                        $qty += $p_qty;
                                     }
                                 @endphp
                             <div class="total-payment-form mt-3">
+                                @foreach($addToCart as $cartProduct)
+                                    <input type="hidden" name="product_id[]" value="{{ $cartProduct?->product_id }}">
+                                    <input type="hidden" name="price[]" value="{{ $cartProduct->product?->price }}">
+                                    <input type="hidden" name="qty[]" value="{{ $cartProduct?->quantity }}">
+                                @endforeach
+                                    <input type="hidden" name="total_price" value="{{ $sum }}">
+                                    <input type="hidden" name="total_qty" value="{{ $qty }}">
                                 <div class="sub-total-wrap">
 {{--                                    <div class="sub-total-item">--}}
 {{--                                        <strong>Sub Total</strong>--}}
@@ -234,9 +266,18 @@
                                             <img src="{{ asset('/frontend/') }}/assets/images/visa.jpeg" alt="image">
                                         </label>
                                     </div>
+                                    <div class="payment-item-outer">
+                                        <input type="radio" name="payment" id="cod" value="cod">
+                                        <label for="cod">
+                                            <img src="{{ asset('/frontend/') }}/assets/images/cod.png" alt="image">
+                                        </label>
+                                    </div>
                                 </div>
+                                    @if ($errors->has('payment'))
+                                        <div class="text-danger">{{ $errors->first('payment') }}</div>
+                                    @endif
                                 <div class="condition-ac-wrap">
-                                    <input type="checkbox" name="check" id="check">
+                                    <input type="checkbox" name="check" id="check" required>
                                     <label for="check">
                                         I have read and agree to the website
                                         <a href="#" style="color: #FF7E16;">Terms & Conditions.</a>

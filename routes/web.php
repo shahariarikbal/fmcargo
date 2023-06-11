@@ -48,6 +48,7 @@ Route::get('/delete/add-to-cart/{id}', [FrontendController::class, 'deleteAddToC
 Route::post('/customer/register', [CustomerController::class, 'customerRegister']);
 Route::post('/customer/login', [CustomerController::class, 'customerLogin']);
 Route::get('/customer/logout', [CustomerController::class, 'customerLogout']);
+Route::post('/order/complete', [CustomerController::class, 'completeOrder']);
 
 Route::middleware([
     'auth:sanctum',

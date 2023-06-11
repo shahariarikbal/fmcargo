@@ -54,7 +54,7 @@
                     <div>
                         <i class="fas fa-chevron-up"></i>
                     </div>
-                    <span>{{ $addToCartCount }}</span>
+                    <span>{{ $item?->quantity }}</span>
                     <div>
                         <i class="fas fa-chevron-down"></i>
                     </div>
