@@ -45,6 +45,9 @@
             </span>
         </div>
         <div class="shopping-order-items-wrapper">
+            @php
+            $sum = 0;
+            @endphp
             @foreach ($addToCart as $item )
             <div class="shopping-order-item-outer">
                 <div class="order-quantity">
@@ -57,14 +60,14 @@
                     </div>
                 </div>
                 <div class="shopping-order-item-image">
-                    <img src="{{ asset('product/'.$item->product->image) }}" />
+                    <img src="{{ asset('product/'.$item->product?->image) }}" />
                 </div>
                 <div class="shopping-order-item-name">
                     <h3 class="name">
-                        {{ $item->product->name }}
+                        {{ $item->product?->name }}
                     </h3>
                     <span class="sub-text">
-                        ৳ {{ $item->product->price }}
+                        ৳ {{ $totalPrice = $item->product?->price }}
                     </span>
                 </div>
                 <div class="shopping-order-item-amount">
@@ -73,11 +76,14 @@
                     </a>
                 </div>
             </div>
+                @php
+                    $sum += $totalPrice;
+                @endphp
             @endforeach
         </div>
         <div class="shopping-cart-order-check">
             <span class="shopping-order-price">
-                ৳ 6000
+                ৳ {{ $sum }}
             </span>
             <a href="{{ url('/checkout') }}" class="shopping-order-view-cart">
                 Place Order
@@ -96,7 +102,7 @@
     <div class="fixed-social-icon-wrap">
         <ul class="fixed-social-list">
             <li class="fixed-social-list-item">
-                <a href="{{ url('https://wa.me/'.$setting->whatsapp) }}" class="fixed-social-list-item-link">
+                <a href="{{ url('https://wa.me/'.$setting?->whatsapp) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </li>
@@ -106,7 +112,7 @@
                 </a>
             </li>
             <li class="fixed-social-list-item">
-                <a href="{{ url($setting->facebook) }}" class="fixed-social-list-item-link">
+                <a href="{{ url($setting?->facebook) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </li>

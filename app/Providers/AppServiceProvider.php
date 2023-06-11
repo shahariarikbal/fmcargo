@@ -73,8 +73,8 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('addToCartCount', AddToCart::where('user_id', session()->get('userId'))->orWhere('ip_address',Request::ip())->count());
             }
             else{
-                $view->with('addToCart', AddToCart::where('ip_address', Request::ip())->orderBy('created_at','desc')->with('product')->get());
-                $view->with('addToCartCount', AddToCart::where('ip_address', Request::ip())->count());
+                $view->with('addToCart', AddToCart::where('ip_address', Request::ip())->orWhere('user_id', session()->get('userId'))->orderBy('created_at','desc')->with('product')->get());
+                $view->with('addToCartCount', AddToCart::where('ip_address', Request::ip())->orWhere('user_id', session()->get('userId'))->count());
             }
         });
     }
