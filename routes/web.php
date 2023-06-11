@@ -35,7 +35,7 @@ Route::get('clear', function () {
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/contact', [FrontendController::class, 'showContactUs']);
 Route::get('/shop', [FrontendController::class, 'showShop']);
-Route::get('/product/details', [FrontendController::class, 'showProductDetails']);
+Route::get('/product/details/{id}', [FrontendController::class, 'showProductDetails']);
 Route::get('/checkout', [FrontendController::class, 'showCheckout']);
 Route::get('/tracking', [FrontendController::class, 'showTracking']);
 Route::get('/customer/login', [FrontendController::class, 'showLogin']);

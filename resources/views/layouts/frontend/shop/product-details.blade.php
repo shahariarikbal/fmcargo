@@ -27,7 +27,7 @@
             </div>
         </section>
         <!-- /Banner -->
-        
+
         <!-- Service details -->
         <div class="product-details-section">
             <div class="container">
@@ -35,15 +35,11 @@
                     <div class="col-lg-5 col-md-5">
                         <div class="product-details-left-outer">
                             <div id="big" class="owl-carousel owl-theme">
+                                @foreach ( json_decode($product->gallery_image) as $image )
                                 <div class="item">
-                                    <img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">
+                                    <img src="{{ asset('product/'.$image) }}" alt="Image" class="product-image">
                                 </div>
-                                <div class="item">
-                                    <img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">
-                                </div>
+                                @endforeach
                             </div>
                             <!-- <img src="assets/images/product.webp" alt="Image" class="product-image">
                             <span class="product-details-discount-persent">
@@ -51,23 +47,19 @@
                             </span> -->
                         </div>
                         <div  id="thumbs" class="owl-carousel owl-theme">
+                            @foreach (json_decode($product->gallery_image) as $image )
                             <div class="item">
-                                <img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">
+                                <img src="{{ asset('product/'.$image) }}" alt="Image" class="product-image">
                             </div>
-                            <div class="item">
-                                <img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('/frontend') }}/assets/images/product.webp" alt="Image" class="product-image">
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="product-details-right">
                             <h3 class="product-name">
-                                Get 50000 Shopify Leads along with decision makers Contact Details
+                                {{ $product->short_description }}
                             </h3>
-                            <ul class="product-details-item-ratting">
+                            {{--  <ul class="product-details-item-ratting">
                                 <li>
                                     <i class="fas fa-star"></i>
                                 </li>
@@ -84,33 +76,34 @@
                                     <i class="fas fa-star"></i>
                                 </li>
                             </ul>
-                            <span class="reviews-count">05 reviews</span>
+                            <span class="reviews-count">05 reviews</span>  --}}
                             <div class="product-details-price-outer">
-                                <del class="main-price">
+                                {{--  <del class="main-price">
                                     $1500
-                                </del>
+                                </del>  --}}
                                 <span class="discount-price">
-                                    $1000
+                                    ${{ $product->price }}
                                 </span>
-                                <span class="discount-price-persect">
+                                {{--  <span class="discount-price-persect">
                                     (-15%)
-                                </span>
+                                </span>  --}}
                             </div>
                             <div class="product-count">
                                 <div class="left">
                                     <label for="size">Quantity</label>
-                                    <form action="#" class="display-flex">
+                                    <form action="{{ url('/product/add-to-cart/'.$product->id) }}" class="display-flex">
+                                        @csrf
                                         <div class="qtyminus">-</div>
                                         <input type="text" name="quantity" value="1" class="qty">
                                         <div class="qtyplus">+</div>
+                                        <button type="submit" class="add-cart-btn">Add to Cart</button>
                                     </form>
                                 </div>
-                                <button type="button" class="add-cart-btn">Add to Cart</button>
                             </div>
                             <a href="#" class="buy-now-btn">Buy Now</a>
                             <p class="category-of-product">
                                 <strong>Category:</strong>
-                                Shopify Leads
+                                {{ $product->category->name }}
                             </p>
                         </div>
                     </div>
@@ -120,19 +113,19 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-details-tab" data-bs-toggle="pill" data-bs-target="#pills-details" type="button" role="tab" aria-controls="pills-details" aria-selected="true">Details</button>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        {{--  <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-review-tab" data-bs-toggle="pill" data-bs-target="#pills-review" type="button" role="tab" aria-controls="pills-review" aria-selected="false">Review (01)</button>
-                        </li>
+                        </li>  --}}
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="details-tab-info">
-                                <p class="text">
-                                    A product details paragraph typically provides a comprehensive overview of the key features and specifications of a particular product. It may include information on the product's size, weight, materials, design, functionality, and any unique or noteworthy features that set it apart from other similar products on the market. The paragraph may also highlight any benefits or advantages that the product offers to the consumer, such as improved performance, durability, or convenience. Additionally, the product details paragraph may provide information on how to use the product, as well as any care or maintenance requirements that the user should be aware of.
-                                </p>
-                                <p class="text">
+                                {{--  <p class="text">  --}}
+                                    {!! $product->long_description !!}
+                                {{--  </p>  --}}
+                                {{--  <p class="text">
                                     The paragraph may also highlight any benefits or advantages that the product offers to the consumer, such as improved performance, durability, or convenience. Additionally, the product details paragraph may provide information on how to use the product, as well as any care or maintenance requirements that the user should be aware of. Overall, the purpose of a product details.
-                                </p>
+                                </p>  --}}
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
