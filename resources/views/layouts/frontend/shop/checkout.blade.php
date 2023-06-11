@@ -53,7 +53,7 @@
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
                                             <label for="division">Division* :</label>
-                                            <select name="division" id="divisions">
+                                            <select name="division" id="divisions" class="form-control">
                                                 <option disabled selected>Select Division</option>
                                                 <option value="Barishal">Barishal</option>
                                                 <option value="Chattogram">Chattogram</option>
