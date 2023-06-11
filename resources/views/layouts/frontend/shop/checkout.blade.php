@@ -12,7 +12,7 @@
 				<h1 class="banner-title">Billing Details</h1>
 				<ul class="banner-item">
 					<li>
-						<a href="index.html">
+						<a href="{{ url('/') }}">
 							<i class="fas fa-home"></i>
 							Home
 						</a>
@@ -52,39 +52,42 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
-                                            <label for="company_name">Company Name :</label>
-                                            <input type="text" name="company_name" class="form-control" placeholder="Bitsro Ltd">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-field-wrap">
-                                            <label for="country">Country* :</label>
-                                            <select name="country" class="form-control">
-                                                <option selected disabled>-- Select Country --</option>
-                                                <option value="Australia">Australia</option>
-                                                <option value="Australia">Australia</option>
-                                                <option value="Australia">Australia</option>
-                                                <option value="Australia">Australia</option>
-                                                <option value="Australia">Australia</option>
+                                            <label for="division">Division* :</label>
+                                            <select name="division" id="divisions">
+                                                <option disabled selected>Select Division</option>
+                                                <option value="Barishal">Barishal</option>
+                                                <option value="Chattogram">Chattogram</option>
+                                                <option value="Dhaka">Dhaka</option>
+                                                <option value="Khulna">Khulna</option>
+                                                <option value="Mymensingh">Mymensingh</option>
+                                                <option value="Rajshahi">Rajshahi</option>
+                                                <option value="Rangpur">Rangpur</option>
+                                                <option value="Sylhet">Sylhet</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-field-wrap">
-                                            <label for="address">Address* :</label>
-                                            <input type="text" name="address" class="form-control" placeholder="Type Address">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-field-wrap">
-                                            <label for="city">City* :</label>
-                                            <select name="city" class="form-control">
-                                                <option selected disabled>-- Select City --</option>
-                                                <option value="Sydney">Sydney</option>
-                                                <option value="Sydney">Sydney</option>
-                                                <option value="Sydney">Sydney</option>
-                                                <option value="Sydney">Sydney</option>
-                                                <option value="Sydney">Sydney</option>
+                                            <label for="district">District* :</label>
+                                            <select name="district" class="form-control">
+                                                <option selected disabled>-- Select Country --</option>
+                                                <option value="Dhaka">Dhaka</option>
+                                                <option value="Faridpur">Faridpur</option>
+                                                <option value="Gazipur">Gazipur</option>
+                                                <option value="Gopalganj">Gopalganj</option>
+                                                <option value="Jamalpur">Jamalpur</option>
+                                                <option value="Kishoreganj">Kishoreganj</option>
+                                                <option value="Madaripur">Madaripur</option>
+                                                <option value="Manikganj">Manikganj</option>
+                                                <option value="Munshiganj">Munshiganj</option>
+                                                <option value="Mymensingh">Mymensingh</option>
+                                                <option value="Narayanganj">Narayanganj</option>
+                                                <option value="Narsingdi">Narsingdi</option>
+                                                <option value="Netrokona">Netrokona</option>
+                                                <option value="Rajbari">Rajbari</option>
+                                                <option value="Shariatpur">Shariatpur</option>
+                                                <option value="Sherpur">Sherpur</option>
+                                                <option value="Tangail">Tangail</option>
                                             </select>
                                         </div>
                                     </div>
@@ -101,14 +104,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <h4 class="billing-details-title">
-                                            Additional Information
-                                        </h4>
-                                    </div>                              
-                                    <div class="col-md-12">
                                         <div class="input-field-wrap">
-                                            <label for="note">Order Notes :</label>
-                                            <textarea name="note" class="form-control" rows="4" cols="50" placeholder="About your orders..."></textarea>
+                                            <label for="address">Address :</label>
+                                            <textarea name="address" class="form-control" rows="4" cols="50" placeholder="Address here..."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -118,39 +116,47 @@
                     <div class="col-lg-5 col-md-5">
                         <div class="billing-details-form-outer">
                             <h4 class="billing-details-title">
-                                Your Product
+                                Total Cost
                             </h4>
-                            <div class="cart-product-item-wrap">
-                                <div class="cart-product-item-left">
-                                    <img src="{{ asset('/frontend') }}/assets/images/cart-product.png" alt="image">
-                                </div>
-                                <div class="cart-product-item-right">
-                                    <div class="left">
-                                        <h5 class="cart-product-name">
-                                            Shopify Leads
-                                        </h5>
-                                        <p class="cart-product-price">
-                                            $1500.00
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        QTY 01
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="total-payment-form">
+{{--                            <div class="cart-product-item-wrap">--}}
+{{--                                <div class="cart-product-item-left">--}}
+{{--                                    <img src="{{ asset('/frontend/') }}/assets/images/cart-product.png" alt="image">--}}
+{{--                                </div>--}}
+{{--                                <div class="cart-product-item-right">--}}
+{{--                                    <div class="left">--}}
+{{--                                        <h5 class="cart-product-name">--}}
+{{--                                            Shopify Leads--}}
+{{--                                        </h5>--}}
+{{--                                        <p class="cart-product-price">--}}
+{{--                                            $1500.00--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="right">--}}
+{{--                                        QTY 01--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+                                @php
+                                    $sum = 0;
+                                    foreach ($addToCart as $product){
+                                        $price = $product->product->price;
+
+                                        $sum += $price;
+                                    }
+                                @endphp
+                            <div class="total-payment-form mt-3">
                                 <div class="sub-total-wrap">
+{{--                                    <div class="sub-total-item">--}}
+{{--                                        <strong>Sub Total</strong>--}}
+{{--                                        <strong>$1500.00</strong>--}}
+{{--                                    </div>--}}
                                     <div class="sub-total-item">
                                         <strong>Sub Total</strong>
-                                        <strong>$1500.00</strong>
-                                    </div>
-                                    <div class="sub-total-item">
-                                        <strong>Sub Total</strong>
-                                        <strong>$1500.00</strong>
+                                        <strong>৳ {{ $sum }}</strong>
                                     </div>
                                     <div class="sub-total-item grand-total">
-                                        <strong>Sub Total</strong>
-                                        <strong>$1500.00</strong>
+                                        <strong>Grand Total</strong>
+                                        <strong>৳ {{ $sum }}</strong>
                                     </div>
                                 </div>
                                 <h6 class="payment-item-title">
@@ -160,32 +166,32 @@
                                     <div class="payment-item-outer">
                                         <input type="radio" name="payment" id="visa" value="visa">
                                         <label for="visa">
-                                            <img src="{{ asset('/frontend') }}/assets/images/payment1.png" alt="image">
+                                            <img src="{{ asset('/frontend/') }}/assets/images/paypal.jpeg" alt="image">
                                         </label>
                                     </div>
                                     <div class="payment-item-outer">
                                         <input type="radio" name="payment" id="wise" value="wise">
                                         <label for="wise">
-                                            <img src="{{ asset('/frontend') }}/assets/images/payment2.png" alt="image">
+                                            <img src="{{ asset('/frontend/') }}/assets/images/stripe.jpeg" alt="image">
                                         </label>
                                     </div>
                                     <div class="payment-item-outer">
                                         <input type="radio" name="payment" id="strip" value="strip">
                                         <label for="strip">
-                                            <img src="{{ asset('/frontend') }}/assets/images/payment3.png" alt="image">
+                                            <img src="{{ asset('/frontend/') }}/assets/images/wise.jpeg" alt="image">
                                         </label>
                                     </div>
                                     <div class="payment-item-outer">
                                         <input type="radio" name="payment" id="paypal" value="paypal">
                                         <label for="paypal">
-                                            <img src="{{ asset('/frontend') }}/assets/images/payment4.png" alt="image">
+                                            <img src="{{ asset('/frontend/') }}/assets/images/visa.jpeg" alt="image">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="condition-ac-wrap">
                                     <input type="checkbox" name="check" id="check">
                                     <label for="check">
-                                        I have read and agree to the website 
+                                        I have read and agree to the website
                                         <a href="#" style="color: #FF7E16;">Terms & Conditions.</a>
                                     </label>
                                 </div>
@@ -196,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-            </form>         
+            </form>
         </div>
     </section>
 @endsection

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\AddToCart;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
+use Auth;
 
 class FrontendController extends Controller
 {
@@ -19,7 +21,6 @@ class FrontendController extends Controller
     public function index()
     {
         $frontend_contents = $this->frontend_content->getAllData();
-        //dd($frontend_contents);
         return view('layouts.frontend.home.index', compact('frontend_contents'));
     }
 
@@ -28,7 +29,8 @@ class FrontendController extends Controller
     }
 
     public function showShop(){
-        return view('layouts.frontend.shop.shop');
+        $frontend_contents = $this->frontend_content->getAllData();
+        return view('layouts.frontend.shop.shop',compact('frontend_contents'));
     }
 
     public function showProductDetails(){
@@ -58,8 +60,33 @@ class FrontendController extends Controller
         return view('layouts.frontend.home.blog-details', compact('blog', 'relatedPosts'));
     }
 
-    public function serviceDetails()
+    public function addToCart (Request $request, $id)
     {
-        return view('layouts.frontend.service.service-details');
+        $add_to_cart = new AddToCart();
+        if(session()->has('userId')){
+            $add_to_cart->user_id = session()->get('userId');
+            $add_to_cart->ip_address = $request->ip();
+            $add_to_cart->product_id = $id;
+            $add_to_cart->quantity = 1;
+            $add_to_cart->save();
+            $this->setSuccessMessage('Added to cart successfully!');
+            return redirect()->back();
+        }
+        else{
+            $add_to_cart->ip_address = $request->ip();
+            $add_to_cart->product_id = $id;
+            $add_to_cart->quantity = 1;
+            $add_to_cart->save();
+            $this->setSuccessMessage('Added to cart successfully!');
+            return redirect()->back();
+        }
+    }
+
+    public function deleteAddToCart ($id)
+    {
+        $add_to_cart = AddToCart::find($id);
+        $add_to_cart->delete();
+        $this->setSuccessMessage('Item is deleted form cart!');
+        return redirect()->back();
     }
 }

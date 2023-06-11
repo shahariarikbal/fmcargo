@@ -27,7 +27,7 @@
                         <i class="fas fa-shopping-bag"></i>
                     </span>
                     <span class="shopping-item-number">
-                        10
+                        {{ $addToCartCount }}
                     </span>
                     <span>items</span>
                 </p>
@@ -45,37 +45,45 @@
             </span>
         </div>
         <div class="shopping-order-items-wrapper">
+            @php
+            $sum = 0;
+            @endphp
+            @foreach ($addToCart as $item )
             <div class="shopping-order-item-outer">
                 <div class="order-quantity">
                     <div>
                         <i class="fas fa-chevron-up"></i>
                     </div>
-                    <span>10</span>
+                    <span>{{ $addToCartCount }}</span>
                     <div>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
                 <div class="shopping-order-item-image">
-                    <img src="{{ asset('/frontend/') }}/assets/images/product.webp" />
+                    <img src="{{ asset('product/'.$item->product?->image) }}" />
                 </div>
                 <div class="shopping-order-item-name">
                     <h3 class="name">
-                        Iphone 12 Pro max
+                        {{ $item->product?->name }}
                     </h3>
                     <span class="sub-text">
-                        ৳ 12000
+                        ৳ {{ $totalPrice = $item->product?->price }}
                     </span>
                 </div>
                 <div class="shopping-order-item-amount">
-                    <button class="shopping-order-item-delete-btn">
+                    <a href="{{ url('/delete/add-to-cart/'.$item->id) }}" class="shopping-order-item-delete-btn">
                         <i class="fas fa-times"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
+                @php
+                    $sum += $totalPrice;
+                @endphp
+            @endforeach
         </div>
         <div class="shopping-cart-order-check">
             <span class="shopping-order-price">
-                ৳ 6000
+                ৳ {{ $sum }}
             </span>
             <a href="{{ url('/checkout') }}" class="shopping-order-view-cart">
                 Place Order
@@ -85,7 +93,7 @@
     <div class="add-cart-outer cart-show-hide-btn">
         <div class="cart-item-count">
             <i class="fas fa-shopping-bag"></i>
-            <span class="items-number">10</span>
+            <span class="items-number">{{ $addToCartCount }}</span>
         </div>
     </div>
     <!-- /Fixed Cart -->
@@ -94,7 +102,7 @@
     <div class="fixed-social-icon-wrap">
         <ul class="fixed-social-list">
             <li class="fixed-social-list-item">
-                <a href="{{ url('https://wa.me/'.$setting->whatsapp) }}" class="fixed-social-list-item-link">
+                <a href="{{ url('https://wa.me/'.$setting?->whatsapp) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </li>
@@ -104,7 +112,7 @@
                 </a>
             </li>
             <li class="fixed-social-list-item">
-                <a href="{{ url($setting->facebook) }}" class="fixed-social-list-item-link">
+                <a href="{{ url($setting?->facebook) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </li>

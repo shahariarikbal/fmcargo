@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Models\Blog;
+use App\Models\AddToCart;
 use App\Repository\BlogRepository;
 use App\Repository\BrandRepository;
 use App\Repository\CargoEcommerce;
@@ -20,6 +21,8 @@ use App\Repository\SettingRepository;
 use App\Repository\FrontendRepository;
 use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Request;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -65,6 +68,14 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view){
             $view->with('setting', Setting::first());
             $view->with('blogs', Blog::orderBy('id', 'desc')->select(['id', 'title', 'slug', 'image', 'created_at'])->get());
+            if(session()->has('userId')){
+                $view->with('addToCart', AddToCart::where('user_id', session()->get('userId'))->orWhere('ip_address',Request::ip())->orderBy('created_at','desc')->with('product')->get());
+                $view->with('addToCartCount', AddToCart::where('user_id', session()->get('userId'))->orWhere('ip_address',Request::ip())->count());
+            }
+            else{
+                $view->with('addToCart', AddToCart::where('ip_address', Request::ip())->orWhere('user_id', session()->get('userId'))->orderBy('created_at','desc')->with('product')->get());
+                $view->with('addToCartCount', AddToCart::where('ip_address', Request::ip())->orWhere('user_id', session()->get('userId'))->count());
+            }
         });
     }
 }
