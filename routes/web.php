@@ -9,6 +9,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Frontend\CustomerController;
 
 /*
@@ -131,5 +132,9 @@ Route::middleware([
         Route::get('/edit/{id}', [BlogController::class, 'blogEdit'])->name('blog.edit');
         Route::post('/update/{id}', [BlogController::class, 'blogUpdate'])->name('blog.update');
         Route::get('/destroy/{id}', [BlogController::class, 'blogDelete'])->name('blog.delete');
+    });
+
+    Route::group(['prefix' => 'testimonial'], function (){
+        Route::get('/list', [TestimonialController::class, 'testimonialList'])->name('testimonial.list');
     });
 });
