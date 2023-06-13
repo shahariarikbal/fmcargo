@@ -30,12 +30,31 @@ class TestimonialRepository implements CargoEcommerce
 
     public function edit($id)
     {
-
+        return $testimonial = Testimonial::where('id', $id)->first();
     }
 
     public function update($data = [], $id = [])
     {
+        $testimonial = Testimonial::find($id);
 
+        if(isset($data['reviewer_image'])){
+            if ($testimonial->reviewer_image && file_exists(public_path('testimonial/'.$testimonial->reviewer_image))){
+                unlink(public_path('testimonial/'.$testimonial->reviewer_image));
+            }
+            $imgname = mt_rand(10000, 99999). '.' . $data['reviewer_image']->getClientOriginalExtension();
+            $data['reviewer_image']->move('testimonial/', $imgname);
+        }
+        else{
+            $imgname = $testimonial->reviewer_image;
+        }
+
+        $testimonial->update([
+            'reviewer_name' => $data['reviewer_name'],
+            'reviewer_designation' => $data['reviewer_designation'],
+            'short_comment' => $data['short_comment'],
+            'long_comment' => $data['long_comment'],
+            'reviewer_image' => $imgname,
+        ]);
     }
 
     public function active($id)
@@ -50,7 +69,12 @@ class TestimonialRepository implements CargoEcommerce
 
     public function delete($id)
     {
+        $testimonial = Testimonial::find($id);
+        if ($testimonial->reviewer_image && file_exists(public_path('testimonial/'.$testimonial->reviewer_image))){
+            unlink(public_path('testimonial/'.$testimonial->reviewer_image));
+        }
 
+        $testimonial->delete();
     }
 
 }
