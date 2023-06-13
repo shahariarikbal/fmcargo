@@ -26,6 +26,7 @@ class FrontendController extends Controller
     public function index()
     {
         $frontend_contents = $this->frontend_content->getAllData();
+        // dd($frontend_contents);
         return view('layouts.frontend.home.index', compact('frontend_contents'));
     }
 

@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Models\Service;
 use App\Models\Product;
+use App\Models\Testimonial;
 
 class FrontendRepository implements CargoEcommerce
 {
@@ -12,6 +13,7 @@ class FrontendRepository implements CargoEcommerce
         $data = [
             'services' => Service::orderBy('id', 'desc')->select(['id', 'title', 'image'])->get(),
             'products' => Product::orderBy('id', 'desc')->get(),
+            'testimonials' => Testimonial::orderBy('id', 'desc')->get(),
         ];
 
         return $data;
