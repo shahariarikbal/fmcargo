@@ -34,7 +34,7 @@
                         <td>{{ $testimonial?->short_comment }}</td>
                         <td>{{ $testimonial?->long_comment }}</td>
                         <td>
-                            <img src="{{ asset('/testimonial/'.$testimonial?->image) }}" height="70" width="100" />
+                            <img src="{{ asset('/testimonial/'.$testimonial?->reviewer_image) }}" height="70" width="100" />
                         </td>
                         <td>
                             <x-admin.action-button href="{{ route('testimonial.edit', $testimonial?->id) }}" title="Edit" class="btn-info"><i class="fas fa-pen-to-square"></i></x-admin.action-button>

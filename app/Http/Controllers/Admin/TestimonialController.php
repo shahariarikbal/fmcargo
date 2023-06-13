@@ -25,4 +25,22 @@ class TestimonialController extends Controller
             'testimonials' => $this->testimonial->getAllData()
         ]);
     }
+
+    public function testimonialAdd ()
+    {
+        return view('layouts.admin.testimonial.add');
+    }
+
+    public function testimonialStore (Request $request)
+    {
+        try {
+            $testimonial = $request->only(['reviewer_name','reviewer_designation','reviewer_image','short_comment','long_comment']);
+            $this->testimonial->store($testimonial);
+            $this->setSuccessMessage('Testimonial has been created.');
+            return redirect()->route('testimonial.list');
+        }catch (\Exception $exception){
+            $this->setErrorMessage($exception->getMessage());
+            return redirect()->back();
+        }
+    }
 }
