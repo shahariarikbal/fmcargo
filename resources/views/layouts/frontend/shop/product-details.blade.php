@@ -100,7 +100,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <a href="#" class="buy-now-btn">Buy Now</a>
+                            <a href="{{ url('/product/add-to-cart/'.$product->id) }}" class="buy-now-btn">Buy Now</a>
                             <p class="category-of-product">
                                 <strong>Category:</strong>
                                 {{ $product->category->name }}

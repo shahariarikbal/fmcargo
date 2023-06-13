@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Models\Blog;
@@ -57,6 +58,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->when(FrontendController::class)->needs(CargoEcommerce::class)->give(function (){
             return new FrontendRepository();
+        });
+
+        $this->app->when(TestimonialController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new TestimonialRepository();
         });
     }
 
