@@ -35,14 +35,18 @@ Route::get('clear', function () {
 
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/contact', [FrontendController::class, 'showContactUs']);
+Route::post('/contact/store', [FrontendController::class, 'contactStore']);
 Route::get('/shop', [FrontendController::class, 'showShop']);
 Route::get('/product/details/{id}', [FrontendController::class, 'showProductDetails']);
 Route::get('/checkout', [FrontendController::class, 'showCheckout']);
+
 Route::get('/tracking', [FrontendController::class, 'showTracking']);
+
 Route::get('/customer/login', [FrontendController::class, 'showLogin']);
 Route::get('/registration', [FrontendController::class, 'showRegistration']);
 Route::get('/blog/details/{id}/{slug}', [FrontendController::class, 'blogDetails']);
-Route::get('/service/details', [FrontendController::class, 'serviceDetails']);
+Route::get('/door/to/door/service', [FrontendController::class, 'serviceDetails']);
+Route::get('/specialized/service', [FrontendController::class, 'specializedService']);
 Route::get('/product/add-to-cart/{id}', [FrontendController::class, 'addToCart']);
 Route::get('/delete/add-to-cart/{id}', [FrontendController::class, 'deleteAddToCart']);
 

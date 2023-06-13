@@ -1,7 +1,7 @@
 @extends('layouts.frontend.master')
 
 @section('title')
-    Door to Door Service | FM Cargo Service
+    Specialized Service | FM Cargo Service
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     <section class="banner-section">
         <div class="container">
             <div class="banner-content-wrapper">
-                <h1 class="banner-title">Door to Door Service</h1>
+                <h1 class="banner-title">Specialized Service</h1>
                 <ul class="banner-item">
                     <li>
                         <a href="{{ url('/') }}">
@@ -19,7 +19,7 @@
                     </li>
                     <li class="active">
                         <a href="javascript:void(0)">
-                            Door to Door Service Details
+                            Specialized Service Details
                         </a>
                     </li>
                 </ul>
@@ -32,7 +32,7 @@
     	<div class="container">
     		<div class="service-details-top-outer">
 		        <h3 class="service-details-title">
-		        	Door to Door Service
+                    Specialized Service
 		        </h3>
 		        <p class="service-details-text">
 		        	FM Cargo provides a reliable and hassle-free door to door shipping service from China, Dubai, Malaysia, USA, UK, EU, France, Hong Kong, Singapore, Australia, Thailand, Pakistan, and India. We have strategically located warehouses in these countries to ensure a seamless and efficient shipping process for our clients. Our experienced team takes care of everything from packing, custom clearance, and transportation to ensure that your shipment arrives at your doorstep on time and in perfect condition. Trust FM Cargo to handle all your door to door shipping needs. Let’s see what our Door to Door service includes.

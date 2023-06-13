@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactRequest;
 use App\Models\Blog;
 use App\Models\AddToCart;
+use App\Models\Booking;
+use App\Models\Contact;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 use Auth;
+use Illuminate\View\View;
 
 class FrontendController extends Controller
 {
@@ -29,6 +33,23 @@ class FrontendController extends Controller
         return view('layouts.frontend.contact.contact-us');
     }
 
+    public function contactStore(ContactRequest $contactRequest)
+    {
+        try {
+            Contact::create([
+                'name' => $contactRequest->name,
+                'email' => $contactRequest->email,
+                'phone' => $contactRequest->phone,
+                'message' => $contactRequest->message,
+            ]);
+            $this->setSuccessMessage('Contact has been successfully submitted');
+            return redirect()->back();
+        }catch (\Exception $exception){
+            $this->setSuccessMessage($exception->getMessage());
+            return redirect()->back();
+        }
+    }
+
     public function showShop(){
         $frontend_contents = $this->frontend_content->getAllData();
         return view('layouts.frontend.shop.shop',compact('frontend_contents'));
@@ -43,8 +64,19 @@ class FrontendController extends Controller
         return view('layouts.frontend.shop.checkout');
     }
 
-    public function showTracking(){
-        return view('layouts.frontend.shop.tracking');
+    public function showTracking(Request $request)
+    {
+//        $this->validate($request, [
+//            'tracking_number' => 'required|max:6|min:6'
+//        ]);
+
+        if ($request->tracking_number){
+            $parcelTracking = Booking::where('bookingId', $request->tracking_number)->first();
+            return view('layouts.frontend.shop.tracking', compact('parcelTracking'));
+        }else{
+            $parcelTracking = '';
+            return view('layouts.frontend.shop.tracking', compact('parcelTracking'));
+        }
     }
 
     public function showLogin(){
@@ -53,6 +85,15 @@ class FrontendController extends Controller
 
     public function showRegistration(){
         return view('layouts.frontend.auth.registration');
+    }
+
+    public function serviceDetails()
+    {
+        return view('layouts.frontend.service.service-details');
+    }
+    public function specializedService()
+    {
+        return view('layouts.frontend.service.specialized-details');
     }
 
     public function blogDetails($id, $slug)
