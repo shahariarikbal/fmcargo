@@ -136,5 +136,10 @@ Route::middleware([
 
     Route::group(['prefix' => 'testimonial'], function (){
         Route::get('/list', [TestimonialController::class, 'testimonialList'])->name('testimonial.list');
+        Route::get('/add', [TestimonialController::class, 'testimonialAdd'])->name('testimonial.add');
+        Route::post('/store', [TestimonialController::class, 'testimonialStore'])->name('testimonial.store');
+        Route::get('/edit/{id}', [TestimonialController::class, 'testimonialEdit'])->name('testimonial.edit');
+        Route::post('/update/{id}', [TestimonialController::class, 'testimonialUpdate'])->name('testimonial.update');
+        Route::get('/destroy/{id}', [TestimonialController::class, 'testimonialDelete'])->name('testimonial.delete');
     });
 });
