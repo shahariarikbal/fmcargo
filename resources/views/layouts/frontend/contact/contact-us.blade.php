@@ -12,7 +12,7 @@
 				<h1 class="banner-title">Contact Us</h1>
 				<ul class="banner-item">
 					<li>
-						<a href="index.html">
+						<a href="{{ url('/') }}">
 							<i class="fas fa-home"></i>
 							Home
 						</a>
@@ -69,40 +69,7 @@
             <div class="contact-form-wrapper">
                 <div class="row">
                     <div class="col-lg-8 col-md-12 m-auto">
-                        <form action="" method="" class="contact-form form-group">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="name">
-                                        Name
-                                    </label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter your name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="phone">
-                                        Phone
-                                    </label>
-                                    <input type="text" name="phone" class="form-control" placeholder="Enter phone number">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="email">
-                                        Email
-                                    </label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter your email">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="message">
-                                        Message
-                                    </label>
-                                    <textarea name="message" rows="5" class="form-control" placeholder="Your Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="contact-submit-btn-outer">
-                                <button class="contact-submit-btn-inner">
-                                    Send Message <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </form>
+                        @include('layouts.frontend.includes.contact')
                     </div>
                 </div>
             </div>
