@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{{ route('category.list') }}">Category</a>
                     <a class="nav-link" href="{{ route('brand.list') }}">Brand</a>
                     <a class="nav-link" href="{{ route('product.list') }}">Product</a>
-                    <a class="nav-link" href="#">Order Management</a>
+                    <a class="nav-link" href="{{ route('admin.order.list') }}">Order Management</a>
                 </nav>
             </div>
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -37,13 +37,15 @@
                     <a class="nav-link" href="{{ route('services') }}">Services</a>
                     <a class="nav-link" href="{{ route('blog.list') }}">Blogs</a>
                     <a class="nav-link" href="{{ route('testimonial.list') }}">Testimonials</a>
+                    <a class="nav-link" href="#">Slider</a>
+                    <a class="nav-link" href="#">Door to Door Service</a>
+                    <a class="nav-link" href="#">Specialized Service</a>
                     {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>
         </div>
     </div>
     <div class="sb-sidenav-footer">
-        <div class="small">Logged in as:</div>
-        {{ optional(auth()->user())->name }}
+        <img src="{{ asset('setting/'.$setting->logo) }}" width="193" height="50" alt="logo"/>
     </div>
 </nav>

@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Frontend\CustomerController;
+use App\Http\Controllers\Admin\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,5 +141,11 @@ Route::middleware([
 
     Route::group(['prefix' => 'testimonial'], function (){
         Route::get('/list', [TestimonialController::class, 'testimonialList'])->name('testimonial.list');
+    });
+
+    Route::group(['prefix' => 'admin/order'], function (){
+        Route::get('/list', [OrderController::class, 'adminOrderList'])->name('admin.order.list');
+        Route::get('/view/{id}', [OrderController::class, 'adminOrderView'])->name('admin.order.view');
+        Route::get('/delete/{id}', [OrderController::class, 'adminOrderDelete'])->name('admin.order.delete');
     });
 });
