@@ -224,30 +224,32 @@
                 </div>
             </div>
             <div class="testimonial-items-wrap owl-carousel">
+                @foreach ( $frontend_contents['testimonials'] as $testimonial )
                 <div class="testimonial-item-outer">
                     <div class="testimonial-author-outer">
                         <div class="author-image">
-                            <img src="{{ asset('/frontend/') }}/assets/images/testimonial1.png" alt="Testimonial">
+                            <img src="{{ asset('testimonial/'.$testimonial->reviewer_image) }}" alt="Testimonial">
                         </div>
                         <div class="author-info">
                             <h6 class="author-name">
-                                Stavis Jobs
+                                {{ $testimonial->reviewer_name }}
                             </h6>
                             <p class="description">
-                                Self Employer
+                                {{ $testimonial->reviewer_designation }}
                             </p>
                         </div>
                     </div>
                     <div class="testimonial-info">
                         <h6 class="testimonial-title">
-                            Great Service!
+                            {{ $testimonial->short_comment }}
                         </h6>
                         <p class="text">
-                            Great service! Riad was very responsive and helpful. We have now worked with him twice and have had a great experience.
+                            {{ $testimonial->long_comment }}
                         </p>
                     </div>
                 </div>
-                <div class="testimonial-item-outer">
+                @endforeach
+                {{--  <div class="testimonial-item-outer">
                     <div class="testimonial-author-outer">
                         <div class="author-image">
                             <img src="{{ asset('/frontend/') }}/assets/images/testimonial1.png" alt="Testimonial">
@@ -315,7 +317,7 @@
                             Great service! Riad was very responsive and helpful. We have now worked with him twice and have had a great experience.
                         </p>
                     </div>
-                </div>
+                </div>  --}}
             </div>
         </div>
     </section>

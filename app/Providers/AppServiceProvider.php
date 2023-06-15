@@ -20,6 +20,7 @@ use App\Repository\ProductRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\SettingRepository;
 use App\Repository\FrontendRepository;
+use App\Repository\TestimonialRepository;
 use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Request;

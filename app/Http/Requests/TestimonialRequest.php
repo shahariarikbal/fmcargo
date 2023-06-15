@@ -11,7 +11,7 @@ class TestimonialRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class TestimonialRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'reviewer_name' => 'required',
+            'reviewer_designation' => 'required',
+            'reviewer_image' => 'required',
+            'short_comment' => 'required',
+            'long_comment' => 'required',
         ];
     }
 }
