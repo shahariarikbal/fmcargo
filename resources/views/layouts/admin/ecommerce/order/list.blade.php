@@ -12,7 +12,7 @@
             Order List Table
         </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+            <table id="datatablesSimple" class="table table-hover">
                 <thead>
                 <tr>
                     <th>SL</th>
@@ -32,12 +32,13 @@
                         <td>{{ $order?->invoice_id }}</td>
                         <td>{{ $order->billing?->full_name }}</td>
                         <td>
-                            @foreach($order->orderDetails->product as $product)
-                                <p>{{ $product->name }}</p>
+                            @foreach($order->orderDetails as $data)
+                                <p>{{ $data->product?->name }}</p>
                             @endforeach
                         </td>
-                        <td>{{ $order->total_price }}</td>
+                        <td>Tk. {{ $order->total_price }}</td>
                         <td>{{ $order->total_qty }}</td>
+                        <td>{{ ucfirst($order->payment_type) }}</td>
                         <td>
                             <x-admin.action-button href="{{ route('admin.order.view', $order->id) }}" title="Edit" class="btn-info"><i class="fas fa-pen-to-square"></i></x-admin.action-button>
                             <x-admin.action-button href="{{ route('admin.order.delete', $order->id) }}" title="Delete" onclick="return confirm('Are you sure delete this info ?')" class="btn-danger"><i class="fas fa-trash-alt"></i></x-admin.action-button>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -153,4 +154,19 @@ Route::middleware([
         Route::get('/view/{id}', [OrderController::class, 'adminOrderView'])->name('admin.order.view');
         Route::get('/delete/{id}', [OrderController::class, 'adminOrderDelete'])->name('admin.order.delete');
     });
+
+    // Register customer controller
+    Route::get('/admin/customer/list', [UserController::class, 'customerList'])->name('admin.customer.list');
+    Route::get('/admin/customer/delete/{id}', [UserController::class, 'customerDelete'])->name('admin.customer.delete');
+
+    //Website settings
+    Route::get('/sliders', [UserController::class, 'sliders'])->name('sliders');
+    Route::get('/slider/create', [UserController::class, 'sliderCreate'])->name('slider.create');
+    Route::post('/slider/store', [UserController::class, 'sliderStore'])->name('slider.store');
+    Route::get('/slider/edit/{id}', [UserController::class, 'sliderEdit'])->name('slider.edit');
+    Route::post('/slider/update/{id}', [UserController::class, 'sliderUpdate'])->name('slider.update');
+    Route::get('/slider/delete/{id}', [UserController::class, 'sliderDelete'])->name('slider.delete');
+
+    Route::get('/door/to/door', [UserController::class, 'doorToDoor'])->name('door.to.door');
+    Route::get('/specialized/service', [UserController::class, 'specializedService'])->name('specialized.service');
 });

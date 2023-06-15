@@ -5,7 +5,7 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                 Dashboard
             </a>
-            <a class="nav-link" href="{{ url('dashboard') }}">
+            <a class="nav-link" href="{{ route('admin.customer.list') }}">
                 <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                 Customer Register
             </a>
@@ -37,9 +37,7 @@
                     <a class="nav-link" href="{{ route('services') }}">Services</a>
                     <a class="nav-link" href="{{ route('blog.list') }}">Blogs</a>
                     <a class="nav-link" href="{{ route('testimonial.list') }}">Testimonials</a>
-                    <a class="nav-link" href="#">Slider</a>
-                    <a class="nav-link" href="#">Door to Door Service</a>
-                    <a class="nav-link" href="#">Specialized Service</a>
+                    <a class="nav-link" href="{{ route('sliders') }}">Slider</a>
                     {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>

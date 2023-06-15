@@ -13,4 +13,10 @@ class OrderController extends Controller
        $orders = Order::with('orderDetails', 'billing')->get();
         return view('layouts.admin.ecommerce.order.list', compact('orders'));
     }
+
+    public function adminOrderView($id)
+    {
+        $order = Order::with('orderDetails', 'billing')->where('id', $id)->first();
+        return view('layouts.admin.ecommerce.order.view', compact('order'));
+    }
 }

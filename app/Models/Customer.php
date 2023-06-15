@@ -10,4 +10,10 @@ class Customer extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+
+    public function getFullNameAttribute() // notice that the attribute name is in CamelCase.
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

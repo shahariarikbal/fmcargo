@@ -8,48 +8,21 @@
     <!-- Home Slider -->
     <section class="home-slider-section">
         <div class="slider-items-wrapper owl-carousel">
-            <div class="slider-item">
-                <img src="{{ asset('/frontend/') }}/assets/images/slide4.jpg" alt="images not found">
-                <div class="slider-content-outer">
-                    <div class="container">
-                        <div class="slider-content">
-                            <h2>Teimagine Digital Experience with</h2>
-                            <h1><span style="color: #FC9D01;">Start-ups</span> and solutions</h1>
-                            <a href="#" class="contact-us-link">
-                                Contact Us
-                            </a>
+            @foreach ($frontend_contents['sliders'] as $slider)
+                <div class="slider-item">
+                    <img src="{{ asset('/slider/'.$slider->image) }}" alt="images not found">
+                    <div class="slider-content-outer">
+                        <div class="container">
+                            <div class="slider-content">
+                                <h2>{{ ucfirst($slider->title) }}</h2>
+                                <a href="{{ url('/contact') }}" target="_blank" class="contact-us-link">
+                                    Contact Us
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="slider-item">
-                <img src="{{ asset('/frontend/') }}/assets/images/slide4.jpg" alt="images not found">
-                <div class="slider-content-outer">
-                    <div class="container">
-                        <div class="slider-content">
-                            <h2>Peimagine Digital Experience with</h2>
-                            <h1><span style="color: #FC9D01;">Intelligent</span> Solutions</h1>
-                            <a href="#" class="contact-us-link">
-                                Contact Us
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img src="{{ asset('/frontend/') }}/assets/images/slide4.jpg" alt="images not found">
-                <div class="slider-content-outer">
-                    <div class="container">
-                        <div class="slider-content">
-                            <h2>Reimagine Digital Experience with</h2>
-                            <h1><span style="color: #FC9D01;">Intelligent</span> solutions</h1>
-                            <a href="#" class="contact-us-link">
-                                Contact Us
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
     <!-- /Home Slider -->
