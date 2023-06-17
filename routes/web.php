@@ -31,7 +31,8 @@ Route::get('clear', function () {
     \Artisan::call('config:clear');
     \Artisan::call('route:clear');
     \Artisan::call('view:clear');
-    \Artisan::call('optimize');
+    \Artisan::call('config:cache');
+   // \Artisan::call('optimize');
     dd("All clear!");
 });
 
