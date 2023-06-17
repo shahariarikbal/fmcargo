@@ -136,7 +136,7 @@
             width: 100%;
         }
         .top-info.word-wrap .text-left {
-            width: 39%;
+            width: 45%;
             border: 1px solid #000000;
         }
         .top-info .pull-middle {
@@ -205,9 +205,47 @@
                                     <b>01688-801343, 01511-027225</b>
                                 </span>
                             </p>
+                            <div class="invoice-tables-outer">
+                                <table class="invoice-main-table" style="margin-bottom: 20px; border: 1px solid #000;width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-a text-uppercase text-center" width="5%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px;">
+                                                Customer Info
+                                            </th>
+                                            <th class="bg-a text-uppercase text-center" width="5%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px;">
+                                                Order Date
+                                            </th>
+                                            <th class="bg-a text-uppercase text-center" width="5%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px;">
+                                                Invoice No.
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding-top: 5px; padding-bottom: 5px;">
+                                                <span class="customer_infos">
+                                                    <b>Name:</b> {{ $order->billing?->full_name }}
+                                                    <span style="display: block; margin-top: 5px;">
+                                                        <b>Address:</b> {{ $order->billing?->address }}
+                                                    </span>
+                                                    <span style="display: block; margin-top: 3px;">
+                                                        <b>Email:</b> {{ $order->billing?->email }}
+                                                    </span>
+                                                </span>
+                                            </td>
+                                            <td style="padding-top: 5px; padding-bottom: 5px;">
+                                                {{ $order->created_at->format('m/d/Y') }}
+                                            </td>
+                                            <td style="padding-top: 5px; padding-bottom: 5px;">
+                                                {{ $order?->invoice_id }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <!-- Invoice number, Date  -->
-                            <p style="width: 100% !important;" class="top-info word-wrap">
-                                <span class="pull-left text-left word-wrap">
+                            {{-- <p style="width: 100%;" class="top-info word-wrap">
+                                <span style="width: 50%;">
                                     <span class="m-title">Customer Info</span>
                                     <span class="inner-wrap">
                                         <!-- customer info -->
@@ -223,7 +261,7 @@
                                         </span>
                                     </span>
                                 </span>
-                                <span class="pull-middle">
+                                <span style="width: 50%;">
                                     <span class="word-wrap">
                                         <span class="m-title">Date</span>
                                         {{ $order->created_at->format('m/d/Y') }}
@@ -233,7 +271,7 @@
                                         {{ $order?->invoice_id }}
                                     </span>
                                 </span>
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
 
