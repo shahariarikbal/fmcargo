@@ -153,6 +153,7 @@ Route::middleware([
         Route::get('/list', [OrderController::class, 'adminOrderList'])->name('admin.order.list');
         Route::get('/view/{id}', [OrderController::class, 'adminOrderView'])->name('admin.order.view');
         Route::get('/delete/{id}', [OrderController::class, 'adminOrderDelete'])->name('admin.order.delete');
+        Route::get('/invoice/download/{id}', [OrderController::class, 'orderInvoiceDownload'])->name('admin.order.invoice.download');
     });
 
     // Register customer controller

@@ -13,6 +13,7 @@
         </div>
         <div class="card-body">
             <span style="font-size: 22px; font-weight: 600; text-transform: capitalize">Order Details</span>
+            <a href="{{ route('admin.order.invoice.download', $order->id) }}" class="btn btn-sm btn-success float-end">Invoice Download</a>
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
