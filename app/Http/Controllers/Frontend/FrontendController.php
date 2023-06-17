@@ -143,4 +143,8 @@ class FrontendController extends Controller
         $this->setSuccessMessage('Item is deleted form cart!');
         return redirect()->back();
     }
+
+    public function showInvoice(){
+        return view('layouts.frontend.invoice');
+    }
 }
