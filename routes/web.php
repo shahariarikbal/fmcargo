@@ -52,14 +52,15 @@ Route::get('/door/to/door/service', [FrontendController::class, 'serviceDetails'
 Route::get('/specialized/service', [FrontendController::class, 'specializedService']);
 Route::get('/product/add-to-cart/{id}', [FrontendController::class, 'addToCart']);
 Route::get('/delete/add-to-cart/{id}', [FrontendController::class, 'deleteAddToCart']);
+Route::get('/about', [FrontendController::class, 'showAbout']);
+Route::get('/terms/condition', [FrontendController::class, 'showTermsCondition']);
+Route::get('/privacy/policy', [FrontendController::class, 'showprivacyPolicy']);
 
 Route::post('/customer/register', [CustomerController::class, 'customerRegister']);
 Route::post('/customer/login', [CustomerController::class, 'customerLogin']);
 Route::get('/customer/logout', [CustomerController::class, 'customerLogout']);
 Route::post('/order/complete', [CustomerController::class, 'completeOrder']);
 
-//Invoice
-Route::get('/invoice', [FrontendController::class, 'showInvoice']);
 
 Route::middleware([
     'auth:sanctum',

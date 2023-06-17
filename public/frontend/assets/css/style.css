@@ -2691,3 +2691,29 @@ input.star:checked~label.star:before {
 }
 
 /*Contact section css End*/
+
+/* pages css start */
+.about-section {
+    padding: 40px 0;
+}
+
+.about-info-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.about-info-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.about-info-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    line-height: 30px;
+}
+/* pages css End */

@@ -38,7 +38,8 @@
                         <h5 class="title">
                             Phone
                         </h5>
-                        <a href="tel:+6594717964">0123456789</a>
+                        <a href="tel:01688-801343">01688-801343, </a>                       
+                        <a href="tel:01511-027225">01511-027225</a>                       
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
@@ -49,7 +50,7 @@
                         <h5 class="title">
                             Email
                         </h5>
-                        <a href="mailto:mimpainting18@gmail.com">info@gmail.com</a>
+                        <a href="mailto:fmcargoworld@gmail.com ">fmcargoworld@gmail.com </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
@@ -61,7 +62,7 @@
                             Address
                         </h5>
                         <p>
-                            House#06, Level#03 Road-1/A, Sector#09 Housebuilding, Uttara Dhaka-1230
+                            House # 16 (1ST Floor), Road # 09, Sector # 01, Uttara Model Town, Dhaka-1230
                         </p>
                     </div>
                 </div>
