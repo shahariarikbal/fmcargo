@@ -25,8 +25,9 @@ class OrderController extends Controller
     {
         $order = Order::with('orderDetails', 'billing')->where('id', $id)->first();
 
-        $pdf = PDF::loadView('pdf_view', compact('order'));
+        $pdf = PDF::loadView('layouts.admin.ecommerce.order.invoice', compact('order'));
 
+        return $pdf->stream();
         // download PDF file with download method
         return $pdf->download('invoice.pdf');
     }

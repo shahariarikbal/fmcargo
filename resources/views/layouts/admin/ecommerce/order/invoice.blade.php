@@ -213,37 +213,24 @@
                                         <!-- customer info -->
                                         <span style="display: block; margin-top: 5px;"></span>
                                         <span class="customer_infos">
-                                            Saidul Isalm
+                                            {{ $order->billing?->full_name }}
                                             <span style="display: block; margin-top: 5px;">
-                                                <b>Address:</b> North Tower, Jishan Building, 248, wushan RD,Tiahne
-                                            </span>                                            
+                                                <b>Address:</b> {{ $order->billing?->address }}
+                                            </span>
                                             <span style="display: block; margin-top: 3px;">
-                                                <b>Phone:</b> 012345678932
-                                            </span>                                            
+                                                <b>Email:</b> {{ $order->billing?->email }}
+                                            </span>
                                         </span>
                                     </span>
                                 </span>
                                 <span class="pull-middle">
                                     <span class="word-wrap">
                                         <span class="m-title">Date</span>
-                                        12-12-2023
+                                        {{ $order->created_at->format('m/d/Y') }}
                                     </span>
                                     <span class="word-wrap">
                                         <span class="m-title">Invoice#</span>
-                                        103254
-                                    </span>
-                                </span>
-                                <span class="pull-right text-left">
-                                    <span class="m-title">Shipping Info</span>
-                                    <span class="inner-wrap">
-                                        <span>
-                                            <b>Delivery Date:</b>
-                                            12-12-2023
-                                        </span>
-                                        <span style="margin-top: 5px; display: block;">
-                                            <b>Address:</b>  North Tower, Jishan Building, 248, wushan RD,Tiahne
-                                        </span>
-                                        <!-- Waiter info -->
+                                        {{ $order?->invoice_id }}
                                     </span>
                                 </span>
                             </p>
@@ -258,20 +245,32 @@
                                         <th class="bg-a text-uppercase text-center" width="5%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px;">Qty.</th>
                                         <th class="bg-a text-uppercase text-center" width="15%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px;">Item Name</th>
                                         <th class="bg-a text-uppercase text-center" width="10%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px;">Price</th>
-                                        <th class="bg-a text-uppercase text-center" width="10%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px; padding-right: 0px;">Amount</th>
+                                        <th class="bg-a text-uppercase text-center" width="10%" style="background: #f0f0f0; padding-top: 5px; padding-bottom: 5px; padding-right: 0px;">Qty</th>
                                     </tr>
                                 </thead>
-                                <tbody>                                   
+                                <tbody>
+                                @php
+                                    $sum = 0;
+                                    $qty = 0;
+                                @endphp
+                                @foreach($order->orderDetails as $data)
                                     <tr>
                                         <td class="text-uppercase text-center" width="5%" style="padding-top: 5px; padding-bottom: 5px;">
-                                            1
+                                            {{ $loop->index+1 }}
                                         </td>
                                         <td class="text-uppercase text-center" width="10%" style="padding-top: 5px; padding-bottom: 5px;">
-                                            nfgd jfsdkgld
+                                            {{ $data->product?->name }}
                                         </td>
-                                        <td style="padding-top: 5px; padding-bottom: 5px;" class="text-center">500 Tk.</td>
-                                        <td style="padding-top: 5px; padding-bottom: 5px; padding-right: 0px;" class="text-center">500 Tk.</td>
+                                        <td style="padding-top: 5px; padding-bottom: 5px;" class="text-center">{{ $totalPrice = $data?->price }} Tk.</td>
+                                        <td style="padding-top: 5px; padding-bottom: 5px; padding-right: 0px;" class="text-center">{{ $totalQty = $data?->qty }}</td>
                                     </tr>
+
+                                    @php
+                                        $sum += $totalPrice;
+                                        $qty += $totalQty;
+                                    @endphp
+
+                                @endforeach
                                     <tr>
                                         <td>
                                         </td>
@@ -279,7 +278,7 @@
                                             Subtotal
                                         </th>
                                         <td colspan="2">
-                                            <b>1025 Tk.</b>
+                                            <b>{{ $sum }} Tk.</b>
                                         </td>
                                     </tr>
                                 </tbody>
