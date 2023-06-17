@@ -93,9 +93,11 @@
                                     <label for="size">Quantity</label>
                                     <form action="{{ url('/product/add-to-cart/'.$product->id) }}" class="display-flex">
                                         @csrf
-                                        <div class="qtyminus">-</div>
-                                        <input type="text" name="quantity" value="1" class="qty">
-                                        <div class="qtyplus">+</div>
+                                        <div class="product-increment-outer">
+                                            <div class="qtyminus">-</div>
+                                            <input type="text" name="quantity" value="1" class="qty">
+                                            <div class="qtyplus">+</div>
+                                        </div>
                                         <button type="submit" class="add-cart-btn">Add to Cart</button>
                                     </form>
                                 </div>

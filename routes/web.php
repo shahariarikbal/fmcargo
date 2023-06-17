@@ -50,6 +50,9 @@ Route::post('/customer/login', [CustomerController::class, 'customerLogin']);
 Route::get('/customer/logout', [CustomerController::class, 'customerLogout']);
 Route::post('/order/complete', [CustomerController::class, 'completeOrder']);
 
+//Invoice
+Route::get('/invoice', [FrontendController::class, 'showInvoice']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
