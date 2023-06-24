@@ -24,6 +24,11 @@
                                     <i class="fab fa-weixin"></i>
                                 </a>
                             </li>
+                            <li class="socials-link-list-item">
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

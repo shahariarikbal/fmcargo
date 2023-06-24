@@ -46,7 +46,7 @@ body {
 }
 
 .section-title-wrap .title {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     font-family: 'Kanit', sans-serif;
     color: #0C0A06;
@@ -119,6 +119,10 @@ body {
 
 .fixed-social-list-item:nth-child(3) a {
     background: #39569c;
+}
+
+.fixed-social-list-item:nth-child(4) a {
+    background: #c4302b ;
 }
 
 /*common css End*/
@@ -807,7 +811,7 @@ body {
     transition: all .4s ease-in-out;
 }
 .service-item-title {
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     font-weight: 600;
     display: inline-block;
@@ -823,6 +827,27 @@ body {
 
 .service-item-title:hover {
     color: #ff9700;
+}
+
+.youtube-section {
+    padding: 40px 0;
+}
+.youtube-btn-outer {
+    text-align: center;
+    margin-top: 30px;
+}
+.youtube-btn-inner {
+    border: 1px solid #ff7e16;
+    background: #ff7e16;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+}
+.youtube-btn-inner:hover {
+    background: transparent;
+    color: #ff7e16;
 }
 /*Service section css End*/
 
@@ -1175,7 +1200,6 @@ body {
 .blog-item-info-top {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .blog-item-info-top .post-info {
@@ -1195,8 +1219,8 @@ body {
 
 .blog-item-info-title {
     display: inline-block;
-    font-size: 26px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     font-family: 'Kanit', sans-serif;
     color: #160803;
 }
@@ -1262,8 +1286,8 @@ body {
     background: #49c358;
 }
 
-.socials-link-list-item:nth-child(3) a {
-    background: #cd2371;
+.socials-link-list-item:nth-child(4) a {
+    background: #c4302b;
 }
 
 .socials-link-list-item:nth-child(3) a {
