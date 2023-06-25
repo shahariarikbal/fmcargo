@@ -7,13 +7,13 @@
                     <a href="{{ url($setting->facebook) }}" class="fab fa-facebook-f"></a>
                 </li>
                 <li class="social-icon-list-item">
-                    <a href="javascript:void(0);" class="fab fa-twitter"></a>
+                    <a href="javascript:void(0);" class="fab fa-whatsapp"></a>
                 </li>
                 <li class="social-icon-list-item">
-                    <a href="javascript:void(0);" class="fab fa-linkedin-in"></a>
+                    <a href="javascript:void(0);" class="fab fa-weixin"></a>
                 </li>
                 <li class="social-icon-list-item">
-                    <a href="javascript:void(0);" class="fab fa-google-plus-g"></a>
+                    <a href="javascript:void(0);" class="fab fa-youtube"></a>
                 </li>
             </ul>
         </div>

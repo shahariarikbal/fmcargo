@@ -144,7 +144,15 @@ class FrontendController extends Controller
         return redirect()->back();
     }
 
-    public function showInvoice(){
-        return view('layouts.frontend.invoice');
+    public function showAbout(){
+        return view('layouts.frontend.pages.about');
+    }
+
+    public function showTermsCondition(){
+        return view('layouts.frontend.pages.terms-condition');
+    }
+
+    public function showprivacyPolicy(){
+        return view('layouts.frontend.pages.privacy-policy');
     }
 }

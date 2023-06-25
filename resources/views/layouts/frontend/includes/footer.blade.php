@@ -24,27 +24,32 @@
                                     <i class="fab fa-weixin"></i>
                                 </a>
                             </li>
+                            <li class="socials-link-list-item">
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
                         <h5 class="footer-item-heading">
-                            Useful Links
+                            policis
                         </h5>
                         <ul class="service-list">
                             <li class="service-list-item">
-                                <a href="#" class="service-list-item-link">
+                                <a href="{{ url('/terms/condition') }}" class="service-list-item-link">
                                     Terms & Conditions
                                 </a>
                             </li>
                             <li class="service-list-item">
-                                <a href="#" class="service-list-item-link">
+                                <a href="{{ url('/privacy/policy') }}" class="service-list-item-link">
                                     Privacy Policy
                                 </a>
                             </li>
                             <li class="service-list-item">
-                                <a href="#about" class="service-list-item-link">
+                                <a href="{{ url('/about') }}" class="service-list-item-link">
                                     About Us
                                 </a>
                             </li>
@@ -54,22 +59,27 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
                         <h5 class="footer-item-heading">
-                            Our policis
+                            Our pages
                         </h5>
                         <ul class="service-list">
                             <li class="service-list-item">
-                                <a href="#" class="service-list-item-link">
-                                    Terms & Conditions
+                                <a href="{{ url('/tracking') }}" class="service-list-item-link">
+                                    Tracking
                                 </a>
                             </li>
                             <li class="service-list-item">
-                                <a href="#" class="service-list-item-link">
-                                    Privacy Policy
+                                <a href="{{ url('/shop') }}" class="service-list-item-link">
+                                    Shop
                                 </a>
                             </li>
                             <li class="service-list-item">
-                                <a href="#about" class="service-list-item-link">
-                                    About Us
+                                <a href="{{ url('/contact') }}" class="service-list-item-link">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li class="service-list-item">
+                                <a href="{{ url('/customer/login') }}" class="service-list-item-link">
+                                    Login
                                 </a>
                             </li>
                         </ul>
@@ -87,7 +97,7 @@
                                     Address
                                 </h6>
                                 <p class="text">
-                                    demo address #8901 Marmora Road Chi Minh City, Vietnam
+                                    House # 16 (1ST Floor), Road # 09, Sector # 01, Uttara Model Town, Dhaka-1230
                                 </p>
                             </div>
                         </div>
@@ -97,8 +107,8 @@
                                 <h6 class="name">
                                     PHONE
                                 </h6>
-                                <a href="tel:01885131495" class="text">
-                                    01885131495
+                                <a href="tel:01688801343" class="text">
+                                    01688-801343, 01511-027225
                                 </a>
                             </div>
                         </div>
@@ -109,7 +119,7 @@
                                     EMAIL
                                 </h6>
                                 <a href="mailto:info@demo.com" class="text">
-                                    info@demo.com
+                                    fmcargoworld@gmail.com 
                                 </a>
                             </div>
                         </div>
