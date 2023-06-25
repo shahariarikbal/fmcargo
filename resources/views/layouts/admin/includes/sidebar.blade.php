@@ -38,6 +38,7 @@
                     <a class="nav-link" href="{{ route('blog.list') }}">Blogs</a>
                     <a class="nav-link" href="{{ route('testimonial.list') }}">Testimonials</a>
                     <a class="nav-link" href="{{ route('sliders') }}">Slider</a>
+                    <a class="nav-link" href="{{ route('youtube.list') }}">Youtube</a>
                     {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>

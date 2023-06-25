@@ -117,7 +117,7 @@
                 </a>
             </li>
             <li class="fixed-social-list-item">
-                <a href="#" target="_blank"  class="fixed-social-list-item-link">
+                <a href="{{ url($setting?->wechat) }}" target="_blank"  class="fixed-social-list-item-link">
                     <i class="fab fa-youtube"></i>
                 </a>
             </li>

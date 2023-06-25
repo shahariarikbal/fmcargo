@@ -119,22 +119,12 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ( $frontend_contents['youtubes'] as $youtube )
                 <div class="col-lg-6 col-md-6">
                     <div class="youtube-item-wrap">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/1f89a6Xh7ak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    </div>
+                        <iframe width="100%" height="315" src="{{ $youtube->youtube }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="youtube-item-wrap">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/1f89a6Xh7ak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="youtube-item-wrap">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/1f89a6Xh7ak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="youtube-item-wrap">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/1f89a6Xh7ak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="youtube-btn-outer">
                 <a href="#" target="_blank" class="youtube-btn-inner">

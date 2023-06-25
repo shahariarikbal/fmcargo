@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\YoutubeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -172,6 +173,13 @@ Route::middleware([
     Route::get('/slider/edit/{id}', [UserController::class, 'sliderEdit'])->name('slider.edit');
     Route::post('/slider/update/{id}', [UserController::class, 'sliderUpdate'])->name('slider.update');
     Route::get('/slider/delete/{id}', [UserController::class, 'sliderDelete'])->name('slider.delete');
+
+    Route::get('/youtube/list', [YoutubeController::class, 'youtubeList'])->name('youtube.list');
+    Route::get('/youtube/create', [YoutubeController::class, 'youtubeCreate'])->name('youtube.create');
+    Route::post('/youtube/store', [YoutubeController::class, 'youtubeStore'])->name('youtube.store');
+    Route::get('/youtube/edit/{id}', [YoutubeController::class, 'youtubeEdit'])->name('youtube.edit');
+    Route::post('/youtube/update/{id}', [YoutubeController::class, 'youtubeUpdate'])->name('youtube.update');
+    Route::get('/youtube/delete/{id}', [YoutubeController::class, 'youtubeDelete'])->name('youtube.delete');
 
     Route::get('/door/to/door', [UserController::class, 'doorToDoor'])->name('door.to.door');
     Route::get('/specialized/service', [UserController::class, 'specializedService'])->name('specialized.service');

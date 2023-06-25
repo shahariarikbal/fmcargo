@@ -28,7 +28,7 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="facebook">Facebook Link</x-admin.label>
-                            <x-admin.input type="text" id="facebook" name="facebook" value="{{ $setting?->facebook }}" placeholder="Enter Facebook Link..."></x-admin.input>
+                            <x-admin.input type="url" id="facebook" name="facebook" value="{{ $setting?->facebook }}" placeholder="Enter Facebook Link..."></x-admin.input>
                             <x-admin.input-error for="facebook" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -39,8 +39,8 @@
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="wechat">Wechat Link</x-admin.label>
-                            <x-admin.input type="text" id="wechat" name="wechat" value="{{ $setting?->wechat }}" placeholder="Enter wechat..."></x-admin.input>
+                            <x-admin.label for="wechat">Youtube Link</x-admin.label>
+                            <x-admin.input type="url" id="wechat" name="wechat" value="{{ $setting?->wechat }}" placeholder="Enter wechat..."></x-admin.input>
                             <x-admin.input-error for="wechat" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
