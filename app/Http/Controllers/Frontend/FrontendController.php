@@ -96,6 +96,10 @@ class FrontendController extends Controller
     {
         return view('layouts.frontend.service.specialized-details');
     }
+    public function cfService()
+    {
+        return view('layouts.frontend.service.cf-details');
+    }
 
     public function blogDetails($id, $slug)
     {

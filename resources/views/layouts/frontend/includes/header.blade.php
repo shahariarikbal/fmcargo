@@ -66,6 +66,11 @@
                                 Specialized
                             </a>
                         </li>
+                        <li class="submenu-item">
+                            <a href="{{ url('/cf/service') }}" class="submenu-item-link">
+                                C&F
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-list-item">
@@ -117,6 +122,24 @@
                         </ul>
                     </li>
                 @endif
+                <li class="nav-list-item item-has-submenu">
+                    <a href="javascript:;" class="nav-item-link">
+                        Language
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <ul class="nav-item-submenu">
+                        <li class="submenu-item">
+                            <a href="#" class="submenu-item-link">
+                                English
+                            </a>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#" class="submenu-item-link">
+                                Bangla
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- <div class="cart-items-wrap">

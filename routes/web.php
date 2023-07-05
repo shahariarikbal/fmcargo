@@ -50,6 +50,7 @@ Route::get('/customer/login', [FrontendController::class, 'showLogin']);
 Route::get('/registration', [FrontendController::class, 'showRegistration']);
 Route::get('/blog/details/{id}/{slug}', [FrontendController::class, 'blogDetails']);
 Route::get('/door/to/door/service', [FrontendController::class, 'serviceDetails']);
+Route::get('/cf/service', [FrontendController::class, 'cfService']);
 Route::get('/specialized/service', [FrontendController::class, 'specializedService']);
 Route::get('/product/add-to-cart/{id}', [FrontendController::class, 'addToCart']);
 Route::get('/delete/add-to-cart/{id}', [FrontendController::class, 'deleteAddToCart']);
