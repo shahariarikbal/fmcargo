@@ -109,19 +109,19 @@ body {
     color: #fff;
 }
 
-.fixed-social-list-item:nth-child(1) a {
+.fixed-social-list-item:nth-child(2) a {
     background: #25D366;
 }
 
-.fixed-social-list-item:nth-child(2) a {
+.fixed-social-list-item:nth-child(3) a {
     background: #09B83E;
 }
 
-.fixed-social-list-item:nth-child(3) a {
+.fixed-social-list-item:nth-child(4) a {
     background: #39569c;
 }
 
-.fixed-social-list-item:nth-child(4) a {
+.fixed-social-list-item:nth-child(5) a {
     background: #c4302b ;
 }
 
@@ -132,7 +132,7 @@ body {
 .add-cart-outer {
     cursor: pointer;
     /*width: 65px;
-    height: 75px;*/
+    height: 75px;
     right: 0;
     top: 30%;
     position: fixed;
@@ -142,7 +142,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px;
     border-radius: 5px 0 0 5px;
-    background: #fff;
+    background: #fff;*/
 }
 
 .cart-item-count {
