@@ -25,6 +25,11 @@ class SettingController extends Controller
     {
         try {
             $setting = $request->all();
+            $whatsapp = $setting['whatsapp'];
+            if (substr($whatsapp, 0, 1) === "0") {
+                $whatsapp = substr($whatsapp, 1);
+                $setting['whatsapp'] = $whatsapp;
+            }
             $this->setting->update($setting, $id);
             $this->setSuccessMessage('Setting has been updated.');
             return redirect()->back();
