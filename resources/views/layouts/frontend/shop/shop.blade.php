@@ -30,64 +30,104 @@
     <!-- Shop -->
     <section class="product-section">
 		<div class="container">
-			<div class="row">
-                @foreach ($frontend_contents['products'] as $product )
-				<div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product-item-wrap">
-						<div class="product-image-outer">
-                            @if (substr($product->image, 0, 5) == 'https')
-                            <img src="https://via.placeholder.com/640x480.png/00bbbb?text=commodi" alt="product" class="product-image">
-                            @else
-                            <img src="{{ asset('product/'.$product->image) }}" alt="product" class="product-image">
-                            @endif
-							{{--  <span class="product-discount-persent">
-								-15%
-							</span>  --}}
-							<div class="product-action">
-                                <a class="action-btn" href="{{ url('/product/add-to-cart/'.$product->id) }}">
-                                	<i class="fas fa-shopping-cart"></i>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="shop-side-category">
+                        <h4 class="category-title">
+                            Categores
+                        </h4>
+                        <ul class="category-list">
+                            <li class="category-list-item">
+                                <a href="#" class="category-list-item-link">
+                                    Man's
                                 </a>
+                            </li>
+                            <li class="category-list-item">
+                                <a href="#" class="category-list-item-link">
+                                    Woman's
+                                </a>
+                            </li>
+                            <li class="category-list-item">
+                                <a href="#" class="category-list-item-link">
+                                    Kid's
+                                </a>
+                            </li>
+                            <li class="category-list-item">
+                                <a href="#" class="category-list-item-link">
+                                    Electronic
+                                </a>
+                            </li>
+                            <li class="category-list-item">
+                                <a href="#" class="category-list-item-link">
+                                    Electrical
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="shop-product-wrap">
+                        <div class="row">
+                            @foreach ($frontend_contents['products'] as $product )
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product-item-wrap">
+                                    <div class="product-image-outer">
+                                        @if (substr($product->image, 0, 5) == 'https')
+                                        <img src="https://via.placeholder.com/640x480.png/00bbbb?text=commodi" alt="product" class="product-image">
+                                        @else
+                                        <img src="{{ asset('product/'.$product->image) }}" alt="product" class="product-image">
+                                        @endif
+                                        {{--  <span class="product-discount-persent">
+                                            -15%
+                                        </span>  --}}
+                                        <div class="product-action">
+                                            <a class="action-btn" href="{{ url('/product/add-to-cart/'.$product->id) }}">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-outer">
+                                        {{--  <ul class="product-item-ratting">
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                        </ul>  --}}
+                                        <a href="{{ url('/product/details/'.$product->id) }}" class="product-name">
+                                            {{ $product->name }}
+                                        </a>
+                                        <div class="product-price-outer">
+                                            {{--  <del class="main-price">
+                                                $300
+                                            </del>  --}}
+                                            <span class="discount-price">
+                                                ${{ $product->price }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-						</div>
-						<div class="product-info-outer">
-							{{--  <ul class="product-item-ratting">
-                                <li>
-                                    <i class="fas fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star"></i>
-                                </li>
-                            </ul>  --}}
-                            <a href="{{ url('/product/details/'.$product->id) }}" class="product-name">
-                            	{{ $product->name }}
+                            @endforeach
+                        </div>
+                        {{--  <div class="product-load-btn-outer">
+                            <a href="#" class="product-load-btn-inner">
+                                Load More
                             </a>
-                            <div class="product-price-outer">
-                            	{{--  <del class="main-price">
-                            		$300
-                            	</del>  --}}
-                            	<span class="discount-price">
-                            		${{ $product->price }}
-                            	</span>
-                            </div>
-						</div>
-					</div>
-				</div>
-                @endforeach
-			</div>
-			{{--  <div class="product-load-btn-outer">
-				<a href="#" class="product-load-btn-inner">
-					Load More
-				</a>
-			</div>  --}}
+                        </div>  --}}
+                    </div>
+                </div>
+            </div>			
 		</div>
 	</section>
     <!-- /Shop -->
