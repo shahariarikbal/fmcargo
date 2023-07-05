@@ -46,7 +46,7 @@
                     <div class="service-item-wrap">
                         <img src="{{ asset('service/'.$service->image) }}" alt="service" class="Service" />
                         <div class="service-item-info">
-                            <a href="service-details.html" class="service-item-title">
+                            <a href="#" class="service-item-title">
                                 {{ $service->title }}
                             </a>
                         </div>
