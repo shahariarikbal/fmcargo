@@ -41,6 +41,7 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('/contact', [FrontendController::class, 'showContactUs']);
 Route::post('/contact/store', [FrontendController::class, 'contactStore']);
 Route::get('/shop', [FrontendController::class, 'showShop']);
+Route::get('/shop/category-products/{cat_id}/{slug}', [FrontendController::class, 'showCategoryProduct']);
 Route::get('/product/details/{id}', [FrontendController::class, 'showProductDetails']);
 Route::get('/checkout', [FrontendController::class, 'showCheckout']);
 

@@ -9,6 +9,7 @@ use App\Models\AddToCart;
 use App\Models\Booking;
 use App\Models\Contact;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 use Auth;
@@ -52,8 +53,16 @@ class FrontendController extends Controller
     }
 
     public function showShop(){
-        $frontend_contents = $this->frontend_content->getAllData();
-        return view('layouts.frontend.shop.shop',compact('frontend_contents'));
+        $products = Product::orderBy('id', 'desc')->get();
+        $categories = Category::where('status', 1)->get();
+        return view('layouts.frontend.shop.shop',compact('products', 'categories'));
+    }
+
+    public function showCategoryProduct ($cat_id)
+    {
+        $products = Product::orderBy('id', 'desc')->where('cat_id', $cat_id)->get();
+        $categories = Category::where('status', 1)->get();
+        return view('layouts.frontend.shop.shop',compact('products', 'categories'));
     }
 
     public function showProductDetails($id){

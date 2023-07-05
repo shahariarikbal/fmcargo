@@ -37,38 +37,20 @@
                             Categores
                         </h4>
                         <ul class="category-list">
+                            @foreach ($categories as $category )
                             <li class="category-list-item">
-                                <a href="#" class="category-list-item-link">
-                                    Man's
+                                <a href="{{ url('/shop/category-products/'.$category->id.'/'.$category->slug) }}" class="category-list-item-link">
+                                    {{ $category->name }}
                                 </a>
                             </li>
-                            <li class="category-list-item">
-                                <a href="#" class="category-list-item-link">
-                                    Woman's
-                                </a>
-                            </li>
-                            <li class="category-list-item">
-                                <a href="#" class="category-list-item-link">
-                                    Kid's
-                                </a>
-                            </li>
-                            <li class="category-list-item">
-                                <a href="#" class="category-list-item-link">
-                                    Electronic
-                                </a>
-                            </li>
-                            <li class="category-list-item">
-                                <a href="#" class="category-list-item-link">
-                                    Electrical
-                                </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="shop-product-wrap">
                         <div class="row">
-                            @foreach ($frontend_contents['products'] as $product )
+                            @foreach ($products as $product )
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product-item-wrap">
                                     <div class="product-image-outer">
@@ -127,7 +109,7 @@
                         </div>  --}}
                     </div>
                 </div>
-            </div>			
+            </div>
 		</div>
 	</section>
     <!-- /Shop -->
