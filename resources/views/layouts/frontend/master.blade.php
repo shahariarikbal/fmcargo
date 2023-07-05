@@ -90,17 +90,25 @@
             </a>
         </div>
     </div>
-    <div class="add-cart-outer cart-show-hide-btn">
+    {{-- <div class="add-cart-outer cart-show-hide-btn">
         <div class="cart-item-count">
             <i class="fas fa-shopping-bag"></i>
             <span class="items-number">{{ $addToCartCount }}</span>
         </div>
-    </div>
+    </div> --}}
     <!-- /Fixed Cart -->
 
     <!-- Fixed Social Icon -->
     <div class="fixed-social-icon-wrap">
         <ul class="fixed-social-list">
+            <li class="fixed-social-list-item">
+                <div class="add-cart-outer cart-show-hide-btn">
+                    <div class="cart-item-count">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="items-number">{{ $addToCartCount }}</span>
+                    </div>
+                </div>
+            </li>
             <li class="fixed-social-list-item">
                 <a href="{{ url('https://wa.me/'.$setting?->whatsapp) }}" class="fixed-social-list-item-link">
                     <i class="fab fa-whatsapp"></i>
