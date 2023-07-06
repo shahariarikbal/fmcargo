@@ -23,7 +23,9 @@ class BlogUpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:191',
+            'title_bn' => 'required',
             'description' => 'required',
+            'description_bn' => 'required',
         ];
     }
 }

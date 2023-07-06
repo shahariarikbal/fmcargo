@@ -32,7 +32,7 @@ class ServiceController extends Controller
     public function serviceStore(ServiceRequest $request)
     {
         try {
-            $service = $request->only(['title','image']);
+            $service = $request->only(['title','title_bn','image']);
             $this->service->store($service);
             $this->setSuccessMessage('Service has been created.');
             return redirect()->route('services');

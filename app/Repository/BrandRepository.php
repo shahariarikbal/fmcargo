@@ -16,6 +16,7 @@ class BrandRepository implements CargoEcommerce
     {
         Brand::create([
             'name' => $data['name'],
+            'name_bn' => $data['name_bn'],
             'slug' => Str::slug($data['name']),
         ]);
     }
@@ -25,6 +26,7 @@ class BrandRepository implements CargoEcommerce
        $brand = Brand::find($id);
         $brand->update([
             'name' => $data['name'],
+            'name_bn' => $data['name_bn'],
             'slug' => Str::slug($data['name']),
         ]);
     }

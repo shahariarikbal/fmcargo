@@ -21,6 +21,12 @@
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                                <x-admin.label for="title_bn">Bangla Title</x-admin.label>
+                                <x-admin.input type="text" id="title_bn" name="title_bn" value="{{ old('title_bn') }}" placeholder="Enter service title..."></x-admin.input>
+                                <x-admin.input-error for="title_bn" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+
+                            <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                                 <x-admin.label for="image">Image</x-admin.label>
                                 <x-admin.input type="file" id="image" name="image"></x-admin.input>
                                 <x-admin.input-error for="image" class="mt-2"></x-admin.input-error>

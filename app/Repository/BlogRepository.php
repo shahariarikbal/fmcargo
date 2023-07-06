@@ -21,8 +21,10 @@ class BlogRepository implements CargoEcommerce
 
         Blog::create([
             'title' => $data['title'],
+            'title_bn' => $data['title_bn'],
             'slug' => Str::slug($data['title']),
             'description' => $data['description'],
+            'description_bn' => $data['description_bn'],
             'image' => $imgname,
         ]);
     }
@@ -44,8 +46,10 @@ class BlogRepository implements CargoEcommerce
 
         $blog->update([
             'title' => $data['title'],
+            'title_bn' => $data['title_bn'],
             'slug' => Str::slug($data['title']),
             'description' => $data['description'],
+            'description_bn' => $data['description_bn'],
             'image' => $updateImgName,
         ]);
     }

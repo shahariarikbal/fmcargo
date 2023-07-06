@@ -30,14 +30,19 @@ class ProductRepository implements CargoEcommerce
 
         Product::create([
             'name' => $data['name'],
+            'name_bn' => $data['name_bn'],
             'slug' => Str::slug($data['name']),
             'sku' => $data['sku'],
             'cat_id' => $data['cat_id'],
             'brand_id' => $data['brand_id'],
             'price' => $data['price'],
+            'price_bn' => $data['price_bn'],
             'qty' => $data['qty'],
+            'qty_bn' => $data['qty_bn'],
             'short_description' => $data['short_description'],
+            'short_description_bn' => $data['short_description_bn'],
             'long_description' => $data['long_description'],
+            'long_description_bn' => $data['long_description_bn'],
             'image' => $imgname,
             'gallery_image'=> json_encode($gallery_image),
         ]);
@@ -74,14 +79,19 @@ class ProductRepository implements CargoEcommerce
 
         $product->update([
             'name' => $data['name'],
+            'name_bn' => $data['name_bn'],
             'slug' => Str::slug($data['name']),
             'sku' => $data['sku'],
             'cat_id' => $data['cat_id'],
             'brand_id' => $data['brand_id'],
             'price' => $data['price'],
+            'price_bn' => $data['price_bn'],
             'qty' => $data['qty'],
+            'qty_bn' => $data['qty_bn'],
             'short_description' => $data['short_description'],
+            'short_description_bn' => $data['short_description_bn'],
             'long_description' => $data['long_description'],
+            'long_description_bn' => $data['long_description_bn'],
             'image' => $imgname,
             'gallery_image'=> json_encode($images),
         ]);

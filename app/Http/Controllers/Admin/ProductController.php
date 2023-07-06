@@ -37,7 +37,7 @@ class ProductController extends Controller
     public function productStore(Request $request)
     {
         try {
-            $product = $request->only(['name','sku','cat_id','brand_id','image','gallery_image','price','qty','short_description','long_description']);
+            $product = $request->only(['name','name_bn','price_bn','short_description_bn','long_description_bn','sku','cat_id','brand_id','image','gallery_image','price','qty','qty_bn','short_description','long_description']);
             $this->product->store($product);
             $this->setSuccessMessage('Product has been created.');
             return redirect()->route('product.list');
