@@ -20,14 +20,19 @@ class ProductSeeder extends Seeder
 
             Product::create([
                 'name'  => $faker->name,
+                'name_bn'  => 'ডেমো নাম',
                 'slug'  => Str::slug($faker->name),
                 'sku'  => $faker->randomDigit(),
                 'cat_id'  => 1,
                 'brand_id'  => 1,
                 'price'  => 300,
+                'price_bn'  => '৩০০',
                 'qty'  => 10,
+                'qty_bn'  => '১০',
                 'short_description'  => $faker->paragraph,
+                'short_description_bn'  => 'ডেমো প্রোডাক্ট শর্ট ডেসক্রিপশন',
                 'long_description'  => $faker->paragraph,
+                'long_description_bn'  => 'ডেমো প্রোডাক্ট লং ডেসক্রিপশন',
                 'image'  => $faker->imageUrl,
                 'gallery_image'  => '["165000021, 168574120, 1853664712"]',
             ]);

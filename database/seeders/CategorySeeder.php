@@ -20,6 +20,7 @@ class CategorySeeder extends Seeder
 
             Category::create([
                 'name'  => $faker->name,
+                'name_bn'  => 'ডেমো নাম',
                 'slug'  => Str::slug($faker->name),
                 'status'  => 1,
             ]);

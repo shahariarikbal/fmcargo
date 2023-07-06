@@ -20,6 +20,7 @@ class ServiceSeeder extends Seeder
 
             Service::create([
                 'title'  => $faker->name,
+                'title_bn'  => 'ডেমো পরিষেবা',
                 'image'  => $faker->imageUrl,
             ]);
         }
