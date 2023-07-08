@@ -17,6 +17,7 @@ class EcommerceRepository implements CargoEcommerce
     {
         $category = new Category();
         $category->name = $data['name'];
+        $category->name_bn = $data['name_bn'];
         $category->slug = Str::slug($data['name']);
         $category->save();
     }
@@ -26,6 +27,7 @@ class EcommerceRepository implements CargoEcommerce
         //dd($data);
         $category = Category::find($id);
         $category->name = $data['name'];
+        $category->name_bn = $data['name_bn'];
         $category->slug = Str::slug($data['name']);
         $category->save();
     }

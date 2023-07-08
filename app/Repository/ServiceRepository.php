@@ -20,6 +20,7 @@ class ServiceRepository implements CargoEcommerce
 
         Service::create([
             'title' => $data['title'],
+            'title_bn' => $data['title_bn'],
             'image' => $imageName,
         ]);
     }
@@ -45,6 +46,7 @@ class ServiceRepository implements CargoEcommerce
 
         $service->update([
             'title' => $data['title'],
+            'title_bn' => $data['title_bn'],
             'image' => $imgname,
         ]);
     }

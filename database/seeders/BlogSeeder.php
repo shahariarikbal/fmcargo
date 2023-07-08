@@ -21,8 +21,10 @@ class BlogSeeder extends Seeder
 
             Blog::create([
                 'title'  => $faker->name,
+                'title_bn'  => 'ডেমো টাইটেল',
                 'slug'  => Str::slug($faker->name),
                 'description'  => $faker->sentence,
+                'description_bn'  => 'ডেমো ডেসক্রিপশন',
                 'image'  => $faker->imageUrl,
             ]);
         }

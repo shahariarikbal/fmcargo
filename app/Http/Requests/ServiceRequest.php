@@ -24,6 +24,7 @@ class ServiceRequest extends FormRequest
         return [
             'title' => 'required',
             'image' => 'required|image',
+            'title_bn' => 'required',
         ];
     }
 }

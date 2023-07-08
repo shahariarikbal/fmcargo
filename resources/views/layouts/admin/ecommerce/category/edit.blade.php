@@ -19,6 +19,11 @@
                             <x-admin.input type="text" id="name" name="name" value="{{ $category?->name ?? old('name') }}" placeholder="Enter your full name..."></x-admin.input>
                             <x-admin.input-error for="name" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
+                        <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                            <x-admin.label for="name_bn">Bangla Name</x-admin.label>
+                            <x-admin.input type="text" id="name_bn" name="name_bn" value="{{ $category?->name_bn ?? old('name_bn') }}" placeholder="Enter your full name..."></x-admin.input>
+                            <x-admin.input-error for="name_bn" class="mt-2"></x-admin.input-error>
+                        </x-admin.input-group-div>
 
                         <x-admin.submit-button class="mt-2"><i class="fas fa-plus-circle"></i> Update</x-admin.submit-button>
                     </form>

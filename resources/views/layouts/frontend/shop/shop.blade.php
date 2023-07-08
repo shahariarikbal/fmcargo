@@ -49,6 +49,11 @@
                 </div>
                 <div class="col-md-9">
                     <div class="shop-product-wrap">
+                        @if (count($products)==0)
+                        <div class="alert alert-danger" role="alert">
+                            No products found!
+                        </div>
+                        @endif
                         <div class="row">
                             @foreach ($products as $product )
                             <div class="col-lg-4 col-md-6 col-sm-6">

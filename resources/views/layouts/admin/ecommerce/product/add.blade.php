@@ -21,6 +21,12 @@
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                                <x-admin.label for="name_bn">Bangla Name</x-admin.label>
+                                <x-admin.input type="text" id="name_bn" name="name_bn" value="{{ old('name_bn') }}" placeholder="Enter product name..."></x-admin.input>
+                                <x-admin.input-error for="name_bn" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+
+                            <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                                 <x-admin.label for="sku">SKU</x-admin.label>
                                 <x-admin.input type="text" id="sku" name="sku" value="{{ old('sku') }}" placeholder="Enter product sku..."></x-admin.input>
                                 <x-admin.input-error for="sku" class="mt-2"></x-admin.input-error>
@@ -55,9 +61,21 @@
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                                <x-admin.label for="price_bn">Bangla Price</x-admin.label>
+                                <x-admin.input type="text" id="price_bn" name="price_bn" value="{{ old('price_bn') }}" placeholder="Enter product price..."></x-admin.input>
+                                <x-admin.input-error for="price_bn" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+
+                            <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                                 <x-admin.label for="qty">Qty</x-admin.label>
                                 <x-admin.input type="number" id="qty" name="qty" value="{{ old('qty') }}" placeholder="Enter product qty..."></x-admin.input>
                                 <x-admin.input-error for="qty" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+
+                            <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                                <x-admin.label for="qty_bn">Bangla Qty</x-admin.label>
+                                <x-admin.input type="text" id="qty_bn" name="qty_bn" value="{{ old('qty_bn') }}" placeholder="Enter product qty..."></x-admin.input>
+                                <x-admin.input-error for="qty_bn" class="mt-2"></x-admin.input-error>
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
@@ -67,9 +85,21 @@
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                                <x-admin.label for="short_description_bn">Bangla Short Description</x-admin.label>
+                                <x-admin.textarea id="short_description_bn" rows="8" name="short_description_bn" value="{{ old('short_description_bn') }}" placeholder="Enter product short description..."></x-admin.textarea>
+                                <x-admin.input-error for="short_description_bn" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+
+                            <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                                 <x-admin.label for="long_description">Long Description</x-admin.label>
                                 <x-admin.textarea id="long_description" class="ckeditor" rows="8" name="long_description" value="{{ old('long_description') }}" placeholder="Enter product long description..."></x-admin.textarea>
                                 <x-admin.input-error for="long_description" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+
+                            <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                                <x-admin.label for="long_description_bn">Bangla Long Description</x-admin.label>
+                                <x-admin.textarea id="long_description_bn" class="ckeditor" rows="8" name="long_description_bn" value="{{ old('long_description_bn') }}" placeholder="Enter product long description..."></x-admin.textarea>
+                                <x-admin.input-error for="long_description_bn" class="mt-2"></x-admin.input-error>
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
