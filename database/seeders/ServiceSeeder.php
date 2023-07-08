@@ -19,7 +19,7 @@ class ServiceSeeder extends Seeder
             $faker = Faker::create();
 
             Service::create([
-                'title'  => $faker->name,
+                'title_en'  => $faker->name,
                 'title_bn'  => 'ডেমো পরিষেবা',
                 'image'  => $faker->imageUrl,
             ]);

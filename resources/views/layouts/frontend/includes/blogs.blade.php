@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                             <a href="{{ url('/blog/details/'.$blog?->id.'/'.$blog?->slug) }}" class="blog-item-info-title">
-                                {{ $blog?->title }}
+                                {{ $blog?->{ 'title_'.app()->getLocale() } }}
                             </a>
                         </div>
                     </div>

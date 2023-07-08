@@ -14,7 +14,7 @@
                     <div class="slider-content-outer">
                         <div class="container">
                             <div class="slider-content">
-                                <h2>{{ ucfirst($slider->title) }}</h2>
+                                <h2>{{ ucfirst($slider->{ 'title_'.app()->getLocale() }) }}</h2>
                                 <a href="{{ url('/contact') }}" target="_blank" class="contact-us-link">
                                     Contact Us
                                 </a>
@@ -47,7 +47,7 @@
                         <img src="{{ asset('service/'.$service->image) }}" alt="service" class="Service" />
                         <div class="service-item-info">
                             <a href="#" class="service-item-title">
-                                {{ $service->title }}
+                                {{ $service->{ 'title_'.app()->getLocale() } }}
                             </a>
                         </div>
                     </div>
