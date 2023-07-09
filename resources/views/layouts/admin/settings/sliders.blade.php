@@ -22,7 +22,7 @@
                         @foreach($data as $info)
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
-                                <td>{{ $info?->title }}</td>
+                                <td>{{ $info?->title_en }}</td>
                                 <td>
                                     <img src="{{ asset('slider/'.$info->image) }}" height="50" width="100" />
                                 </td>
@@ -45,9 +45,13 @@
                     <form action="{{ route('slider.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="title">Title</x-admin.label>
-                            <x-admin.input type="text" id="title" name="title" value="{{ old('title') }}" placeholder="Enter slider title..."></x-admin.input>
-                            <x-admin.input-error for="title" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="title_en">Title</x-admin.label>
+                            <x-admin.input type="text" id="title_en" name="title_en" value="{{ old('title_en') }}" placeholder="Enter slider title..."></x-admin.input>
+                            <x-admin.input-error for="title_en" class="mt-2"></x-admin.input-error>
+
+                            <x-admin.label for="title_bn">Title</x-admin.label>
+                            <x-admin.input type="text" id="title_bn" name="title_bn" value="{{ old('title_bn') }}" placeholder="Enter slider title..."></x-admin.input>
+                            <x-admin.input-error for="title_bn" class="mt-2"></x-admin.input-error>
 
                             <x-admin.label for="image">Image</x-admin.label>
                             <x-admin.input type="file" id="image" name="image"></x-admin.input>
@@ -70,16 +74,20 @@
                         <form action="{{ route('slider.update', $slider->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                                <x-admin.label for="title">Title</x-admin.label>
-                                <x-admin.input type="text" id="title" name="title" value="{{ $slider->title ?? old('title') }}" placeholder="Enter slider title..."></x-admin.input>
-                                <x-admin.input-error for="title" class="mt-2"></x-admin.input-error>
+                                <x-admin.label for="title_en">Title</x-admin.label>
+                                <x-admin.input type="text" id="title_en" name="title_en" value="{{ $slider->title_en ?? old('title_en') }}" placeholder="Enter slider title..."></x-admin.input>
+                                <x-admin.input-error for="title_en" class="mt-2"></x-admin.input-error>
+
+                                <x-admin.label for="title_bn">Title</x-admin.label>
+                                <x-admin.input type="text" id="title_bn" name="title_bn" value="{{ $slider->title_bn ?? old('title_bn') }}" placeholder="Enter slider title..."></x-admin.input>
+                                <x-admin.input-error for="title_bn" class="mt-2"></x-admin.input-error>
 
                                 <x-admin.label for="image">Image</x-admin.label>
                                 <x-admin.input type="file" id="image" name="image"></x-admin.input>
                                 <img src="{{ asset('/slider/'.$slider->image) }}" height="80" width="80" />
                                 <x-admin.input-error for="image" class="mt-2"></x-admin.input-error>
                             </x-admin.input-group-div>
-                            <x-admin.submit-button class="mt-2"><i class="fas fa-plus-circle"></i> Create</x-admin.submit-button>
+                            <x-admin.submit-button class="mt-2"><i class="fas fa-plus-circle"></i> Update</x-admin.submit-button>
                         </form>
                     </div>
                 </div>
