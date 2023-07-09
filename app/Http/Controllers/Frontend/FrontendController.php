@@ -10,6 +10,7 @@ use App\Models\Booking;
 use App\Models\Contact;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\ClearingForwarding;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 use Auth;
@@ -107,7 +108,8 @@ class FrontendController extends Controller
     }
     public function cfService()
     {
-        return view('layouts.frontend.service.cf-details');
+        $clear_forwarding = ClearingForwarding::first();
+        return view('layouts.frontend.service.cf-details', compact('clear_forwarding'));
     }
 
     public function blogDetails($id, $slug)

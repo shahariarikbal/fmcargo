@@ -33,5 +33,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(BlogSeeder::class);
+        $this->call(ClearingForwardingSeeder::class);
     }
 }
