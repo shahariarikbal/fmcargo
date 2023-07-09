@@ -26,7 +26,7 @@
                 @foreach($services as $service)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
-                        <td>{{ ucfirst($service?->title) }}</td>
+                        <td>{{ ucfirst($service?->title_en) }}</td>
                         <td>
                             <img src="{{ asset('/service/'.$service?->image) }}" height="70" width="100" />
                         </td>

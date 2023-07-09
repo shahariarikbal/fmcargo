@@ -15,9 +15,9 @@
                     <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="name">Name</x-admin.label>
-                            <x-admin.input type="text" id="name" name="name" value="{{ $product?->name ?? old('name') }}" placeholder="Enter your full name..."></x-admin.input>
-                            <x-admin.input-error for="name" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="name_en">Name</x-admin.label>
+                            <x-admin.input type="text" id="name_en" name="name_en" value="{{ $product?->name_en ?? old('name_en') }}" placeholder="Enter your full name..."></x-admin.input>
+                            <x-admin.input-error for="name_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="name_bn">Bangla Name</x-admin.label>
@@ -35,7 +35,7 @@
                             <x-admin.select-option class="form-control" name="cat_id" id="cat_id">
                                 <option selected disabled>Select A Category</option>
                                 @foreach($data['categories'] as $category)
-                                <option @if($category->id == $product->cat_id) selected  @endif value="{{ $category?->id }}">{{ $category?->name }}</option>
+                                <option @if($category->id == $product->cat_id) selected  @endif value="{{ $category?->id }}">{{ $category?->name_en }}</option>
                                 @endforeach
                             </x-admin.select-option>
                             <x-admin.input-error for="cat_id" class="mt-2"></x-admin.input-error>
@@ -46,16 +46,16 @@
                             <x-admin.select-option class="form-control" name="brand_id" id="brand_id">
                                 <option selected disabled>Select A Brand</option>
                                 @foreach($data['brands'] as $brand)
-                                <option @if($brand->id == $product->brand_id) selected  @endif value="{{ $brand?->id }}">{{ $brand?->name }}</option>
+                                <option @if($brand->id == $product->brand_id) selected  @endif value="{{ $brand?->id }}">{{ $brand?->name_en }}</option>
                                 @endforeach
                             </x-admin.select-option>
                             <x-admin.input-error for="brand_id" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="price">Price</x-admin.label>
-                            <x-admin.input type="text" id="price" name="price" value="{{ $product?->price }}" placeholder="Enter product price..."></x-admin.input>
-                            <x-admin.input-error for="price" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="price_en">Price</x-admin.label>
+                            <x-admin.input type="text" id="price_en" name="price_en" value="{{ $product?->price_en }}" placeholder="Enter product price..."></x-admin.input>
+                            <x-admin.input-error for="price_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
@@ -65,9 +65,9 @@
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="qty">Qty</x-admin.label>
-                            <x-admin.input type="number" id="qty" name="qty" value="{{ $product?->qty }}" placeholder="Enter product qty..."></x-admin.input>
-                            <x-admin.input-error for="qty" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="qty_en">Qty</x-admin.label>
+                            <x-admin.input type="number" id="qty_en" name="qty_en" value="{{ $product?->qty_en }}" placeholder="Enter product qty..."></x-admin.input>
+                            <x-admin.input-error for="qty_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
@@ -77,9 +77,9 @@
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="short_description">Short Description</x-admin.label>
-                            <x-admin.textarea id="short_description" rows="8" name="short_description" placeholder="Enter product short description...">{{ strip_tags($product->short_description) }}</x-admin.textarea>
-                            <x-admin.input-error for="short_description" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="short_description_en">Short Description</x-admin.label>
+                            <x-admin.textarea id="short_description_en" rows="8" name="short_description_en" placeholder="Enter product short description...">{{ strip_tags($product->short_description_en) }}</x-admin.textarea>
+                            <x-admin.input-error for="short_description_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
@@ -89,9 +89,9 @@
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="long_description">Long Description</x-admin.label>
-                            <x-admin.textarea id="long_description" class="ckeditor" rows="8" name="long_description" placeholder="Enter product long description...">{{ strip_tags($product->long_description) }}</x-admin.textarea>
-                            <x-admin.input-error for="long_description" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="long_description_en">Long Description</x-admin.label>
+                            <x-admin.textarea id="long_description_en" class="ckeditor" rows="8" name="long_description_en" placeholder="Enter product long description...">{{ strip_tags($product->long_description_en) }}</x-admin.textarea>
+                            <x-admin.input-error for="long_description_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">

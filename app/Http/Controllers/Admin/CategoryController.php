@@ -30,7 +30,7 @@ class CategoryController extends Controller
     public function categoryStore(Request $request)
     {
         try {
-            $category = $request->only(['name','name_bn']);
+            $category = $request->only(['name_en','name_bn']);
             $this->category->store($category);
             $this->setSuccessMessage('Category has been created.');
             return redirect()->route('category.list');

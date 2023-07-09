@@ -32,7 +32,7 @@ class ServiceController extends Controller
     public function serviceStore(ServiceRequest $request)
     {
         try {
-            $service = $request->only(['title','title_bn','image']);
+            $service = $request->only(['title_en','title_bn','image']);
             $this->service->store($service);
             $this->setSuccessMessage('Service has been created.');
             return redirect()->route('services');
@@ -51,7 +51,8 @@ class ServiceController extends Controller
     public function serviceUpdate(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
+            'title_en' => 'required',
+            'title_bn' => 'required',
         ]);
 
         try {

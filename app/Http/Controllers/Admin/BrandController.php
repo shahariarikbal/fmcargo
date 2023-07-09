@@ -30,7 +30,7 @@ class BrandController extends Controller
     public function brandStore(Request $request)
     {
         try {
-            $brand = $request->only(['name','name_bn']);
+            $brand = $request->only(['name_en','name_bn']);
             $this->brand->store($brand);
             $this->setSuccessMessage('Brand has been created.');
             return redirect()->route('brand.list');

@@ -15,9 +15,9 @@
                     <form action="{{ route('blog.update', $blog?->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="title">Title</x-admin.label>
-                            <x-admin.input type="text" id="title" name="title" value="{{ $blog?->title ?? old('title') }}" placeholder="Enter service title..."></x-admin.input>
-                            <x-admin.input-error for="title" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="title_en">Title</x-admin.label>
+                            <x-admin.input type="text" id="title_en" name="title_en" value="{{ $blog?->title_en ?? old('title_en') }}" placeholder="Enter service title..."></x-admin.input>
+                            <x-admin.input-error for="title_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="title_bn">Bangla Title</x-admin.label>
@@ -25,9 +25,9 @@
                             <x-admin.input-error for="title_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="description">Description</x-admin.label>
-                            <x-admin.textarea id="description" class="ckeditor" name="description" placeholder="Enter service description...">{{ $blog?->description ?? old('title') }}</x-admin.textarea>
-                            <x-admin.input-error for="description" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="description_en">Description</x-admin.label>
+                            <x-admin.textarea id="description_en" class="ckeditor" name="description_en" placeholder="Enter service description...">{{ $blog?->description_en ?? old('description_en') }}</x-admin.textarea>
+                            <x-admin.input-error for="description_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="description_bn">Bangla Description</x-admin.label>

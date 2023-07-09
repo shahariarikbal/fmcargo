@@ -28,8 +28,8 @@ class ProductController extends Controller
     public function productCreate()
     {
         $data = [
-            'categories' => Category::orderBy('id', 'desc')->select(['id', 'name', 'status'])->where('status', 1)->get(),
-            'brands' => Brand::orderBy('id', 'desc')->select(['id', 'name', 'status'])->where('status', 1)->get(),
+            'categories' => Category::orderBy('id', 'desc')->select(['id', 'name_en', 'status'])->where('status', 1)->get(),
+            'brands' => Brand::orderBy('id', 'desc')->select(['id', 'name_en', 'status'])->where('status', 1)->get(),
         ];
         return view('layouts.admin.ecommerce.product.add', compact('data'));
     }
@@ -37,7 +37,7 @@ class ProductController extends Controller
     public function productStore(Request $request)
     {
         try {
-            $product = $request->only(['name','name_bn','price_bn','short_description_bn','long_description_bn','sku','cat_id','brand_id','image','gallery_image','price','qty','qty_bn','short_description','long_description']);
+            $product = $request->only(['name_en','name_bn','price_bn','short_description_bn','long_description_bn','sku','cat_id','brand_id','image','gallery_image','price_en','qty_en','qty_bn','short_description_en','long_description_en']);
             $this->product->store($product);
             $this->setSuccessMessage('Product has been created.');
             return redirect()->route('product.list');
@@ -64,8 +64,8 @@ class ProductController extends Controller
     public function productEdit($id)
     {
         $data = [
-            'categories' => Category::orderBy('id', 'desc')->select(['id', 'name', 'status'])->where('status', 1)->get(),
-            'brands' => Brand::orderBy('id', 'desc')->select(['id', 'name', 'status'])->where('status', 1)->get(),
+            'categories' => Category::orderBy('id', 'desc')->select(['id', 'name_en', 'status'])->where('status', 1)->get(),
+            'brands' => Brand::orderBy('id', 'desc')->select(['id', 'name_en', 'status'])->where('status', 1)->get(),
         ];
         $product = $this->product->edit($id);
         return view('layouts.admin.ecommerce.product.edit', compact('product','data'));

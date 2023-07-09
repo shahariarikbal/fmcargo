@@ -9,7 +9,7 @@ class BlogRepository implements CargoEcommerce
 {
     public function getAllData()
     {
-        return Blog::orderBy('id', 'desc')->select(['id', 'title', 'image'])->get();
+        return Blog::orderBy('id', 'desc')->select(['id', 'title_en', 'image'])->get();
     }
 
     public function store($data = [])
@@ -20,10 +20,10 @@ class BlogRepository implements CargoEcommerce
         }
 
         Blog::create([
-            'title' => $data['title'],
+            'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
-            'slug' => Str::slug($data['title']),
-            'description' => $data['description'],
+            'slug' => Str::slug($data['title_en']),
+            'description_en' => $data['description_en'],
             'description_bn' => $data['description_bn'],
             'image' => $imgname,
         ]);
@@ -45,10 +45,10 @@ class BlogRepository implements CargoEcommerce
         }
 
         $blog->update([
-            'title' => $data['title'],
+            'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
-            'slug' => Str::slug($data['title']),
-            'description' => $data['description'],
+            'slug' => Str::slug($data['title_en']),
+            'description_en' => $data['description_en'],
             'description_bn' => $data['description_bn'],
             'image' => $updateImgName,
         ]);
