@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Http\Requests\StoreProductRequest;
 use App\Http\Controllers\Controller;
 use App\Repository\CargoEcommerce;
 use App\Models\Brand;
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -34,7 +35,7 @@ class ProductController extends Controller
         return view('layouts.admin.ecommerce.product.add', compact('data'));
     }
 
-    public function productStore(Request $request)
+    public function productStore(StoreProductRequest $request):RedirectResponse
     {
         try {
             $product = $request->only(['name_en','name_bn','price_bn','short_description_bn','long_description_bn','sku','cat_id','brand_id','image','gallery_image','price_en','qty_en','qty_bn','short_description_en','long_description_en']);
