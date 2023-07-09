@@ -18,7 +18,7 @@
                     </li>
                     <li class="active">
                         <a href="javascript:void(0)">
-                            {{ $blog?->title }}
+                            {{ $blog?->{ 'title_'.app()->getLocale() } }}
                         </a>
                     </li>
                 </ul>
@@ -44,10 +44,10 @@
                                 </li>
                             </ul>
                             <h2 class="blog-item-title">
-                                {{ $blog->title }}
+                                {{ $blog->{ 'title_'.app()->getLocale() } }}
                             </h2>
                             <p class="blog-item-text">
-                                {!! $blog->description !!}
+                                {!! $blog->{ 'description_'.app()->getLocale() } !!}
                             </p>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             </a>
                             <div class="recent-blog-content">
                                 <a href="{{ url('/blog/details/'.$relatedPost?->id.'/'.$blog?->slug) }}" target="_blank" class="recent-blog-title">
-                                    {{ substr($relatedPost->title,0,50) }}
+                                    {{ substr($relatedPost->{ 'title_'.app()->getLocale() } ,0,50) }}
                                 </a>
                                 <p class="recent-blog-post-date">
                                     {{ $relatedPost->created_at->format('Y M-d') }}

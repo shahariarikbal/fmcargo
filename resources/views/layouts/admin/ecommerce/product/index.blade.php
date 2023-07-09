@@ -31,11 +31,11 @@
                @foreach($products as $product)
                    <tr>
                        <td>{{ $loop->index+1 }}</td>
-                       <td>{{ ucfirst($product->name) }}</td>
-                       <td>{{ $product->category->name }}y</td>
-                       <td>{{ $product->brand->name }}</td>
-                       <td>{{ $product->price }}</td>
-                       <td>{{ $product->qty }}</td>
+                       <td>{{ ucfirst($product->name_en) }}</td>
+                       <td>{{ $product->category->name_en }}</td>
+                       <td>{{ $product->brand->name_en }}</td>
+                       <td>{{ $product->price_en }}</td>
+                       <td>{{ $product->qty_en }}</td>
                        <td>
                         @if (substr($product->image, 0, 5) == 'https')
                             <img src="https://via.placeholder.com/640x480.png/00bbbb?text=commodi" alt="" height="20px" width="40px">

@@ -26,7 +26,7 @@
                 @foreach($blogs as $blog)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
-                        <td>{{ ucfirst($blog?->title) }}</td>
+                        <td>{{ ucfirst($blog?->title_en) }}</td>
                         <td>
                             <img src="{{ asset('/blog/'.$blog?->image) }}" height="70" width="100" />
                         </td>

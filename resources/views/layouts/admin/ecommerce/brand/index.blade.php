@@ -26,7 +26,7 @@
                 @foreach($brands as $brand)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
-                        <td>{{ ucfirst($brand->name) }}</td>
+                        <td>{{ ucfirst($brand->name_en) }}</td>
                         <td>
                             @if($brand->status == 1)
                                 <span>Active</span>

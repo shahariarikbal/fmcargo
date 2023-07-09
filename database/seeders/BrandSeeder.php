@@ -19,7 +19,7 @@ class BrandSeeder extends Seeder
             $faker = Faker::create();
 
             Brand::create([
-                'name'  => $faker->name,
+                'name_en'  => $faker->name,
                 'name_bn'  => 'ডেমো নাম',
                 'slug'  => Str::slug($faker->name),
                 'status'  => 1,

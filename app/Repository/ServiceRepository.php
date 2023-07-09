@@ -8,7 +8,7 @@ class ServiceRepository implements CargoEcommerce
 {
     public function getAllData()
     {
-        return Service::orderBy('id', 'desc')->select(['id', 'title', 'image'])->get();
+        return Service::orderBy('id', 'desc')->select(['id', 'title_en', 'image'])->get();
     }
 
     public function store($data = [])
@@ -19,7 +19,7 @@ class ServiceRepository implements CargoEcommerce
         }
 
         Service::create([
-            'title' => $data['title'],
+            'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
             'image' => $imageName,
         ]);
@@ -45,7 +45,7 @@ class ServiceRepository implements CargoEcommerce
         }
 
         $service->update([
-            'title' => $data['title'],
+            'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
             'image' => $imgname,
         ]);

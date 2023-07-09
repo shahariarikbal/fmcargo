@@ -15,9 +15,9 @@
                     <form action="{{ route('service.update', $service?->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="title">Title</x-admin.label>
-                            <x-admin.input type="text" id="title" name="title" value="{{ $service?->title ?? old('title') }}" placeholder="Enter service title..."></x-admin.input>
-                            <x-admin.input-error for="title" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="title_en">Title</x-admin.label>
+                            <x-admin.input type="text" id="title_en" name="title_en" value="{{ $service?->title_en ?? old('title_en') }}" placeholder="Enter service title..."></x-admin.input>
+                            <x-admin.input-error for="title_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">

@@ -15,9 +15,9 @@
                         <form action="{{ route('blog.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                                <x-admin.label for="title">Title</x-admin.label>
-                                <x-admin.input type="text" id="title" name="title" value="{{ old('title') }}" placeholder="Enter service title..."></x-admin.input>
-                                <x-admin.input-error for="title" class="mt-2"></x-admin.input-error>
+                                <x-admin.label for="title_en">Title</x-admin.label>
+                                <x-admin.input type="text" id="title_en" name="title_en" value="{{ old('title_en') }}" placeholder="Enter service title..."></x-admin.input>
+                                <x-admin.input-error for="title_en" class="mt-2"></x-admin.input-error>
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
@@ -27,9 +27,9 @@
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                                <x-admin.label for="description">Description</x-admin.label>
-                                <x-admin.textarea id="description" class="ckeditor" name="description" placeholder="Enter service description..."></x-admin.textarea>
-                                <x-admin.input-error for="description" class="mt-2"></x-admin.input-error>
+                                <x-admin.label for="description_en">Description</x-admin.label>
+                                <x-admin.textarea id="description_en" class="ckeditor" name="description_en" placeholder="Enter service description..."></x-admin.textarea>
+                                <x-admin.input-error for="description_en" class="mt-2"></x-admin.input-error>
                             </x-admin.input-group-div>
 
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">

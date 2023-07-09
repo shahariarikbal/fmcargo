@@ -41,7 +41,8 @@ class UserController extends Controller
     public function sliderStore(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'title_en' => 'required',
+            'title_bn' => 'required',
             'image' => 'required',
         ]);
 
@@ -50,7 +51,8 @@ class UserController extends Controller
             $request->image->move('slider/', $imageName);
 
             Slider::create([
-                'title' => $request->title,
+                'title_en' => $request->title_en,
+                'title_bn' => $request->title_bn,
                 'image' => $imageName,
             ]);
 
@@ -73,7 +75,8 @@ class UserController extends Controller
     public function sliderUpdate(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'title_bn' => 'required',
+            'title_en' => 'required',
         ]);
 
         try {
@@ -88,7 +91,8 @@ class UserController extends Controller
             }
 
             $slider->update([
-                'title' => $request->title,
+                'title_en' => $request->title_en,
+                'title_bn' => $request->title_bn,
             ]);
 
             $this->setSuccessMessage('Slider has been updated.');

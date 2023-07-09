@@ -35,7 +35,7 @@ class BlogController extends Controller
     public function blogStore(BlogRequest $request): \Illuminate\Http\RedirectResponse
     {
         try {
-            $blog = $request->only(['title','title_bn', 'description','description_bn', 'image']);
+            $blog = $request->only(['title_en','title_bn', 'description_en','description_bn', 'image']);
             $this->blog->store($blog);
             $this->setSuccessMessage('Blog has been created');
             return redirect()->route('blog.list');
@@ -54,7 +54,7 @@ class BlogController extends Controller
     public function blogUpdate(BlogUpdateRequest $request, $id): \Illuminate\Http\RedirectResponse
     {
         try {
-            $blogUpdate = $request->only(['title','title_bn', 'description','description_bn', 'image']);
+            $blogUpdate = $request->only(['title_en','title_bn', 'description_en','description_bn', 'image']);
             $this->blog->update($blogUpdate, $id);
             $this->setSuccessMessage('Blog has been updated');
             return redirect()->route('blog.list');

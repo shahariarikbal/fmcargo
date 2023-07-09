@@ -26,7 +26,7 @@
                 @foreach($categories as $category)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
-                        <td>{{ ucfirst($category->name) }}</td>
+                        <td>{{ ucfirst($category->name_en) }}</td>
                         <td>
                             @if($category->status == 1)
                                 <span>Active</span>

@@ -9,15 +9,15 @@ class BrandRepository implements CargoEcommerce
 {
     public function getAllData()
     {
-        return Brand::orderBy('id', 'desc')->select(['id', 'name', 'slug', 'status'])->get();
+        return Brand::orderBy('id', 'desc')->select(['id', 'name_en', 'slug', 'status'])->get();
     }
 
     public function store($data = [])
     {
         Brand::create([
-            'name' => $data['name'],
+            'name_en' => $data['name_en'],
             'name_bn' => $data['name_bn'],
-            'slug' => Str::slug($data['name']),
+            'slug' => Str::slug($data['name_en']),
         ]);
     }
 
@@ -25,9 +25,9 @@ class BrandRepository implements CargoEcommerce
     {
        $brand = Brand::find($id);
         $brand->update([
-            'name' => $data['name'],
+            'name_en' => $data['name_en'],
             'name_bn' => $data['name_bn'],
-            'slug' => Str::slug($data['name']),
+            'slug' => Str::slug($data['name_en']),
         ]);
     }
 

@@ -128,7 +128,11 @@
                         <i class="fa fa-chevron-down"></i>
                     </a>
                     <ul class="nav-item-submenu">
-                        <li class="submenu-item">
+                        @foreach(config('app.available_locale') as $locale)
+                        <li class="submenu-item"><a class="submenu-item-link" href="{{ request()->url() }}?language={{ $locale }}">{{
+                                strtoupper($locale) }}</a></li>
+                        @endforeach
+                        {{-- <li class="submenu-item">
                             <a href="#" class="submenu-item-link">
                                 English
                             </a>
@@ -137,7 +141,7 @@
                             <a href="#" class="submenu-item-link">
                                 Bangla
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
             </ul>

@@ -20,10 +20,10 @@ class BlogSeeder extends Seeder
             $faker = Faker::create();
 
             Blog::create([
-                'title'  => $faker->name,
+                'title_en'  => $faker->name,
                 'title_bn'  => 'ডেমো টাইটেল',
                 'slug'  => Str::slug($faker->name),
-                'description'  => $faker->sentence,
+                'description_en'  => $faker->sentence,
                 'description_bn'  => 'ডেমো ডেসক্রিপশন',
                 'image'  => $faker->imageUrl,
             ]);
