@@ -40,7 +40,7 @@
                             @foreach ($categories as $category )
                             <li class="category-list-item">
                                 <a href="{{ url('/shop/category-products/'.$category->id.'/'.$category->slug) }}" class="category-list-item-link">
-                                    {{ $category->name }}
+                                    {{ $category->{'name_'.app()->getLocale()} }}
                                 </a>
                             </li>
                             @endforeach
@@ -92,14 +92,14 @@
                                             </li>
                                         </ul>  --}}
                                         <a href="{{ url('/product/details/'.$product->id) }}" class="product-name">
-                                            {{ $product->name }}
+                                            {{ $product->{'name_'.app()->getLocale()} }}
                                         </a>
                                         <div class="product-price-outer">
                                             {{--  <del class="main-price">
                                                 $300
                                             </del>  --}}
                                             <span class="discount-price">
-                                                ${{ $product->price }}
+                                                ${{ $product->{'price_'.app()->getLocale()} }}
                                             </span>
                                         </div>
                                     </div>
