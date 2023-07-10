@@ -123,7 +123,7 @@
                         <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="details-tab-info">
                                 {{--  <p class="text">  --}}
-                                  {{ $product->{'long_description_'.app()->getLocale()}}}
+                                    {!! $product->{'long_description_'.app()->getLocale()} !!}
                                 {{--  </p>  --}}
                                 {{--  <p class="text">
                                     The paragraph may also highlight any benefits or advantages that the product offers to the consumer, such as improved performance, durability, or convenience. Additionally, the product details paragraph may provide information on how to use the product, as well as any care or maintenance requirements that the user should be aware of. Overall, the purpose of a product details.
