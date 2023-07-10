@@ -29,10 +29,10 @@
                 @foreach($testimonials as $testimonial)
                     <tr>
                         <td>{{ $loop->index+1 }}</td>
-                        <td>{{ $testimonial?->reviewer_name }}</td>
-                        <td>{{ $testimonial?->reviewer_designation }}</td>
-                        <td>{{ $testimonial?->short_comment }}</td>
-                        <td>{{ $testimonial?->long_comment }}</td>
+                        <td>{{ $testimonial?->reviewer_name_en }}</td>
+                        <td>{{ $testimonial?->reviewer_designation_en }}</td>
+                        <td>{{ $testimonial?->short_comment_en }}</td>
+                        <td>{{ $testimonial?->long_comment_en }}</td>
                         <td>
                             <img src="{{ asset('/testimonial/'.$testimonial?->reviewer_image) }}" height="70" width="100" />
                         </td>
