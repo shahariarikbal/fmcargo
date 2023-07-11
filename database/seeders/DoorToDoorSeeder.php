@@ -4,16 +4,16 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\ClearingForwarding;
+use App\Models\DoorToDoor;
 
-class ClearingForwardingSeeder extends Seeder
+class DoorToDoorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $clearing_forwarding = [
+        $door_to_door = [
             ['header_title_en' => 'Door to Door Service', 'header_title_bn' => 'ডোর টু ডোর সার্ভিস',
              'header_desc_en' => 'FM Cargo provides a reliable and hassle-free door to door shipping service from China, Dubai, Malaysia, USA, UK, EU, France, Hong Kong, Singapore, Australia, Thailand, Pakistan, and India. We have strategically located warehouses in these countries to ensure a seamless and efficient shipping process for our clients. Our experienced team takes care of everything from packing, custom clearance, and transportation to ensure that your shipment arrives at your doorstep on time and in perfect condition. Trust FM Cargo to handle all your door to door shipping needs. Let’s see what our Door to Door service includes.',
             'header_desc_bn' => 'এফএম কার্গো চীন, দুবাই, মালয়েশিয়া, মার্কিন যুক্তরাষ্ট্র, যুক্তরাজ্য, ইইউ, ফ্রান্স, হংকং, সিঙ্গাপুর, অস্ট্রেলিয়া, থাইল্যান্ড, পাকিস্তান এবং ভারত থেকে একটি নির্ভরযোগ্য এবং ঝামেলামুক্ত ডোর টু ডোর শিপিং পরিষেবা প্রদান করে। আমাদের ক্লায়েন্টদের জন্য একটি নির্বিঘ্ন এবং দক্ষ শিপিং প্রক্রিয়া নিশ্চিত করার জন্য আমাদের এই দেশগুলিতে কৌশলগতভাবে গুদামগুলি রয়েছে। আপনার চালান সময়মতো এবং নিখুঁত অবস্থায় আপনার দোরগোড়ায় পৌঁছেছে তা নিশ্চিত করতে আমাদের অভিজ্ঞ দল প্যাকিং, কাস্টম ক্লিয়ারেন্স এবং পরিবহন থেকে সবকিছুর যত্ন নেয়। আপনার ডোর টু ডোর শিপিং প্রয়োজনীয়তাগুলি পরিচালনা করার জন্য FM কার্গোকে বিশ্বাস করুন। আসুন দেখি আমাদের ডোর টু ডোর পরিষেবাতে কী অন্তর্ভুক্ত রয়েছে।',
@@ -63,6 +63,6 @@ class ClearingForwardingSeeder extends Seeder
             'footer_desc_bn' => 'এফএম কার্গোতে, আমরা আমাদের ক্লায়েন্টদের নির্ভরযোগ্য এবং দক্ষ দ্বারে দ্বারে সেবা প্রদান করতে প্রতিশ্রুতিবদ্ধ। আমরা ব্যক্তিগতকৃত সমাধান অফার করি যা আপনার নির্দিষ্ট প্রয়োজনীয়তা পূরণ করে এবং নিশ্চিত করে যে আপনার পণ্যগুলি সময়মতো এবং নিখুঁত অবস্থায় বিতরণ করা হয়। আমাদের ডোর টু ডোর পরিষেবা সম্পর্কে আরও জানতে এবং কীভাবে আমরা আপনার শিপিং এবং লজিস্টিক চাহিদাগুলির সাথে আপনাকে সহায়তা করতে পারি তা জানতে আজই আমাদের সাথে যোগাযোগ করুন৷'],
         ];
 
-        ClearingForwarding::insert($clearing_forwarding);
+        DoorToDoor::insert($door_to_door);
     }
 }
