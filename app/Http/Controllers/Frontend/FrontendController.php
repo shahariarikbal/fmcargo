@@ -11,6 +11,7 @@ use App\Models\Contact;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\ClearingForwarding;
+use App\Models\DoorToDoor;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 use Auth;
@@ -100,7 +101,8 @@ class FrontendController extends Controller
 
     public function serviceDetails()
     {
-        return view('layouts.frontend.service.service-details');
+        $door_to_door = DoorToDoor::first();
+        return view('layouts.frontend.service.service-details', compact('door_to_door'));
     }
     public function specializedService()
     {
