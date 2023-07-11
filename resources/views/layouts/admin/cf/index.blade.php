@@ -1,11 +1,11 @@
 @extends('layouts.admin.master')
 
 @section('content')
-    <h1 class="mt-4">Settings</h1>
+    <h1 class="mt-4">C & F</h1>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Settings
+            C & F
         </div>
         <div class="row" style="padding: 30px;">
             <div class="col-md-2"></div>
