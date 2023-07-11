@@ -159,7 +159,6 @@ Route::middleware([
     });
 
     Route::group(['prefix' => 'cf'], function (){
-        Route::get('/list', [ClearingForwardingController::class, 'cfList'])->name('c_&_f.list');
         Route::get('/edit/{id}', [ClearingForwardingController::class, 'cfEdit'])->name('c_&_f.edit');
         Route::post('/update/{id}', [ClearingForwardingController::class, 'cfUpdate'])->name('c_&_f.update');
     });

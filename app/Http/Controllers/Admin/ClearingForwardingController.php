@@ -16,10 +16,9 @@ class ClearingForwardingController extends Controller
         $this->clearing_forwarding = $cargoEcommerce;
     }
 
-    public function cfList ():View
+    public function cfEdit ($id)
     {
-        return view('layouts.admin.cf.index', [
-            'clear_forwarding' => $this->clearing_forwarding->getAllData()
-        ]);
+        $clear_forwarding = $this->clearing_forwarding->edit($id);
+        return view('layouts.admin.cf.index', compact('clear_forwarding'));
     }
 }

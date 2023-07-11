@@ -9,7 +9,7 @@ class ClearingForwardingRepository implements CargoEcommerce
 {
     public function getAllData()
     {
-        return ClearingForwarding::first();
+        return $clearForwarding = ClearingForwarding::first();
     }
 
     public function store($data = [])
@@ -43,29 +43,18 @@ class ClearingForwardingRepository implements CargoEcommerce
 
     public function edit($id)
     {
-        return $blog = Blog::find($id);
+        return $clearForwarding = ClearingForwarding::find($id);
     }
 
     public function delete($id)
     {
-        $blog = Blog::find($id);
-        if ($blog->image && file_exists(public_path('blog/'.$blog->image))){
-            unlink(public_path('blog/'.$blog->image));
-        }
-        $blog->delete();
     }
 
     public function active($id)
     {
-        $blog = Blog::find($id);
-        $blog->status = false;
-        $blog->save();
     }
 
     public function inactive($id)
     {
-        $blog = Blog::find($id);
-        $blog->status = true;
-        $blog->save();
     }
 }
