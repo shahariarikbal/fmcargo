@@ -57,7 +57,7 @@
                     <div class="col-lg-7 col-md-7">
                         <div class="product-details-right">
                             <h3 class="product-name">
-                                {{ $product->short_description }}
+                                {{ $product->{'short_description_'.app()->getLocale()} }}
                             </h3>
                             {{--  <ul class="product-details-item-ratting">
                                 <li>
@@ -82,7 +82,7 @@
                                     $1500
                                 </del>  --}}
                                 <span class="discount-price">
-                                    ${{ $product->price }}
+                                    ${{ $product->{'price_'.app()->getLocale()} }}
                                 </span>
                                 {{--  <span class="discount-price-persect">
                                     (-15%)
@@ -105,7 +105,7 @@
                             <a href="{{ url('/product/add-to-cart/'.$product->id) }}" class="buy-now-btn">Buy Now</a>
                             <p class="category-of-product">
                                 <strong>Category:</strong>
-                                {{ $product->category->name }}
+                                {{ $product->category->{'name_'.app()->getLocale()} }}
                             </p>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                         <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="details-tab-info">
                                 {{--  <p class="text">  --}}
-                                    {!! $product->long_description !!}
+                                    {{ $product->{'long_description_'.app()->getLocale()} }}
                                 {{--  </p>  --}}
                                 {{--  <p class="text">
                                     The paragraph may also highlight any benefits or advantages that the product offers to the consumer, such as improved performance, durability, or convenience. Additionally, the product details paragraph may provide information on how to use the product, as well as any care or maintenance requirements that the user should be aware of. Overall, the purpose of a product details.

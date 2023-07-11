@@ -20,10 +20,14 @@ class TestimonialRepository implements CargoEcommerce
         }
 
         Testimonial::create([
-            'reviewer_name' => $data['reviewer_name'],
-            'reviewer_designation' => $data['reviewer_designation'],
-            'short_comment' => $data['short_comment'],
-            'long_comment' => $data['long_comment'],
+            'reviewer_name_en' => $data['reviewer_name_en'],
+            'reviewer_designation_en' => $data['reviewer_designation_en'],
+            'short_comment_en' => $data['short_comment_en'],
+            'long_comment_en' => $data['long_comment_en'],
+            'reviewer_name_bn' => $data['reviewer_name_bn'],
+            'reviewer_designation_bn' => $data['reviewer_designation_bn'],
+            'short_comment_bn' => $data['short_comment_bn'],
+            'long_comment_bn' => $data['long_comment_bn'],
             'reviewer_image' => $imageName,
         ]);
     }
@@ -49,10 +53,14 @@ class TestimonialRepository implements CargoEcommerce
         }
 
         $testimonial->update([
-            'reviewer_name' => $data['reviewer_name'],
-            'reviewer_designation' => $data['reviewer_designation'],
-            'short_comment' => $data['short_comment'],
-            'long_comment' => $data['long_comment'],
+            'reviewer_name_en' => $data['reviewer_name_en'],
+            'reviewer_designation_en' => $data['reviewer_designation_en'],
+            'short_comment_en' => $data['short_comment_en'],
+            'long_comment_en' => $data['long_comment_en'],
+            'reviewer_name_bn' => $data['reviewer_name_bn'],
+            'reviewer_designation_bn' => $data['reviewer_designation_bn'],
+            'short_comment_bn' => $data['short_comment_bn'],
+            'long_comment_bn' => $data['long_comment_bn'],
             'reviewer_image' => $imgname,
         ]);
     }

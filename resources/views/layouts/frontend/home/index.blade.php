@@ -232,19 +232,19 @@
                         </div>
                         <div class="author-info">
                             <h6 class="author-name">
-                                {{ $testimonial->reviewer_name }}
+                                {{ $testimonial->{'reviewer_name_'.app()->getLocale() } }}
                             </h6>
                             <p class="description">
-                                {{ $testimonial->reviewer_designation }}
+                                {{ $testimonial->{'reviewer_designation_'.app()->getLocale()} }}
                             </p>
                         </div>
                     </div>
                     <div class="testimonial-info">
                         <h6 class="testimonial-title">
-                            {{ $testimonial->short_comment }}
+                            {{ $testimonial->{'short_comment_'.app()->getLocale()} }}
                         </h6>
                         <p class="text">
-                            {{ $testimonial->long_comment }}
+                            {{ $testimonial->{'long_comment_'.app()->getLocale()} }}
                         </p>
                     </div>
                 </div>
