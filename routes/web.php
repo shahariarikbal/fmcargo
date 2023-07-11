@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\YoutubeController;
+use App\Http\Controllers\Admin\ClearingForwardingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -155,6 +156,11 @@ Route::middleware([
         Route::get('/edit/{id}', [TestimonialController::class, 'testimonialEdit'])->name('testimonial.edit');
         Route::post('/update/{id}', [TestimonialController::class, 'testimonialUpdate'])->name('testimonial.update');
         Route::get('/destroy/{id}', [TestimonialController::class, 'testimonialDelete'])->name('testimonial.delete');
+    });
+
+    Route::group(['prefix' => 'cf'], function (){
+        Route::get('/edit/{id}', [ClearingForwardingController::class, 'cfEdit'])->name('c_&_f.edit');
+        Route::post('/update/{id}', [ClearingForwardingController::class, 'cfUpdate'])->name('c_&_f.update');
     });
 
     Route::group(['prefix' => 'admin/order'], function (){

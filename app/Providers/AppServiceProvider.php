@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\YoutubeController;
+use App\Http\Controllers\Admin\ClearingForwardingController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Models\Blog;
@@ -24,6 +25,7 @@ use App\Repository\FrontendRepository;
 use App\Repository\TestimonialRepository;
 use App\Models\Setting;
 use App\Repository\YoutubeVideoRepository;
+use App\Repository\ClearingForwardingRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Request;
 use Auth;
@@ -69,6 +71,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->when(YoutubeController::class)->needs(CargoEcommerce::class)->give(function (){
             return new YoutubeVideoRepository();
+        });
+
+        $this->app->when(ClearingForwardingController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new ClearingForwardingRepository();
         });
     }
 
