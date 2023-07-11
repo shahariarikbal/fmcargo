@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('reviewer_name');
-            $table->string('reviewer_designation');
+            $table->string('reviewer_name_en');
+            $table->string('reviewer_name_bn');
+            $table->string('reviewer_designation_en');
+            $table->string('reviewer_designation_bn');
             $table->string('reviewer_image');
-            $table->text('short_comment');
-            $table->longText('long_comment');
+            $table->text('short_comment_en');
+            $table->text('short_comment_bn');
+            $table->longText('long_comment_en');
+            $table->longText('long_comment_bn');
             $table->timestamps();
         });
     }

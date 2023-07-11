@@ -22,10 +22,14 @@ class TestimonialUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reviewer_name' => 'required',
-            'reviewer_designation' => 'required',
-            'short_comment' => 'required',
-            'long_comment' => 'required',
+            'reviewer_name_en' => 'required',
+            'reviewer_designation_en' => 'required',
+            'short_comment_en' => 'required',
+            'long_comment_en' => 'required',
+            'reviewer_name_bn' => 'required',
+            'reviewer_designation_bn' => 'required',
+            'short_comment_bn' => 'required',
+            'long_comment_bn' => 'required',
         ];
     }
 }

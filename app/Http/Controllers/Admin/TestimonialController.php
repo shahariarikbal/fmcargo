@@ -34,7 +34,7 @@ class TestimonialController extends Controller
     public function testimonialStore (Request $request)
     {
         try {
-            $testimonial = $request->only(['reviewer_name','reviewer_designation','reviewer_image','short_comment','long_comment']);
+            $testimonial = $request->only(['reviewer_name_en','reviewer_designation_en','reviewer_image','short_comment_en','long_comment_en','reviewer_name_bn','reviewer_designation_bn','short_comment_bn','long_comment_bn',]);
             $this->testimonial->store($testimonial);
             $this->setSuccessMessage('Testimonial has been created.');
             return redirect()->route('testimonial.list');
