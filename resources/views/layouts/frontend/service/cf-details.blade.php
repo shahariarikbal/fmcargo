@@ -62,7 +62,7 @@
             	</div>
             	<div class="col-md-6">
             		<div class="service-details-right">
-            			<img src="{{ asset('clearing/'.$clear_forwarding->pro_sourcing_img) }}">
+            			<img src="{{ asset('clearing_forwarding/'.$clear_forwarding->pro_sourcing_img) }}">
             		</div>
             	</div>
             </div>
@@ -73,7 +73,7 @@
             <div class="row align-items-center">
             	<div class="col-md-6">
             		<div class="service-details-right">
-            			<img src="{{ asset('clearing/'.$clear_forwarding->free_warehousing_img) }}">
+            			<img src="{{ asset('clearing_forwarding/'.$clear_forwarding->free_warehousing_img) }}">
             		</div>
             	</div>
             	<div class="col-md-6">
@@ -110,7 +110,7 @@
             	</div>
             	<div class="col-md-6">
             		<div class="service-details-right">
-            			<img src="{{ asset('clearing/'.$clear_forwarding->inspection_img) }}">
+            			<img src="{{ asset('clearing_forwarding/'.$clear_forwarding->inspection_img) }}">
             		</div>
             	</div>
             </div>
@@ -121,7 +121,7 @@
             <div class="row align-items-center">
             	<div class="col-md-6">
             		<div class="service-details-right">
-            			<img src="{{ asset('clearing/'.$clear_forwarding->repacking_img) }}">
+            			<img src="{{ asset('clearing_forwarding/'.$clear_forwarding->repacking_img) }}">
             		</div>
             	</div>
             	<div class="col-md-6">
@@ -158,7 +158,7 @@
             	</div>
             	<div class="col-md-6">
             		<div class="service-details-right">
-            			<img src="{{ asset('clearing/'.$clear_forwarding->custom_clr_img) }}">
+            			<img src="{{ asset('clearing_forwarding/'.$clear_forwarding->custom_clr_img) }}">
             		</div>
             	</div>
             </div>
@@ -169,7 +169,7 @@
             <div class="row align-items-center">
             	<div class="col-md-6">
             		<div class="service-details-right">
-            			<img src="{{ asset('clearing/'.$clear_forwarding->d_step_delivery_img) }}">
+            			<img src="{{ asset('clearing_forwarding/'.$clear_forwarding->d_step_delivery_img) }}">
             		</div>
             	</div>
             	<div class="col-md-6">
