@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\YoutubeController;
 use App\Http\Controllers\Admin\ClearingForwardingController;
+use App\Http\Controllers\Admin\DoorToDoorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -161,6 +162,11 @@ Route::middleware([
     Route::group(['prefix' => 'cf'], function (){
         Route::get('/edit/{id}', [ClearingForwardingController::class, 'cfEdit'])->name('c_&_f.edit');
         Route::post('/update/{id}', [ClearingForwardingController::class, 'cfUpdate'])->name('c_&_f.update');
+    });
+
+    Route::group(['prefix' => 'door_to_door'], function (){
+        Route::get('/edit/{id}', [DoorToDoorController::class, 'doorEdit'])->name('door.edit');
+        Route::post('/update/{id}', [DoorToDoorController::class, 'doorUpdate'])->name('door.update');
     });
 
     Route::group(['prefix' => 'admin/order'], function (){

@@ -2,14 +2,14 @@
 
 namespace App\Repository;
 
-use App\Models\ClearingForwarding;
+use App\Models\DoorToDoor;
 use Illuminate\Support\Str;
 
-class ClearingForwardingRepository implements CargoEcommerce
+class DoorToDoorRepository implements CargoEcommerce
 {
     public function getAllData()
     {
-        return $clearForwarding = ClearingForwarding::first();
+        return $door_to_door = DoorToDoor::first();
     }
 
     public function store($data = [])
@@ -18,75 +18,75 @@ class ClearingForwardingRepository implements CargoEcommerce
 
     public function update($data = [], $id = [])
     {
-        $clearing_forwarding = ClearingForwarding::find($id);
+        $door_to_door = DoorToDoor::find($id);
 
         if(isset($data['pro_sourcing_img'])){
-            if ($clearing_forwarding->pro_sourcing_img && file_exists(public_path('clearing_forwarding/'.$clearing_forwarding->pro_sourcing_img))){
-                unlink(public_path('clearing_forwarding/'.$clearing_forwarding->pro_sourcing_img));
+            if ($door_to_door->pro_sourcing_img && file_exists(public_path('door_to_door/'.$door_to_door->pro_sourcing_img))){
+                unlink(public_path('door_to_door/'.$door_to_door->pro_sourcing_img));
             }
             $imgname_1 = mt_rand(10000, 99999). '.' . $data['pro_sourcing_img']->getClientOriginalExtension();
-            $data['pro_sourcing_img']->move('clearing_forwarding/', $imgname_1);
+            $data['pro_sourcing_img']->move('door_to_door/', $imgname_1);
         }
         else{
-            $imgname_1 = $clearing_forwarding->pro_sourcing_img;
+            $imgname_1 = $door_to_door->pro_sourcing_img;
         }
 
         if(isset($data['free_warehousing_img'])){
-            if ($clearing_forwarding->free_warehousing_img && file_exists(public_path('clearing_forwarding/'.$clearing_forwarding->free_warehousing_img))){
-                unlink(public_path('clearing_forwarding/'.$clearing_forwarding->free_warehousing_img));
+            if ($door_to_door->free_warehousing_img && file_exists(public_path('door_to_door/'.$door_to_door->free_warehousing_img))){
+                unlink(public_path('door_to_door/'.$door_to_door->free_warehousing_img));
             }
             $imgname_2 = mt_rand(10000, 99999). '.' . $data['free_warehousing_img']->getClientOriginalExtension();
-            $data['free_warehousing_img']->move('clearing_forwarding/', $imgname_2);
+            $data['free_warehousing_img']->move('door_to_door/', $imgname_2);
         }
         else{
-            $imgname_2 = $clearing_forwarding->free_warehousing_img;
+            $imgname_2 = $door_to_door->free_warehousing_img;
         }
 
         if(isset($data['inspection_img'])){
-            if ($clearing_forwarding->inspection_img && file_exists(public_path('clearing_forwarding/'.$clearing_forwarding->inspection_img))){
-                unlink(public_path('clearing_forwarding/'.$clearing_forwarding->inspection_img));
+            if ($door_to_door->inspection_img && file_exists(public_path('door_to_door/'.$door_to_door->inspection_img))){
+                unlink(public_path('door_to_door/'.$door_to_door->inspection_img));
             }
             $imgname_3 = mt_rand(10000, 99999). '.' . $data['inspection_img']->getClientOriginalExtension();
-            $data['inspection_img']->move('clearing_forwarding/', $imgname_3);
+            $data['inspection_img']->move('door_to_door/', $imgname_3);
         }
         else{
-            $imgname_3 = $clearing_forwarding->inspection_img;
+            $imgname_3 = $door_to_door->inspection_img;
         }
 
         if(isset($data['repacking_img'])){
-            if ($clearing_forwarding->repacking_img && file_exists(public_path('clearing_forwarding/'.$clearing_forwarding->repacking_img))){
-                unlink(public_path('clearing_forwarding/'.$clearing_forwarding->repacking_img));
+            if ($door_to_door->repacking_img && file_exists(public_path('door_to_door/'.$door_to_door->repacking_img))){
+                unlink(public_path('door_to_door/'.$door_to_door->repacking_img));
             }
             $imgname_4 = mt_rand(10000, 99999). '.' . $data['repacking_img']->getClientOriginalExtension();
-            $data['repacking_img']->move('clearing_forwarding/', $imgname_4);
+            $data['repacking_img']->move('door_to_door/', $imgname_4);
         }
         else{
-            $imgname_4 = $clearing_forwarding->repacking_img;
+            $imgname_4 = $door_to_door->repacking_img;
         }
 
         if(isset($data['custom_clr_img'])){
-            if ($clearing_forwarding->custom_clr_img && file_exists(public_path('clearing_forwarding/'.$clearing_forwarding->custom_clr_img))){
-                unlink(public_path('clearing_forwarding/'.$clearing_forwarding->custom_clr_img));
+            if ($door_to_door->custom_clr_img && file_exists(public_path('door_to_door/'.$door_to_door->custom_clr_img))){
+                unlink(public_path('door_to_door/'.$door_to_door->custom_clr_img));
             }
             $imgname_5 = mt_rand(10000, 99999). '.' . $data['custom_clr_img']->getClientOriginalExtension();
-            $data['custom_clr_img']->move('clearing_forwarding/', $imgname_5);
+            $data['custom_clr_img']->move('door_to_door/', $imgname_5);
         }
         else{
-            $imgname_5 = $clearing_forwarding->custom_clr_img;
+            $imgname_5 = $door_to_door->custom_clr_img;
         }
 
         if(isset($data['d_step_delivery_img'])){
-            if ($clearing_forwarding->d_step_delivery_img && file_exists(public_path('clearing_forwarding/'.$clearing_forwarding->d_step_delivery_img))){
-                unlink(public_path('clearing_forwarding/'.$clearing_forwarding->d_step_delivery_img));
+            if ($door_to_door->d_step_delivery_img && file_exists(public_path('door_to_door/'.$door_to_door->d_step_delivery_img))){
+                unlink(public_path('door_to_door/'.$door_to_door->d_step_delivery_img));
             }
             $imgname_6 = mt_rand(10000, 99999). '.' . $data['d_step_delivery_img']->getClientOriginalExtension();
-            $data['d_step_delivery_img']->move('clearing_forwarding/', $imgname_6);
+            $data['d_step_delivery_img']->move('door_to_door/', $imgname_6);
         }
         else{
-            $imgname_6 = $clearing_forwarding->d_step_delivery_img;
+            $imgname_6 = $door_to_door->d_step_delivery_img;
         }
 
-        $clearing_forwarding->update([
+        $door_to_door->update([
             'header_title_en' => $data['header_title_en'],
             'header_title_bn' => $data['header_title_bn'],
             'header_desc_en' => $data['header_desc_en'],
@@ -128,7 +128,7 @@ class ClearingForwardingRepository implements CargoEcommerce
 
     public function edit($id)
     {
-        return $clearForwarding = ClearingForwarding::find($id);
+        return $door_to_door = DoorToDoor::find($id);
     }
 
     public function delete($id)
