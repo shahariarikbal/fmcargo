@@ -16,7 +16,11 @@
                             <div class="slider-content">
                                 <h2>{{ ucfirst($slider->{ 'title_'.app()->getLocale() }) }}</h2>
                                 <a href="{{ url('/contact') }}" target="_blank" class="contact-us-link">
+                                    @if (app()->getLocale()=='bn')
+                                    যোগাযোগ করুন
+                                    @else
                                     Contact Us
+                                    @endif
                                 </a>
                             </div>
                         </div>
@@ -33,10 +37,18 @@
             <div class="section-title-wrap">
                 <div class="testimonial-top-left">
                     <h6 class="top-title">
+                        @if (app()->getLocale()=='bn')
+                        সেবা
+                        @else
                         Service
+                        @endif
                     </h6>
                     <h1 class="title">
+                        @if (app()->getLocale()=='bn')
+                        আমাদের মূল্যবান সেবা
+                        @else
                         Our Valuable service
+                        @endif
                     </h1>
                 </div>
             </div>
@@ -114,7 +126,11 @@
             <div class="section-title-wrap">
                 <div class="testimonial-top-left">
                     <h6 class="top-title mb-4">
+                        @if (app()->getLocale()=='bn')
+                        ইউটিউব ভিডিও
+                        @else
                         Youtube Video
+                        @endif
                     </h6>
                 </div>
             </div>
@@ -128,7 +144,11 @@
             </div>
             <div class="youtube-btn-outer">
                 <a href="#" target="_blank" class="youtube-btn-inner">
+                    @if (app()->getLocale()=='bn')
+                    আরো দেখুন
+                    @else
                     See More
+                    @endif
                 </a>
             </div>
         </div>
@@ -147,13 +167,25 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="transport-skill-right">
                         <h6 class="top-title">
+                            @if (app()->getLocale()=='bn')
+                            আমাদের কার্গো
+                            @else
                             OUR CARGO
+                            @endif
                         </h6>
                         <h2 class="title">
+                            @if (app()->getLocale()=='bn')
+                            পরিবহন দক্ষতা
+                            @else
                             Transportations Skills
+                            @endif
                         </h2>
                         <p class="text">
+                            @if (app()->getLocale()=='bn')
+                            আমরা কেবল সরবরাহকারীদের পরিচালনা করি না, আমরা তাদের মাইক্রো-ম্যানেজ করি। নতুন কর্মচারী নিয়োগের জন্য আমাদের একটি পরামর্শমূলক, ব্যক্তিগতকৃত পদ্ধতি রয়েছে।
+                            @else
                             We don’t just manage suppliers, we micro-manage them. We have a consultative, personalized approach to hiring new employees.
+                            @endif
                         </p>
                         <div class="transport-skill-progress-wrap">
                             <div class="transport-skill-progress-item">
@@ -216,10 +248,18 @@
             <div class="section-title-wrap">
                 <div class="testimonial-top-left">
                     <h6 class="top-title">
+                        @if (app()->getLocale()=='bn')
+                        প্রশংসাপত্র
+                        @else
                         Testimonials
+                        @endif
                     </h6>
                     <h1 class="title">
+                        @if (app()->getLocale()=='bn')
+                        আমাদের গ্রাহক পর্যালোচনা
+                        @else
                         Our Customer Reviews
+                        @endif
                     </h1>
                 </div>
             </div>
