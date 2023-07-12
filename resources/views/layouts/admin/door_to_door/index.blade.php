@@ -70,9 +70,9 @@
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="free_warehousing_title_en ">Free warehousing Title En</x-admin.label>
-                            <x-admin.input type="text" id="free_warehousing_title_en " name="free_warehousing_title_en " value="{{ $door_to_door?->free_warehousing_title_en  ?? old('free_warehousing_title_en ') }}" placeholder="Enter free_warehousing_title_en ..."></x-admin.input>
-                            <x-admin.input-error for="free_warehousing_title_en " class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="free_warehousing_title_en">Free warehousing Title En</x-admin.label>
+                            <x-admin.input type="text" id="free_warehousing_title_en" name="free_warehousing_title_en" value="{{ $door_to_door?->free_warehousing_title_en  ?? old('free_warehousing_title_en ') }}" placeholder="Enter free_warehousing_title_en ..."></x-admin.input>
+                            <x-admin.input-error for="free_warehousing_title_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
@@ -103,8 +103,8 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="inspection_title_en">Inspection Title En</x-admin.label>
-                            <x-admin.input type="text" id="inspection_title_en " name="inspection_title_en" value="{{ $door_to_door?->inspection_title_en ?? old('inspection_title_en ') }}" placeholder="Enter inspection title en  ..."></x-admin.input>
-                            <x-admin.input-error for="inspection_title_en " class="mt-2"></x-admin.input-error>
+                            <x-admin.input type="text" id="inspection_title_en" name="inspection_title_en" value="{{ $door_to_door?->inspection_title_en ?? old('inspection_title_en') }}" placeholder="Enter inspection title en  ..."></x-admin.input>
+                            <x-admin.input-error for="inspection_title_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
