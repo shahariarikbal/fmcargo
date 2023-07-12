@@ -27,13 +27,13 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="header_desc_en"> Header Description En</x-admin.label>
-                            <x-admin.textarea id="header_desc_en" rows="8" name="header_desc_en" value="{{ old('header_desc_en') }}" placeholder="Enter product short description..."></x-admin.textarea>
+                            <x-admin.textarea id="header_desc_en" rows="8" name="header_desc_en" value="{{ $clear_forwarding?->header_desc_en ?? old('header_desc_en') }}" placeholder="Enter product short description..."></x-admin.textarea>
                             <x-admin.input-error for="header_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="header_desc_bn"> Header Description Bn</x-admin.label>
-                            <x-admin.textarea id="header_desc_bn" rows="8" name="header_desc_bn" value="{{ old('header_desc_bn') }}" placeholder="Enter product short description..."></x-admin.textarea>
+                            <x-admin.textarea id="header_desc_bn" rows="8" name="header_desc_bn" value="{{  $clear_forwarding?->header_desc_bn ?? old('header_desc_bn') }}" placeholder="Enter product short description..."></x-admin.textarea>
                             <x-admin.input-error for="header_desc_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -51,13 +51,13 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="pro_sourcing_desc_en"> Pro Sourcing Description En</x-admin.label>
-                            <x-admin.textarea id="pro_sourcing_desc_en" rows="8" name="pro_sourcing_desc_en" value="{{ old('pro_sourcing_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.textarea id="pro_sourcing_desc_en" rows="8" name="pro_sourcing_desc_en" value="{{  $clear_forwarding?->pro_sourcing_desc_en ?? old('pro_sourcing_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
                             <x-admin.input-error for="pro_sourcing_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="pro_sourcing_desc_bn"> Pro Sourcing Description Bn</x-admin.label>
-                            <x-admin.textarea id="pro_sourcing_desc_bn" rows="8" name="pro_sourcing_desc_bn" value="{{ old('pro_sourcing_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.textarea id="pro_sourcing_desc_bn" rows="8" name="pro_sourcing_desc_bn" value="{{  $clear_forwarding?->pro_sourcing_desc_bn ?? old('pro_sourcing_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
                             <x-admin.input-error for="pro_sourcing_desc_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -65,6 +65,7 @@
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="pro_sourcing_img"> Pro Sourcing Image</x-admin.label>
                             <x-admin.input type="file" id="pro_sourcing_img" name="pro_sourcing_img"></x-admin.input>
+                            <img src="{{ asset('product/'.$clear_forwarding->pro_sourcing_img) }}" alt="product" height="100px">
                             <x-admin.input-error for="pro_sourcing_img" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -82,13 +83,13 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="free_warehousing_desc_en"> Free warehousing Description En</x-admin.label>
-                            <x-admin.textarea id="free_warehousing_desc_en" rows="8" name="free_warehousing_desc_en" value="{{ old('free_warehousing_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.textarea id="free_warehousing_desc_en" rows="8" name="free_warehousing_desc_en" value="{{$clear_forwarding?->free_warehousing_desc_en ?? old('free_warehousing_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
                             <x-admin.input-error for="free_warehousing_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="free_warehousing_desc_bn"> Free warehousing Description Bn</x-admin.label>
-                            <x-admin.textarea id="free_warehousing_desc_bn" rows="8" name="free_warehousing_desc_bn" value="{{ old('free_warehousing_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.textarea id="free_warehousing_desc_bn" rows="8" name="free_warehousing_desc_bn" value="{{ $clear_forwarding?->free_warehousing_desc_bn ?? old('free_warehousing_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
                             <x-admin.input-error for="free_warehousing_desc_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -96,6 +97,7 @@
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="free_warehousing_img">  Free warehousing Image</x-admin.label>
                             <x-admin.input type="file" id="free_warehousing_img" name="free_warehousing_img"></x-admin.input>
+                            <img src="{{ asset('product/'.$clear_forwarding->free_warehousing_img) }}" alt="product" height="100px">
                             <x-admin.input-error for="free_warehousing_img" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -113,20 +115,20 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="inspection_desc_en">Inspection Description En</x-admin.label>
-                            <x-admin.textarea id="inspection_desc_en" rows="8" name="inspection_desc_en" value="{{ old('inspection_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.textarea id="inspection_desc_en" rows="8" name="inspection_desc_en" value="{{ $clear_forwarding?->inspection_desc_en ?? old('inspection_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
                             <x-admin.input-error for="inspection_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="inspection_desc_bn">Inspection Description Bn</x-admin.label>
-                            <x-admin.textarea id="inspection_desc_bn" rows="8" name="inspection_desc_bn" value="{{ old('inspection_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.textarea id="inspection_desc_bn" rows="8" name="inspection_desc_bn" value="{{ $clear_forwarding?->inspection_desc_bn ?? old('inspection_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
                             <x-admin.input-error for="inspection_desc_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="inspection_img">Inspection Image</x-admin.label>
-                            <x-admin.input type="file" id="inspection_img" name="inspection_img"></x-admin.input>
+                            <x-admin.input type="file" id="inspection_img" name="inspection_img"></x-admin.input><img src="{{ asset('product/'.$clear_forwarding->inspection_img) }}" alt="product" height="100px">
                             <x-admin.input-error for="inspection_img" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -144,20 +146,20 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="repacking_desc_en">Repacking Description En</x-admin.label>
-                            <x-admin.textarea id="repacking_desc_en" rows="8" name="repacking_desc_en" value="{{ old('repacking_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.textarea id="repacking_desc_en" rows="8" name="repacking_desc_en" value="{{ $clear_forwarding?->repacking_desc_en ?? old('repacking_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
                             <x-admin.input-error for="repacking_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="repacking_desc_bn">Repacking Description Bn</x-admin.label>
-                            <x-admin.textarea id="repacking_desc_bn" rows="8" name="repacking_desc_bn" value="{{ old('repacking_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.textarea id="repacking_desc_bn" rows="8" name="repacking_desc_bn" value="{{ $clear_forwarding?->repacking_desc_bn ?? old('repacking_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
                             <x-admin.input-error for="repacking_desc_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="repacking_img">Repacking Image</x-admin.label>
-                            <x-admin.input type="file" id="repacking_img" name="repacking_img"></x-admin.input>
+                            <x-admin.input type="file" id="repacking_img" name="repacking_img"></x-admin.input><img src="{{ asset('product/'.$clear_forwarding->repacking_img) }}" alt="product" height="100px">
                             <x-admin.input-error for="repacking_img" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
@@ -175,56 +177,67 @@
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="custom_clr_desc_en">Custom Clr Description En</x-admin.label>
-                            <x-admin.textarea id="custom_clr_desc_en" rows="8" name="custom_clr_desc_en" value="{{ old('custom_clr_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.textarea id="custom_clr_desc_en" rows="8" name="custom_clr_desc_en" value="{{ $clear_forwarding?->custom_clr_desc_en ?? old ('custom_clr_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
                             <x-admin.input-error for="custom_clr_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="custom_clr_desc_bn">Custom Clr Description Bn</x-admin.label>
-                            <x-admin.textarea id="custom_clr_desc_bn" rows="8" name="custom_clr_desc_bn" value="{{ old('custom_clr_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.textarea id="custom_clr_desc_bn" rows="8" name="custom_clr_desc_bn" value="{{ $clear_forwarding?->custom_clr_desc_bn ??old('custom_clr_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
                             <x-admin.input-error for="custom_clr_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
                             <x-admin.label for="custom_clr_img">Custom Clr Image</x-admin.label>
-                            <x-admin.input type="file" id="custom_clr_img" name="custom_clr_img"></x-admin.input>
+                            <x-admin.input type="file" id="custom_clr_img" name="custom_clr_img"></x-admin.input><img src="{{ asset('product/'.$clear_forwarding->custom_clr_img) }}" alt="product" height="100px">
                             <x-admin.input-error for="custom_clr_img" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
 
-                        ================================================================================================
-
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="d_step_delivery_title_en">Custom Clr Title En</x-admin.label>
+                            <x-admin.label for="d_step_delivery_title_en">Door Step Delivery Title En</x-admin.label>
                             <x-admin.input type="text" id="d_step_delivery_title_en " name="d_step_delivery_title_en" value="{{ $clear_forwarding?->d_step_delivery_title_en ?? old('d_step_delivery_title_en ') }}" placeholder="Enter inspection title en  ..."></x-admin.input>
                             <x-admin.input-error for="d_step_delivery_title_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="d_step_delivery_title_bn">Custom Clr Title Bn</x-admin.label>
+                            <x-admin.label for="d_step_delivery_title_bn">Door Step Delivery Title Bn</x-admin.label>
                             <x-admin.input type="text" id="d_step_delivery_title_bn" name="d_step_delivery_title_bn" value="{{ $clear_forwarding?->d_step_delivery_title_bn ?? old('d_step_delivery_title_bn') }}" placeholder="Enter d_step_delivery_title_bn..."></x-admin.input>
                             <x-admin.input-error for="d_step_delivery_title_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="d_step_delivery_desc_en">Custom Clr Description En</x-admin.label>
-                            <x-admin.textarea id="d_step_delivery_desc_en" rows="8" name="d_step_delivery_desc_en" value="{{ old('d_step_delivery_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.label for="d_step_delivery_desc_en">Door Step Delivery Description En</x-admin.label>
+                            <x-admin.textarea id="d_step_delivery_desc_en" rows="8" name="d_step_delivery_desc_en" value="{{ $clear_forwarding?->d_step_delivery_desc_en ??old('d_step_delivery_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
                             <x-admin.input-error for="d_step_delivery_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="d_step_delivery_desc_bn">Custom Clr Description Bn</x-admin.label>
-                            <x-admin.textarea id="d_step_delivery_desc_bn" rows="8" name="d_step_delivery_desc_bn" value="{{ old('d_step_delivery_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.label for="d_step_delivery_desc_bn">Door Step Delivery Description Bn</x-admin.label>
+                            <x-admin.textarea id="d_step_delivery_desc_bn" rows="8" name="d_step_delivery_desc_bn" value="{{ $clear_forwarding?->d_step_delivery_desc_bn ??old('d_step_delivery_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
                             <x-admin.input-error for="custom_clr_desc_en" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="d_step_delivery_img ">Custom Clr Image</x-admin.label>
-                            <x-admin.input type="file" id="d_step_delivery_img " name="d_step_delivery_img "></x-admin.input>
+                            <x-admin.label for="d_step_delivery_img ">Door Step Delivery Image</x-admin.label>
+                            <x-admin.input type="file" id="d_step_delivery_img " name="d_step_delivery_img "></x-admin.input><img src="{{ asset('product/'.$clear_forwarding->d_step_delivery_img) }}" alt="product" height="100px">
                             <x-admin.input-error for="d_step_delivery_img " class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
+
+                        <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                            <x-admin.label for="footer_desc_en">Footer Description En</x-admin.label>
+                            <x-admin.textarea id="footer_desc_en" rows="8" name="footer_desc_en" value="{{ $clear_forwarding?->footer_desc_en ??old('footer_desc_en') }}" placeholder="Enter Pro Sourcing Description En..."></x-admin.textarea>
+                            <x-admin.input-error for="footer_desc_en" class="mt-2"></x-admin.input-error>
+                        </x-admin.input-group-div>
+
+                        <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                            <x-admin.label for="footer_desc_bn">Footer  Description Bn</x-admin.label>
+                            <x-admin.textarea id="footer_desc_bn" rows="8" name="footer_desc_bn" value="{{ $clear_forwarding?->footer_desc_bn ??old('footer_desc_bn') }}" placeholder="Enter Pro Sourcing Description Bn..."></x-admin.textarea>
+                            <x-admin.input-error for="custom_clr_desc_en" class="mt-2"></x-admin.input-error>
+                        </x-admin.input-group-div>
+
                         <x-admin.submit-button class="mt-2"><i class="fas fa-plus-circle"></i> Update</x-admin.submit-button>
                     </form>
                 </div>
