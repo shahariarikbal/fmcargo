@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\BlogController;
@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\YoutubeController;
 use App\Http\Controllers\Admin\ClearingForwardingController;
 use App\Http\Controllers\Admin\DoorToDoorController;
-use App\Http\Controllers\SpecializedServiceController;
+use App\Http\Controllers\Admin\SpecializedServiceController;
 
 /*
 |--------------------------------------------------------------------------
