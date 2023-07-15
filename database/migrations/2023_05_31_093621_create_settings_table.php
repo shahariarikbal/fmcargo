@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string('facebook');
             $table->string('whatsapp');
             $table->string('wechat');
-            $table->longText('address');
-            $table->longText('footer_description');
+            $table->longText('address_en');
+            $table->longText('address_bn');
+            $table->longText('footer_description_en');
+            $table->longText('footer_description_bn');
             $table->string('logo');
             $table->timestamps();
         });

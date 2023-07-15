@@ -43,7 +43,10 @@ class SettingRepository implements CargoEcommerce
             'facebook' => $data['facebook'],
             'whatsapp' => $data['whatsapp'],
             'wechat' => $data['wechat'],
-            'address' => $data['address'],
+            'address_en' => $data['address_en'],
+            'address_bn' => $data['address_bn'],
+            'footer_description_en' => $data['footer_description_en'],
+            'footer_description_bn' => $data['footer_description_bn'],
             'logo' => $imgname,
         ]);
     }
