@@ -47,62 +47,106 @@
             <ul class="nav-item-list">
                 <li class="nav-list-item">
                     <a href="{{url('/')}}" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        হোম
+                        @else
                         Home
+                        @endif
                     </a>
                 </li>
                 <li class="nav-list-item item-has-submenu">
                     <a href="javascript:;" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        সেবা
+                        @else
                         Services
+                        @endif
                         <i class="fa fa-chevron-down"></i>
                     </a>
                     <ul class="nav-item-submenu">
                         <li class="submenu-item">
                             <a href="{{ url('/door/to/door/service') }}" class="submenu-item-link">
+                                @if (app()->getLocale()=='bn')
+                                দ্বারে দ্বারে
+                                @else
                                 Door To Door
+                                @endif
                             </a>
                         </li>
                          <li class="submenu-item">
                             <a href="{{ url('/specialized/service') }}" class="submenu-item-link">
+                                @if (app()->getLocale()=='bn')
+                                বিশেষজ্ঞ
+                                @else
                                 Specialized
+                                @endif
                             </a>
                         </li>
                         <li class="submenu-item">
                             <a href="{{ url('/cf/service') }}" class="submenu-item-link">
+                                @if (app()->getLocale()=='bn')
+                                সিএন্ডএফ
+                                @else
                                 C&F
+                                @endif
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-list-item">
                     <a href="{{ url('/tracking') }}" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        ট্র্যাকিং
+                        @else
                         Tracking
+                        @endif
                     </a>
                 </li>
                 <li class="nav-list-item">
                     <a href="{{ url('/shop') }}" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        দোকান
+                        @else
                         Shop
+                        @endif
                     </a>
                 </li>
                 <li class="nav-list-item">
                     <a href="{{ url('/contact') }}" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        যোগাযোগ করুন
+                        @else
                         Contact Us
+                        @endif
                     </a>
                 </li>
                 @if(!session()->get('userId'))
                 <li class="nav-list-item item-has-submenu">
                     <a href="javascript:;" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        সাইন ইন / সাইন আপ
+                        @else
                         SignIn / SignUp
+                        @endif
                         <i class="fa fa-chevron-down"></i>
                     </a>
                     <ul class="nav-item-submenu">
                         <li class="submenu-item">
                             <a href="{{ url('/customer/login') }}" class="submenu-item-link">
+                                @if (app()->getLocale()=='bn')
+                                লগইন
+                                @else
                                 Login
+                                @endif
                             </a>
                         </li>
                         <li class="submenu-item">
                             <a href="{{ url('/registration') }}" class="submenu-item-link">
+                                @if (app()->getLocale()=='bn')
+                                নিবন্ধন
+                                @else
                                 Registration
+                                @endif
                             </a>
                         </li>
                     </ul>
@@ -116,7 +160,11 @@
                         <ul class="nav-item-submenu">
                             <li class="submenu-item">
                                 <a href="{{ url('/customer/logout') }}" class="submenu-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    লগ আউট
+                                    @else
                                     Logout
+                                    @endif
                                 </a>
                             </li>
                         </ul>
@@ -124,7 +172,11 @@
                 @endif
                 <li class="nav-list-item item-has-submenu">
                     <a href="javascript:;" class="nav-item-link">
+                        @if (app()->getLocale()=='bn')
+                        ভাষা
+                        @else
                         Language
+                        @endif
                         <i class="fa fa-chevron-down"></i>
                     </a>
                     <ul class="nav-item-submenu">
