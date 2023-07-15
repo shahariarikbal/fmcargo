@@ -61,11 +61,11 @@
                                 Door To Door
                             </a>
                         </li>
-                        {{--  <li class="submenu-item">
+                         <li class="submenu-item">
                             <a href="{{ url('/specialized/service') }}" class="submenu-item-link">
                                 Specialized
                             </a>
-                        </li>  --}}
+                        </li>
                         <li class="submenu-item">
                             <a href="{{ url('/cf/service') }}" class="submenu-item-link">
                                 C&F
