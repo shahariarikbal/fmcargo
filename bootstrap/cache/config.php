@@ -15,7 +15,7 @@
     ),
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:Hir3SAQI67hfYjYSQH4rnLS+Yb3JYj1Ekb/CifvTrgs=',
+    'key' => 'base64:g9JAOHmhcryjn7vyYv6x4JfpsaAErq2mDTEkLvmdSLY=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -205,7 +205,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -378,13 +378,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -404,7 +404,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\fmcargo\\public\\storage' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\app/public',
+      'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\public\\storage' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\app/public',
     ),
   ),
   'fortify-options' => 
@@ -528,14 +528,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -600,7 +600,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -667,7 +667,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\fmcargo\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -778,7 +778,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -798,9 +798,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\fmcargo\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\framework\\views',
   ),
   'dompdf' => 
   array (
@@ -809,10 +809,10 @@
     'convert_entities' => true,
     'options' => 
     array (
-      'font_dir' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\fonts',
-      'font_cache' => 'C:\\xampp\\htdocs\\fmcargo\\storage\\fonts',
-      'temp_dir' => 'C:\\Users\\WEBCOD~1\\AppData\\Local\\Temp',
-      'chroot' => 'C:\\xampp\\htdocs\\fmcargo',
+      'font_dir' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\fonts',
+      'font_cache' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\storage\\fonts',
+      'temp_dir' => 'C:\\Users\\Aspire\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo',
       'allowed_protocols' => 
       array (
         'file://' => 
@@ -852,7 +852,7 @@
   'livewire' => 
   array (
     'class_namespace' => 'App\\Http\\Livewire',
-    'view_path' => 'C:\\xampp\\htdocs\\fmcargo\\resources\\views/livewire',
+    'view_path' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo\\resources\\views/livewire',
     'layout' => 'layouts.app',
     'asset_url' => NULL,
     'app_url' => NULL,
@@ -1044,7 +1044,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'C:\\xampp\\htdocs\\fmcargo',
+    'remote_sites_path' => 'C:\\xampp\\htdocs\\fmcargoWC_v2\\fmcargo',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',
