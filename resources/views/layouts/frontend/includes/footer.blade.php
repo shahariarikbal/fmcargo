@@ -36,7 +36,7 @@
                     <div class="footer-item-wrapper">
                         <h5 class="footer-item-heading">
                         @if (app()->getLocale()=='bn')
-                        পলিসি
+                        কর্মপন্থা
                         @else
                         Policis
                         @endif
@@ -44,17 +44,29 @@
                         <ul class="service-list">
                             <li class="service-list-item">
                                 <a href="{{ url('/terms/condition') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    শর্তাবলী
+                                    @else
                                     Terms & Conditions
+                                    @endif
                                 </a>
                             </li>
                             <li class="service-list-item">
                                 <a href="{{ url('/privacy/policy') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    গোপনীয়তা নীতি
+                                    @else
                                     Privacy Policy
+                                    @endif
                                 </a>
                             </li>
                             <li class="service-list-item">
                                 <a href="{{ url('/about') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    আমাদের সম্পর্কে
+                                    @else
                                     About Us
+                                    @endif
                                 </a>
                             </li>
                         </ul>
@@ -72,22 +84,38 @@
                         <ul class="service-list">
                             <li class="service-list-item">
                                 <a href="{{ url('/tracking') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    ট্র্যাকিং
+                                    @else
                                     Tracking
+                                    @endif
                                 </a>
                             </li>
                             <li class="service-list-item">
                                 <a href="{{ url('/shop') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    দোকান
+                                    @else
                                     Shop
+                                    @endif
                                 </a>
                             </li>
                             <li class="service-list-item">
                                 <a href="{{ url('/contact') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    যোগাযোগ করুন
+                                    @else
                                     Contact Us
+                                    @endif
                                 </a>
                             </li>
                             <li class="service-list-item">
                                 <a href="{{ url('/customer/login') }}" class="service-list-item-link">
+                                    @if (app()->getLocale()=='bn')
+                                    লগইন
+                                    @else
                                     Login
+                                    @endif
                                 </a>
                             </li>
                         </ul>
@@ -106,7 +134,11 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="content">
                                 <h6 class="name">
+                                    @if (app()->getLocale()=='bn')
+                                    ঠিকানা
+                                    @else
                                     Address
+                                    @endif
                                 </h6>
                                 <p class="text">
                                     {{ $setting->{ 'address_'.app()->getLocale() } }}
@@ -117,7 +149,11 @@
                             <i class="fas fa-mobile-alt"></i>
                             <div class="content">
                                 <h6 class="name">
+                                    @if (app()->getLocale()=='bn')
+                                    ফোন
+                                    @else
                                     PHONE
+                                    @endif
                                 </h6>
                                 <a href="tel:01688801343" class="text">
                                     01688-801343, 01511-027225
@@ -128,7 +164,11 @@
                             <i class="fas fa-envelope"></i>
                             <div class="content">
                                 <h6 class="name">
+                                    @if (app()->getLocale()=='bn')
+                                    ইমেইল
+                                    @else
                                     EMAIL
+                                    @endif
                                 </h6>
                                 <a href="mailto:info@demo.com" class="text">
                                     fmcargoworld@gmail.com
