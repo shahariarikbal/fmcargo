@@ -104,9 +104,11 @@ class FrontendController extends Controller
         $door_to_door = DoorToDoor::first();
         return view('layouts.frontend.service.service-details', compact('door_to_door'));
     }
+
     public function specializedService()
     {
-        return view('layouts.frontend.service.specialized-details');
+        $door_to_door = DoorToDoor::first();
+        return view('layouts.frontend.service.service-details',compact('door_to_door'));
     }
     public function cfService()
     {

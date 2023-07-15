@@ -195,6 +195,6 @@ Route::middleware([
     Route::post('/youtube/update/{id}', [YoutubeController::class, 'youtubeUpdate'])->name('youtube.update');
     Route::get('/youtube/delete/{id}', [YoutubeController::class, 'youtubeDelete'])->name('youtube.delete');
 
-    Route::get('/door/to/door', [UserController::class, 'doorToDoor'])->name('door.to.door');
-    Route::get('/specialized/service', [UserController::class, 'specializedService'])->name('specialized.service');
+    // Route::get('/door/to/door', [UserController::class, 'doorToDoor'])->name('door.to.door');
+    // Route::get('/specialized/service', [UserController::class, 'specializedService'])->name('specialized.service');
 });
