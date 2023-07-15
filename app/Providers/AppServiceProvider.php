@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ClearingForwardingController;
 use App\Http\Controllers\Admin\DoorToDoorController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\SpecializedServiceController;
 use App\Models\Blog;
 use App\Models\AddToCart;
 use App\Repository\BlogRepository;
@@ -28,6 +29,7 @@ use App\Models\Setting;
 use App\Repository\YoutubeVideoRepository;
 use App\Repository\ClearingForwardingRepository;
 use App\Repository\DoorToDoorRepository;
+use App\Repository\SpecializedServiceRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Request;
 use Auth;
@@ -81,6 +83,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->when(DoorToDoorController::class)->needs(CargoEcommerce::class)->give(function (){
             return new DoorToDoorRepository();
+        });
+
+        $this->app->when(SpecializedServiceController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new SpecializedServiceRepository();
         });
     }
 
