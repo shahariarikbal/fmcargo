@@ -9,17 +9,31 @@
 	<section class="banner-section">
 		<div class="container">
 			<div class="banner-content-wrapper">
-				<h1 class="banner-title">Contact Us</h1>
+				<h1 class="banner-title">
+                    @if (app()->getLocale()=='bn')
+                    যোগাযোগ করুন
+                    @else
+                    Contact Us
+                    @endif
+                </h1>
 				<ul class="banner-item">
 					<li>
 						<a href="{{ url('/') }}">
 							<i class="fas fa-home"></i>
-							Home
+                            @if (app()->getLocale()=='bn')
+                            হোম
+                            @else
+                            Home
+                            @endif
 						</a>
 					</li>
 					<li class="active">
 						<a href="javascript:void(0)">
-							Contact
+							@if (app()->getLocale()=='bn')
+                            যোগাযোগ
+                            @else
+                            Contact
+                            @endif
 						</a>
 					</li>
 				</ul>
@@ -36,10 +50,14 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <h5 class="title">
+                            @if (app()->getLocale()=='bn')
+                            ফোন
+                            @else
                             Phone
+                            @endif
                         </h5>
-                        <a href="tel:01688-801343">01688-801343, </a>                       
-                        <a href="tel:01511-027225">01511-027225</a>                       
+                        <a href="tel:01688-801343">01688-801343, </a>
+                        <a href="tel:01511-027225">01511-027225</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
@@ -48,7 +66,11 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h5 class="title">
+                            @if (app()->getLocale()=='bn')
+                            ইমেইল
+                            @else
                             Email
+                            @endif
                         </h5>
                         <a href="mailto:fmcargoworld@gmail.com ">fmcargoworld@gmail.com </a>
                     </div>
@@ -59,10 +81,14 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h5 class="title">
+                            @if (app()->getLocale()=='bn')
+                            ঠিকানা
+                            @else
                             Address
+                            @endif
                         </h5>
                         <p>
-                            House # 16 (1ST Floor), Road # 09, Sector # 01, Uttara Model Town, Dhaka-1230
+                            {{ $setting->{ 'address_'.app()->getLocale() } }}
                         </p>
                     </div>
                 </div>
