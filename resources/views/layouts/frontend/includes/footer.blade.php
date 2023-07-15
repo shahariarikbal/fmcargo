@@ -6,7 +6,7 @@
                     <div class="footer-item-wrapper">
                         <img src="{{ asset('setting/'.$setting->logo) }}" alt="Footer Logo" class="footer-brand-logo">
                         <p class="footer-item-des">
-                            {{$setting->footer_description}}
+                            {{ $setting->{ 'footer_description_'.app()->getLocale() } }}
                         </p>
                         <ul class="socials-link-list">
                             <li class="socials-link-list-item">
@@ -35,7 +35,11 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
                         <h5 class="footer-item-heading">
-                            policis
+                        @if (app()->getLocale()=='bn')
+                        পলিসি
+                        @else
+                        Policis
+                        @endif
                         </h5>
                         <ul class="service-list">
                             <li class="service-list-item">
@@ -59,7 +63,11 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
                         <h5 class="footer-item-heading">
-                            Our pages
+                        @if (app()->getLocale()=='bn')
+                        আমাদের পেজ
+                        @else
+                        Our pages
+                        @endif
                         </h5>
                         <ul class="service-list">
                             <li class="service-list-item">
@@ -88,7 +96,11 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item-wrapper">
                         <h5 class="footer-item-heading">
-                            Contact Info
+                        @if (app()->getLocale()=='bn')
+                        যোগাযোগের তথ্য
+                        @else
+                        Contact Info
+                        @endif
                         </h5>
                         <div class="footer-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -97,7 +109,7 @@
                                     Address
                                 </h6>
                                 <p class="text">
-                                    House # 16 (1ST Floor), Road # 09, Sector # 01, Uttara Model Town, Dhaka-1230
+                                    {{ $setting->{ 'address_'.app()->getLocale() } }}
                                 </p>
                             </div>
                         </div>
@@ -119,7 +131,7 @@
                                     EMAIL
                                 </h6>
                                 <a href="mailto:info@demo.com" class="text">
-                                    fmcargoworld@gmail.com 
+                                    fmcargoworld@gmail.com
                                 </a>
                             </div>
                         </div>
