@@ -1,7 +1,7 @@
 @extends('layouts.frontend.master')
 
 @section('title')
-    Door to Door Service | FM Cargo Service
+Specialized Service | FM Cargo Service
 @endsection
 
 @section('content')
