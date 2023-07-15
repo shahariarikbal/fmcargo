@@ -9,17 +9,31 @@
 	<section class="banner-section">
 		<div class="container">
 			<div class="banner-content-wrapper">
-				<h1 class="banner-title">Tracking</h1>
+				<h1 class="banner-title">
+                    @if (app()->getLocale()=='bn')
+                    ট্র্যাকিং
+                    @else
+                    Tracking
+                    @endif
+                </h1>
 				<ul class="banner-item">
 					<li>
 						<a href="{{ url('/') }}">
 							<i class="fas fa-home"></i>
-							Home
+							@if (app()->getLocale()=='bn')
+                            হোম
+                            @else
+                            Home
+                            @endif
 						</a>
 					</li>
 					<li class="active">
 						<a href="javascript:void(0)">
-							Tracking
+							@if (app()->getLocale()=='bn')
+                            ট্র্যাকিং
+                            @else
+                            Tracking
+                            @endif
 						</a>
 					</li>
 				</ul>
@@ -35,8 +49,13 @@
 	            <form action="{{ url('/tracking') }}" method="get" class="tracking-form form-group">
                     @csrf
 	                <div class="input-group">
-	                    <input type="search" name="tracking_number" placeholder="Enter Tracking No." class="form-control" />
+                        @if (app()->getLocale()=='bn')
+                        <input type="search" name="tracking_number" placeholder="ট্র্যাকিং নম্বর লিখুন" class="form-control" />
+	                    <button type="submit" name="tracking">অনুসন্ধান</button>
+                        @else
+                        <input type="search" name="tracking_number" placeholder="Enter Tracking No." class="form-control" />
 	                    <button type="submit" name="tracking">Search</button>
+                        @endif
 	                </div>
 	            </form>
                 @if($parcelTracking)
