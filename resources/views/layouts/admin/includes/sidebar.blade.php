@@ -41,6 +41,7 @@
                     <a class="nav-link" href="{{ route('youtube.list') }}">Youtube</a>
                     <a class="nav-link" href="{{ route('c_&_f.edit', 1) }}">C&F Contents</a>
                     <a class="nav-link" href="{{ route('door.edit', 1) }}">Door To Door Contents</a>
+                    <a class="nav-link" href="{{ route('specialized.edit', 1) }}">Specialized Service Contents</a>
                     {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>

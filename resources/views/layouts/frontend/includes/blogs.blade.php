@@ -2,10 +2,18 @@
     <div class="container">
         <div class="section-title-wrap mx-width-secure-data">
             <h6 class="top-title">
+                @if (app()->getLocale()=='bn')
+                সাম্প্রতিক ব্লগ
+                @else
                 Recent Blogs
+                @endif
             </h6>
             <h1 class="title">
+                @if (app()->getLocale()=='bn')
+                আমাদের সাম্প্রতিক খবর এবং নিবন্ধ
+                @else
                 Our Recent News & Articles
+                @endif
             </h1>
         </div>
         <div class="row">
