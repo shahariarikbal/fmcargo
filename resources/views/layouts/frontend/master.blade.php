@@ -64,10 +64,10 @@
                 </div>
                 <div class="shopping-order-item-name">
                     <h3 class="name">
-                        {{ $item->product?->name }}
+                        {{ $item->product?->name_en }}
                     </h3>
                     <span class="sub-text">
-                        ৳ {{ $totalPrice = $item->product?->price }}
+                        ৳ {{ $totalPrice = $item->product?->price_en }}
                     </span>
                 </div>
                 <div class="shopping-order-item-amount">
