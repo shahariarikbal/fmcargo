@@ -19,8 +19,10 @@ class SettingSeeder extends Seeder
             'facebook' => 'https://www.facebook.com/',
             'whatsapp' => '1XXXXXXXXX',
             'wechat' => '01XXXXXXXXX',
-            'address' => 'Dhaka, Uttara',
-            'footer_description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
+            'address_en' => 'Dhaka, Uttara',
+            'address_bn' => 'ঢাকা, উত্তরা',
+            'footer_description_en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.',
+            'footer_description_bn' => 'ব্যথা নিজেই যত্ন নেওয়া গুরুত্বপূর্ণ, এবং এটি রোগীর বৃদ্ধি দ্বারা অনুসরণ করা হবে, কিন্তু একই সময়ে এটি ঘটবে যে অনেক কাজ এবং ব্যথা আছে। ন্যূনতম বিষের জন্য ব্যবহার করা যেতে পারে, নস্ট্রুড ব্যায়াম ন্যূনতমভাবে উলামকো শ্রমের জন্য কাজ করতে পারে। দুজনকে দোষারোপ করে সুখী হতে চায় সে।',
             'logo' => 'test.png',
         ]);
     }

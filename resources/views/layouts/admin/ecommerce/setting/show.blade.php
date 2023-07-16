@@ -45,9 +45,27 @@
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
-                            <x-admin.label for="address">Address</x-admin.label>
-                            <x-admin.textarea id="address" rows="8" name="address" placeholder="Enter Address...">{{ strip_tags($setting->address) }}</x-admin.textarea>
-                            <x-admin.input-error for="address" class="mt-2"></x-admin.input-error>
+                            <x-admin.label for="address_en">Address (English)</x-admin.label>
+                            <x-admin.textarea id="address_en" rows="8" name="address_en" placeholder="Enter Address...">{{ strip_tags($setting->address_en) }}</x-admin.textarea>
+                            <x-admin.input-error for="address_en" class="mt-2"></x-admin.input-error>
+                        </x-admin.input-group-div>
+
+                        <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                            <x-admin.label for="address_bn">Address (Bengali)</x-admin.label>
+                            <x-admin.textarea id="address_bn" rows="8" name="address_bn" placeholder="Enter Address...">{{ strip_tags($setting->address_bn) }}</x-admin.textarea>
+                            <x-admin.input-error for="address_bn" class="mt-2"></x-admin.input-error>
+                        </x-admin.input-group-div>
+
+                        <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                            <x-admin.label for="footer_description_en">Footer Description (English)</x-admin.label>
+                            <x-admin.textarea id="footer_description_en" rows="8" name="footer_description_en" placeholder="Enter footer_description_en...">{{ strip_tags($setting->footer_description_en) }}</x-admin.textarea>
+                            <x-admin.input-error for="footer_description_en" class="mt-2"></x-admin.input-error>
+                        </x-admin.input-group-div>
+
+                        <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
+                            <x-admin.label for="footer_description_bn">Footer Description (Bengali)</x-admin.label>
+                            <x-admin.textarea id="footer_description_bn" rows="8" name="footer_description_bn" placeholder="Enter footer_description_bn...">{{ strip_tags($setting->footer_description_bn) }}</x-admin.textarea>
+                            <x-admin.input-error for="footer_description_bn" class="mt-2"></x-admin.input-error>
                         </x-admin.input-group-div>
 
                         <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-top: 20px;">
