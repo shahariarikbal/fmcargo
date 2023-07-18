@@ -209,7 +209,7 @@
                                     $sum = 0;
                                     $qty = 0;
                                     foreach ($addToCart as $product){
-                                        $price = $product->product?->price;
+                                        $price = $product->product?->price_en;
                                         $p_qty = $product?->quantity;
 
                                         $sum += $price;
@@ -219,7 +219,7 @@
                             <div class="total-payment-form mt-3">
                                 @foreach($addToCart as $cartProduct)
                                     <input type="hidden" name="product_id[]" value="{{ $cartProduct?->product_id }}">
-                                    <input type="hidden" name="price[]" value="{{ $cartProduct->product?->price }}">
+                                    <input type="hidden" name="price[]" value="{{ $cartProduct->product?->price_en }}">
                                     <input type="hidden" name="qty[]" value="{{ $cartProduct?->quantity }}">
                                 @endforeach
                                     <input type="hidden" name="total_price" value="{{ $sum }}">

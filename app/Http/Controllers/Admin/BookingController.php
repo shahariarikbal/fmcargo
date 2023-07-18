@@ -63,6 +63,7 @@ class BookingController extends Controller
                 'drop_of_address' => $request->drop_of_address,
                 'weight_pcs' => $request->weight_pcs,
                 'unit' => $request->unit,
+                'status' => $request->status,
                 'product_description' => $request->product_description,
                 'bookingId' => 'FM'.rand(10000, 99999),
             ];
