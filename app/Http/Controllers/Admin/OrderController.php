@@ -31,4 +31,15 @@ class OrderController extends Controller
         // download PDF file with download method
         return $pdf->download('invoice.pdf');
     }
+
+    public function adminOrderDelete($id)
+{
+    try {
+        $order = Order::findOrFail($id);
+        $order->delete();
+        return redirect()->back()->with('success', 'Order deleted successfully.');
+    } catch (\Exception $exception) {
+        return redirect()->back()->with('error', 'Failed to delete the order. Please try again.');
+    }
+}
 }
