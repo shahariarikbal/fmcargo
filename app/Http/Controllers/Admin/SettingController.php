@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Repository\CargoEcommerce;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -38,6 +39,44 @@ class SettingController extends Controller
         }catch (\Exception $exception){
             $this->setErrorMessage($exception->getMessage());
             return redirect()->back();
+        }
+    }
+
+    public function editCredential ()
+    {
+        $credential = User::first();
+        return view('layouts.admin.ecommerce.setting.credential-show', compact('credential'));
+    }
+
+    public function updateCredential (Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'old_password' => 'required',
+            'new_password' => 'required',
+            'confirm_password' => 'required',
+        ]);
+        $admin = User::first();
+        if(isset($request->new_password)){
+            if (password_verify($request->old_password, $admin->password)){
+                if($request->new_password==$request->confirm_password){
+                    $admin->password=bcrypt($request->new_password);
+                    $admin->email=$request->email;
+                    $admin->update();
+                    return redirect()->back()->with('success', 'Updated Successfully');
+                }
+                else{
+                    return redirect()->back()->with('error', 'Confirm Password is not Matched!!');
+                }
+            }
+            else{
+                return redirect()->back()->with('error', 'Old Password does not Match!!');
+            }
+        }
+        else{
+            $admin->email=$request->email;
+            $admin->update();
+            return redirect()->back()->with('success', 'Updated Successfully');
         }
     }
 }

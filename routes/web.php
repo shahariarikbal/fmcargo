@@ -131,6 +131,9 @@ Route::middleware([
     Route::group(['prefix' => 'settings'], function (){
         Route::get('/show/{id}', [SettingController::class, 'showSetting'])->name('setting.show');
         Route::post('/update/{id}', [SettingController::class, 'updateSetting'])->name('setting.update');
+        Route::get('/credential/edit', [SettingController::class, 'editCredential'])->name('edit.credential');
+        Route::post('/credential/update', [SettingController::class, 'updateCredential'])->name('update.credential');
+
     });
 
     Route::group(['prefix' => 'service'], function (){

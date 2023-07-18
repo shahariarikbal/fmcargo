@@ -71,6 +71,22 @@
                         </div>
 
                         <div class="input-group">
+                            <x-admin.input-group-div style="width: calc( 50% - 10px )">
+                                <x-admin.label for="status">Select Status</x-admin.label>
+                                <x-admin.select-option name="status" id="status">
+                                    <option selected disabled>Select Status</option>
+                                    <option value="1" {{$booking->status == '1' ? 'selected': ''}}>pending</option>
+                                    <option value="2" {{$booking->status == '2' ? 'selected': ''}}>warehouse</option>
+                                    <option value="3" {{$booking->status == '3' ? 'selected': ''}}>shipping</option>
+                                    <option value="4" {{$booking->status == '4' ? 'selected': ''}}>customs</option>
+                                    <option value="5"{{$booking->status == '5' ? 'selected': ''}}>BD warehouse</option>
+                                    <option value="6"{{$booking->status == '6' ? 'selected': ''}}>Delivered</option>
+                                </x-admin.select-option>
+                                <x-admin.input-error for="status" class="mt-2"></x-admin.input-error>
+                            </x-admin.input-group-div>
+                        </div>
+
+                        <div class="input-group">
                             <x-admin.input-group-div style="width: calc( 100% - 10px ); margin-right: 10px;">
                                 <x-admin.label for="product_description">Parcel details</x-admin.label>
                                 <x-admin.textarea name="product_description" id="product_description" rows="5" placeholder="Enter Parcel details">{{ $booking->product_description ?? old('product_description') }}</x-admin.textarea>
