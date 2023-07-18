@@ -39,7 +39,7 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->back()->with('success', 'Order deleted successfully.');
     } catch (\Exception $exception) {
-        return redirect()->back()->with('error', 'Failed to delete the order. Please try again.');
+        return redirect()->back()->with($exception->getMessage());
     }
 }
 }
