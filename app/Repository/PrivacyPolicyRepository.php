@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Models\AboutUs;
+use App\Models\PrivacyPolicy;
 
-class AboutUsRepository implements CargoEcommerce
+class PrivacyPolicyRepository implements CargoEcommerce
 {
     public function getAllData()
     {
@@ -17,9 +17,9 @@ class AboutUsRepository implements CargoEcommerce
 
     public function update($data = [], $id = [])
     {
-        $about_us = AboutUs::find($id);
+        $privacy_policy = PrivacyPolicy::find($id);
 
-        $about_us->update([
+        $privacy_policy->update([
             'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
             'description_en' => $data['description_en'],
@@ -29,7 +29,7 @@ class AboutUsRepository implements CargoEcommerce
 
     public function edit($id)
     {
-        return $about_us = AboutUs::find($id);
+        return $privacy_policy = PrivacyPolicy::find($id);
     }
 
     public function delete($id)

@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Models\AboutUs;
+use App\Models\TermCondition;
 
-class AboutUsRepository implements CargoEcommerce
+class TermConditionRepository implements CargoEcommerce
 {
     public function getAllData()
     {
@@ -17,9 +17,9 @@ class AboutUsRepository implements CargoEcommerce
 
     public function update($data = [], $id = [])
     {
-        $about_us = AboutUs::find($id);
+        $term_condition = TermCondition::find($id);
 
-        $about_us->update([
+        $term_condition->update([
             'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
             'description_en' => $data['description_en'],
@@ -29,7 +29,7 @@ class AboutUsRepository implements CargoEcommerce
 
     public function edit($id)
     {
-        return $about_us = AboutUs::find($id);
+        return $term_condition = TermCondition::find($id);
     }
 
     public function delete($id)
