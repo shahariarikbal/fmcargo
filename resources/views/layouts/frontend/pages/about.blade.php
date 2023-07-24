@@ -44,7 +44,7 @@
                     {{ $about_us->{ 'title_'.app()->getLocale() } }}
                 </h2>
                 <p class="about-info-text">
-                    {{ $about_us->{ 'description_'.app()->getLocale() } }}
+                    {!! $about_us->{ 'description_'.app()->getLocale() } !!}
                 </p>
                 {{-- <p class="about-info-text">
                     After more than two decades of hard work and success have bore the company fruits of labor by enriching the client portfolio and helped establish branch offices all over Bangladesh. Branced with the support of loyal workforce the proprietor has leaded the company to build long trust and maintained Goodwill all over the clearing forwarding industry
