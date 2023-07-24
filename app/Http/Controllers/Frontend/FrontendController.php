@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
+use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\AddToCart;
 use App\Models\Booking;
@@ -12,7 +13,9 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\ClearingForwarding;
 use App\Models\DoorToDoor;
+use App\Models\PrivacyPolicy;
 use App\Models\SpecializedService;
+use App\Models\TermCondition;
 use Illuminate\Http\Request;
 use App\Repository\CargoEcommerce;
 use Auth;
@@ -165,14 +168,17 @@ class FrontendController extends Controller
     }
 
     public function showAbout(){
-        return view('layouts.frontend.pages.about');
+        $about_us = AboutUs::first();
+        return view('layouts.frontend.pages.about', compact('about_us'));
     }
 
     public function showTermsCondition(){
-        return view('layouts.frontend.pages.terms-condition');
+        $term_condition = TermCondition::first();
+        return view('layouts.frontend.pages.terms-condition', compact('term_condition'));
     }
 
     public function showprivacyPolicy(){
-        return view('layouts.frontend.pages.privacy-policy');
+        $privacy_policy = PrivacyPolicy::first();
+        return view('layouts.frontend.pages.privacy-policy', compact('privacy_policy'));
     }
 }
