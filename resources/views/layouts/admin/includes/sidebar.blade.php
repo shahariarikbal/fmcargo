@@ -42,6 +42,9 @@
                     <a class="nav-link" href="{{ route('c_&_f.edit', 1) }}">C&F Contents</a>
                     <a class="nav-link" href="{{ route('door.edit', 1) }}">Door To Door Contents</a>
                     <a class="nav-link" href="{{ route('specialized.edit', 1) }}">Specialized Service Contents</a>
+                    <a class="nav-link" href="{{ route('about_us.edit', 1) }}">About Us</a>
+                    <a class="nav-link" href="{{ route('term_condition.edit', 1) }}">Terms & Conditions</a>
+                    <a class="nav-link" href="{{ route('privacy_policy.edit', 1) }}">Privacy Policy</a>
                     {{--  <a class="nav-link" href="#">Light Sidenav</a>  --}}
                 </nav>
             </div>

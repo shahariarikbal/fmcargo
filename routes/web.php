@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -16,7 +17,9 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\YoutubeController;
 use App\Http\Controllers\Admin\ClearingForwardingController;
 use App\Http\Controllers\Admin\DoorToDoorController;
+use App\Http\Controllers\Admin\PrivacyPolicyController;
 use App\Http\Controllers\Admin\SpecializedServiceController;
+use App\Http\Controllers\Admin\TermConditionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -172,9 +175,25 @@ Route::middleware([
         Route::get('/edit/{id}', [SpecializedServiceController::class, 'specializedEdit'])->name('specialized.edit');
         Route::post('/update/{id}', [SpecializedServiceController::class, 'specializedUpdate'])->name('specialized.update');
     });
+
     Route::group(['prefix' => 'door_to_door'], function (){
         Route::get('/edit/{id}', [DoorToDoorController::class, 'doorEdit'])->name('door.edit');
         Route::post('/update/{id}', [DoorToDoorController::class, 'doorUpdate'])->name('door.update');
+    });
+
+    Route::group(['prefix' => 'about_us'], function (){
+        Route::get('/edit/{id}', [AboutUsController::class, 'aboutUsEdit'])->name('about_us.edit');
+        Route::post('/update/{id}', [AboutUsController::class, 'aboutUsUpdate'])->name('about_us.update');
+    });
+
+    Route::group(['prefix' => 'term_condition'], function (){
+        Route::get('/edit/{id}', [TermConditionController::class, 'termConditionEdit'])->name('term_condition.edit');
+        Route::post('/update/{id}', [TermConditionController::class, 'termConditionUpdate'])->name('term_condition.update');
+    });
+
+    Route::group(['prefix' => 'privacy_policy'], function (){
+        Route::get('/edit/{id}', [PrivacyPolicyController::class, 'privacyPolicyEdit'])->name('privacy_policy.edit');
+        Route::post('/update/{id}', [PrivacyPolicyController::class, 'privacyPolicyUpdate'])->name('privacy_policy.update');
     });
 
 

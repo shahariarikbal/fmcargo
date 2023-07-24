@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -26,6 +27,7 @@ use App\Repository\SettingRepository;
 use App\Repository\FrontendRepository;
 use App\Repository\TestimonialRepository;
 use App\Models\Setting;
+use App\Repository\AboutUsRepository;
 use App\Repository\YoutubeVideoRepository;
 use App\Repository\ClearingForwardingRepository;
 use App\Repository\DoorToDoorRepository;
@@ -87,6 +89,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->when(SpecializedServiceController::class)->needs(CargoEcommerce::class)->give(function (){
             return new SpecializedServiceRepository();
+        });
+
+        $this->app->when(AboutUsController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new AboutUsRepository();
         });
     }
 
