@@ -36,5 +36,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ClearingForwardingSeeder::class);
         $this->call(DoorToDoorSeeder::class);
         $this->call(SpecializedServiceSeeder::class);
+        $this->call(TermConditionSeeder::class);
+        $this->call(PrivacyPolicySeeder::class);
+        $this->call(AboutUsSeeder::class);
     }
 }

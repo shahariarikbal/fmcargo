@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -11,9 +12,11 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\YoutubeController;
 use App\Http\Controllers\Admin\ClearingForwardingController;
 use App\Http\Controllers\Admin\DoorToDoorController;
+use App\Http\Controllers\Admin\PrivacyPolicyController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\SpecializedServiceController;
+use App\Http\Controllers\Admin\TermConditionController;
 use App\Models\Blog;
 use App\Models\AddToCart;
 use App\Repository\BlogRepository;
@@ -26,10 +29,13 @@ use App\Repository\SettingRepository;
 use App\Repository\FrontendRepository;
 use App\Repository\TestimonialRepository;
 use App\Models\Setting;
+use App\Repository\AboutUsRepository;
 use App\Repository\YoutubeVideoRepository;
 use App\Repository\ClearingForwardingRepository;
 use App\Repository\DoorToDoorRepository;
+use App\Repository\PrivacyPolicyRepository;
 use App\Repository\SpecializedServiceRepository;
+use App\Repository\TermConditionRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Request;
 use Auth;
@@ -87,6 +93,18 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->when(SpecializedServiceController::class)->needs(CargoEcommerce::class)->give(function (){
             return new SpecializedServiceRepository();
+        });
+
+        $this->app->when(AboutUsController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new AboutUsRepository();
+        });
+
+        $this->app->when(TermConditionController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new TermConditionRepository();
+        });
+
+        $this->app->when(PrivacyPolicyController::class)->needs(CargoEcommerce::class)->give(function (){
+            return new PrivacyPolicyRepository();
         });
     }
 
